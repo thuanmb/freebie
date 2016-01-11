@@ -51,6 +51,51 @@ URL: **https://chodocu.herokuapp.com/**
 - As a logged in user, I can get notification of all post that I subscribed.
 - As a logged in user, I can see the list of post that I subscribed.
 
+## Schema 
+#### User 
+- name
+- email 
+- password_digest 
+- avatar_url
+- is_admin:boolean 
+- is_organization:boolean
+- description (html, optional)
+- address
+
+#### Post 
+- title 
+- image_url 
+- description 
+- location
+- has_many items
+
+#### Item
+- post:references
+- categories
+- name
+- description
+- photos
+
+#### Request (a request for one or many items in a post)
+- has_many items
+- user:references
+- message:references
+
+#### Campaign (an organisation can request for donation money / goods / old clothes .... for a good cause, to support a poor family, …)
+- user:references  (type organization)
+- title 
+- image_url 
+- description (allow html)
+- categories
+- participants (as text)
+
+
+#### Message 
+- from:user:references 
+- to:user:references 
+- content
+
+
 ## Wireframes
 ![Home Screen](/wireframe/home.png)
 ![Logged In Screen](/wireframe/logged_in.png)
