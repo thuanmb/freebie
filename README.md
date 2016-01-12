@@ -60,7 +60,8 @@ URL: **https://chodocu.herokuapp.com/**
 - is_admin:boolean 
 - is_organization:boolean
 - description (html, optional)
-- address
+- contact_address
+- contact_city
 
 #### Post 
 - title 
@@ -68,6 +69,7 @@ URL: **https://chodocu.herokuapp.com/**
 - description 
 - location
 - has_many items
+- location_city
 
 #### Item
 - post:references
@@ -88,7 +90,15 @@ URL: **https://chodocu.herokuapp.com/**
 - description (allow html)
 - categories
 - participants (as text)
+- done: boolean
+- end_date
 
+#### Campaign-Item
+- campaign:references
+- item name
+- qty
+- collected_qty
+- label
 
 #### Message 
 - from:user:references 
