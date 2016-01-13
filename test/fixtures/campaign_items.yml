@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_id: 
+  name: MyString
+  target_qty: 1
+  collected_qty: 1
+  label: MyString
+
+two:
+  campaign_id: 
+  name: MyString
+  target_qty: 1
+  collected_qty: 1
+  label: MyString
