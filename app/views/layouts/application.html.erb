@@ -7,8 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569662315d82736c" async="async"></script>
 
-<%= yield %>
+<nav class="navbar navbar-light bg-faded">
+  <%= link_to 'Freebies', root_path, class: 'navbar-brand' %>
+  <ul class="nav navbar-nav">
+    <% unless user_signed_in? %>
+      <li class="nav-item">
+        <%= active_link_to 'Log in', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= active_link_to "Posts", class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= active_link_to "Campaigns", class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= active_link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% end %>
+    <li class="nav-item">
+      <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <%= flash_messages %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
