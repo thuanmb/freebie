@@ -51,6 +51,9 @@ URL: **https://chodocu.herokuapp.com/**
 - As a logged in user, I can get notification of all post that I subscribed.
 - As a logged in user, I can see the list of post that I subscribed.
 
+#### More
+- As a finder, I can take a see list of post on Google Map
+
 ## Wireframes
 ![Home Screen](/wireframe/home.png)
 ![Logged In Screen](/wireframe/logged_in.png)
