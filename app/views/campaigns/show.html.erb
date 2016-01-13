@@ -1,2 +1,56 @@
-<h1>Campaigns#show</h1>
-<p>Find me in app/views/campaigns/show.html.erb</p>
+<div class="container-fluid no-pad events-detail">
+  <div class="row no-pad">
+    <div class="col-md-12 event-content">
+      <div class="hero-img hidden-sm-down" style="background-image: url(<%= @campaign.image_url %>); background-size: cover;"> </div>
+      <div class="container">
+        <h1> <%= @campaign.title %> </h1> 
+      
+        <hr/>
+        <div class="col-md-12">
+          <a href="#donations"><span><b>100 donations</b></span></a> | 
+          <a href="#money"><span><b>34 Mil VND</b></span></a> |
+          <a href="#books"><span><b>200 books</b></span></a> 
+        </div>
+
+        <div class="extended-description col-md-6">
+          <%= @campaign.description %>
+          <div>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-heart"></i>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h3> Campaign will end in 23 days </h3> 
+          
+          <h4> Money </h4> 
+          <progress class="progress progress-striped progress-success" value="25" max="100">25% Money collected</progress>
+          <h4> Books </h4>
+          <progress class="progress progress-striped progress-info" value="50" max="100">50% Book collected</progress>
+
+          <p>We will collect books at your place. For money, you can send us via Vietcombank Account Name / Number / Bank Branch </p>
+          <p>
+          <span>Want to contribute, <button type="button" class="btn btn-success">Message Us!</button></span></p>
+        </div>
+
+        <div class="col-md-12">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62713.09674534687!2d106.66230720000001!3d10.767697100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee868cafa03%3A0x0670a0b58b4ecb95!2zTmd1eeG7hW4gTmfhu41jIEzhu5ljLCBwaMaw4budbmcgMTQsIFF14bqtbiAxMCwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1452694130802" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <div class="col-md-12">
+          <h3> Hornorable donations </h3> 
+          <ul class="list-group" id="donations">
+            <li class="list-group-item">1234 donated 5 tr</li>
+            <li class="list-group-item">user2 donated 100 books</li>
+            <li class="list-group-item">user3 donated 1 tr</li>
+            <li class="list-group-item">user4 donated 5 tr</li>
+            <li class="list-group-item">user5 donated 15 books</li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
