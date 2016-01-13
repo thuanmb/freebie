@@ -11,4 +11,9 @@ class Campaign < ActiveRecord::Base
     ['Draft', 'Published', 'Collected', 'Delivered']
   end 
 
+
+  def self.public_campaigns
+    Campaign.where('status != ?', 'Draft')
+  end
+
 end
