@@ -5,6 +5,10 @@ class Campaign < ActiveRecord::Base
 
   def remaining_days 
     (self.end_date - Date.today).to_i
+  end
+
+  def status_enum
+    ['Draft', 'Published', 'Collected', 'Delivered']
   end 
 
 end
