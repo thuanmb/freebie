@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
   resources :users
+  resources :campaigns do
+    resources :campaign_item
+  end
 
   root 'users#index'
 
