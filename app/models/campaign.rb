@@ -3,4 +3,8 @@ class Campaign < ActiveRecord::Base
   has_many :campaign_items
   has_many :donations
 
+  def remaining_days 
+    (self.end_date - Date.today).to_i
+  end 
+
 end
