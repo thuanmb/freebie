@@ -36,7 +36,8 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'simple_form'
 gem 'devise'
 gem 'active_link_to'
-
+gem 'font-awesome-rails'
+  
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
