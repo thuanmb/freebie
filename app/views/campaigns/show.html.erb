@@ -43,13 +43,11 @@
         </div>
 
         <div class="col-md-12">
-          <h3> Hornorable donations </h3> 
+          <h3> Hornorable donations </h3>
           <ul class="list-group" id="donations">
-            <li class="list-group-item">1234 donated 5 tr</li>
-            <li class="list-group-item">user2 donated 100 books</li>
-            <li class="list-group-item">user3 donated 1 tr</li>
-            <li class="list-group-item">user4 donated 5 tr</li>
-            <li class="list-group-item">user5 donated 15 books</li>
+            <% @campaign.donations.each do |donation| %>
+              <li class="list-group-item"><%= "#{donation.name} - #{donation.description}" %></li>
+            <% end %>
           </ul>
         </div>
       </div>  
