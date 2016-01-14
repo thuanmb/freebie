@@ -30,18 +30,15 @@
       </li>
     <% else %>
       <li class="nav-item">
-        <%= active_link_to "Posts", class: 'nav-link' %>
+        <%= active_link_to "Posts", root_path, class: 'nav-link' %> <!-- Edit root_path to correct post_path -->
       </li>
       <li class="nav-item">
-        <%= active_link_to "Campaigns", class: 'nav-link' %>
+        <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= active_link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
     <% end %>
-    <li class="nav-item">
-      <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
-    </li>
   </ul>
 </nav>
 

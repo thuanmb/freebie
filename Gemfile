@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'simple_form'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'active_link_to'
 gem 'font-awesome-rails'
 gem 'rails_admin'

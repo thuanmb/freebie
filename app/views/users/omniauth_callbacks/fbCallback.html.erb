@@ -1,0 +1,6 @@
+<script type="text/javascript">
+<% if @after_sign_in_url %>
+  window.opener.location = '<%= @after_sign_in_url %>';
+<% end %>
+  window.close();
+</script>
