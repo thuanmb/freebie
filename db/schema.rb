@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113162613) do
+ActiveRecord::Schema.define(version: 20160113164013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20160113162613) do
 
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
+  create_table "participants", force: :cascade do |t|
+    t.integer  "message_id"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "participants", ["message_id"], name: "index_participants_on_message_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.boolean  "is_admin"
@@ -92,4 +102,5 @@ ActiveRecord::Schema.define(version: 20160113162613) do
   add_foreign_key "campaigns", "users"
   add_foreign_key "donations", "campaigns"
   add_foreign_key "messages", "users"
+  add_foreign_key "participants", "messages"
 end
