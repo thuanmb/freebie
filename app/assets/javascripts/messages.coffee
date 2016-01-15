@@ -1,2 +1,2 @@
 $ ->
-  $('.chosen-it').chosen()
+  $('.chosen-it').chosen({ width: '100%' })
