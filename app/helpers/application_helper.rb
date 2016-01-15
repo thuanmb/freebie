@@ -12,4 +12,8 @@ module ApplicationHelper
     end
     nil
   end
+
+  def avatar_url_for(user, size = 50, title = user.name)
+    user.avatar_url || gravatar_image_url(user.email, size: size)
+  end
 end
