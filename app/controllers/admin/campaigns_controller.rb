@@ -41,6 +41,6 @@ class Admin::CampaignsController < AdminController
   private 
 
   def campaign_params
-    params.require(:campaign).permit(:title, :description, :image_url)
+    params.require(:campaign).permit(:title, :description, :image_url, :gmap_location, :donation_instruction, :end_date)
   end 
 end
