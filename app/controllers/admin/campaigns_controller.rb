@@ -7,4 +7,8 @@ class Admin::CampaignsController < AdminController
     @campaign = Campaign.find(params[:id])
   end
 
+  def edit
+    @campaign = Campaign.find(params[:id])
+  end
+
 end
