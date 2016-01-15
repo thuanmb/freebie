@@ -36,7 +36,12 @@
         <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= active_link_to "Messages", conversations_path, class: 'nav-link' %>
+        <%= active_link_to conversations_path, class: 'nav-link' do %>
+          Messages
+          <% if current_user.unread_messages_count > 0 %>
+            <span class="label label-pill label-danger"><%= current_user.unread_messages_count %></span>
+          <% end %>
+        <% end %>
       </li>
       <li class="nav-item">
         <%= active_link_to "Edit Profile", edit_user_registration_path, class: 'nav-link' %>
