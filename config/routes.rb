@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
   resources :posts
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/super', as: 'rails_admin'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   resources :campaigns do
     resources :campaign_item
+  end
+
+  namespace :admin do
+   resources :campaigns
   end
 
   resources :conversations, only: [:index, :show, :destroy] do
