@@ -1,0 +1,9 @@
+<div class="card-block">
+  <h6 class="card-title" style="margin-bottom: 0">
+    <%= link_to campaign.title, campaign_path(campaign) %></h6>
+</div>
+
+<%= image_tag(campaign.image_url, class: "card-img-top img-responsive") %>
+<div class="card-block">
+  <p class="card-text"><%= campaign.description %></p>
+</div>
