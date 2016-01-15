@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       member do
         put :publish
       end
-    end 
+    end
   end
 
   resources :conversations, only: [:index, :show, :destroy] do
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:new, :create]
 
-  root 'users#index'  # edit root path to correct post#index
+  root 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
