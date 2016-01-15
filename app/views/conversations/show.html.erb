@@ -13,7 +13,7 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-            <%= image_tag avatar_url_for(message.sender), class: 'img-rounded', size: 50 %>
+            <%= render 'conversations/avatar', user: message.sender %>
           </div>
 
           <div class="media-body">
