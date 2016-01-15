@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to "View", campaign_path(@campaign) %> | 
-<%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %>
+<%= link_to 'Edit', edit_admin_campaign_path(@campaign) %> |
+<%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %> |
+<%= link_to "Add", new_admin_campaign_campaign_item_path(@campaign) %>
 
 <p>
   <strong>Title:</strong>
@@ -38,4 +40,29 @@
   <%= image_tag @campaign.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_admin_campaign_path(@campaign) %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Label</th>
+        <th>Target</th>
+        <th>Collected</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaign.campaign_items.each_with_index do |item, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to item.name, admin_campaign_campaign_item_path(@campaign, item) %></td>
+        <td><%= item.label %></td>
+        <td><%= item.target_qty %></td>
+        <td><%= item.collected_qty %></td>
+        <td><%= link_to "Edit", edit_admin_campaign_campaign_item_path(@campaign, item) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
