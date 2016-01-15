@@ -5,7 +5,12 @@
     <%= mailbox_section 'inbox', @box %>
     <%= mailbox_section 'sent', @box %>
     <%= mailbox_section 'trash', @box %>
-    <%= link_to 'Start conversation', new_message_path, class: 'btn btn-primary pull-right' %>
+
+    <% if @box == 'trash' %>
+      <%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% else %>
+      <%= link_to 'Start conversation', new_message_path, class: 'btn btn-primary pull-right' %>
+    <% end %>
   </ul>
 
   <div class="tab-content m-t-1">
