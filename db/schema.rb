@@ -51,38 +51,13 @@ ActiveRecord::Schema.define(version: 20160114095208) do
 
   add_index "donations", ["campaign_id"], name: "index_donations_on_campaign_id", using: :btree
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "content"
-    t.boolean  "unread"
-    t.datetime "read_time"
-    t.text     "images"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "participants", force: :cascade do |t|
-    t.integer  "message_id"
-    t.integer  "target_id"
-    t.string   "target_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "participants", ["message_id"], name: "index_participants_on_message_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,6 +92,4 @@ ActiveRecord::Schema.define(version: 20160114095208) do
   add_foreign_key "campaign_items", "campaigns"
   add_foreign_key "campaigns", "users"
   add_foreign_key "donations", "campaigns"
-  add_foreign_key "messages", "users"
-  add_foreign_key "participants", "messages"
 end

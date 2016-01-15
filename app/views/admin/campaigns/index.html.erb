@@ -1,0 +1,23 @@
+<h2>Campaigns</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaigns.each_with_index do |campaign, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to campaign.title, admin_campaign_path(campaign) %></td>
+        <td><%= campaign.status %></td>
+        <td><%= campaign.end_date %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
