@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Status</th>
         <th>End Date</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
         <td><%= link_to campaign.title, admin_campaign_path(campaign) %></td>
         <td><%= campaign.status %></td>
         <td><%= campaign.end_date %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_campaign_path(campaign) %>
+        </td>
       </tr>
       <% end %>
     </tbody>
