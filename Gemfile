@@ -43,12 +43,13 @@ gem 'active_link_to'
 gem 'font-awesome-rails'
 gem 'rails_admin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'rmagick', '2.13.2'
 gem 'mailboxer'
 gem 'gravatar_image_tag'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
-gem 'rmagick'
+gem 'rmagick', '2.13.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
