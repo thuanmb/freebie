@@ -1,4 +1,4 @@
-<li class="list-group-item clearfix">
+<li class="list-group-item clearfix <%= 'unread' if conversation.is_unread?(current_user) %>">
   <div class="media">
     <div class="media-body">
       <%= link_to conversation.subject, conversation_path(conversation) %>
