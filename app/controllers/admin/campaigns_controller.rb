@@ -3,12 +3,29 @@ class Admin::CampaignsController < AdminController
     @campaigns = Campaign.all
   end
 
+  def new
+    @campaign = Campaign.new
+  end
+
   def show
     @campaign = Campaign.find(params[:id])
   end
 
   def edit
     @campaign = Campaign.find(params[:id])
+  end
+
+  def create
+    @campaign = Campaign.create(campaign_params)
+    @campaign.status = :Draft
+    @campaign.user = current_user
+
+    if @campaign.save
+      flash[:success] = "Create '#{@campaign.title}' successfully"
+      redirect_to admin_campaigns_path 
+    else
+      render 'admin/campaigns/new'
+    end
   end
 
   def update
@@ -24,6 +41,6 @@ class Admin::CampaignsController < AdminController
   private 
 
   def campaign_params
-    params.require(:campaign).permit(:title, :description)
+    params.require(:campaign).permit(:title, :description, :image_url)
   end 
 end
