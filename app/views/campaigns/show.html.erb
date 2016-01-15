@@ -5,7 +5,7 @@
       <div class="container">
         <h1> <%= @campaign.title %> </h1> 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="addthis_native_toolbox"></div>
+        <div class="addthis_sharing_toolbox"></div>
       
         <hr/>
         <div class="col-md-12">
@@ -28,13 +28,13 @@
             <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
           <% end %>
 
-          <p>We will collect books at your place. For money, you can send us via Vietcombank Account Name / Number / Bank Branch </p>
+          <p><%= @campaign.donation_instruction %></p>
           <p>
           <span>Bạn muốn quyên góp? <button type="button" class="btn btn-success">Liên hệ</button></span></p>
         </div>
 
         <div class="col-md-12">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62713.09674534687!2d106.66230720000001!3d10.767697100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee868cafa03%3A0x0670a0b58b4ecb95!2zTmd1eeG7hW4gTmfhu41jIEzhu5ljLCBwaMaw4budbmcgMTQsIFF14bqtbiAxMCwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1452694130802" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <%= @campaign.gmap_location.html_safe %>
         </div>
 
         <div class="col-md-12">

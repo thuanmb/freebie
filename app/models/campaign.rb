@@ -7,6 +7,11 @@ class Campaign < ActiveRecord::Base
     (self.end_date - Date.today).to_i
   end
 
+  def publish
+    self.status = 'Published'
+    self.save
+  end
+
   def status_enum
     ['Draft', 'Published', 'Collected', 'Delivered']
   end 

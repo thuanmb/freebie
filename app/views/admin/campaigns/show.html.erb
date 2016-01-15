@@ -1,13 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "View", campaign_path(@campaign) %> | 
+<%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %>
+
 <p>
   <strong>Title:</strong>
   <%= @campaign.title %>
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @campaign.description %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @campaign.end_date %>
+</p>
+
+<p>
+  <strong>Donation Instruction:</strong>
+  <%= @campaign.donation_instruction %>
+</p>
+
+<p>
+  <strong>Gmap Location:</strong>
+  <%= @campaign.gmap_location %>
 </p>
 
 <p>
