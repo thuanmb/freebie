@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'welcome/index'
+
   resources :posts
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
     resources :campaign_item
   end
 
-  root 'users#index'  # edit root path to correct post#index
+  root 'welcome#index'  # edit root path to correct post#index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
