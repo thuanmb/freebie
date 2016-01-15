@@ -12,4 +12,9 @@ module ApplicationHelper
     end
     nil
   end
+
+  def gravatar_for(user, size = 30, title = user.name)
+    url = user.avatar_url || gravatar_image_url(user.email, size: size)
+    image_tag url, title: title, class: 'img-rounded', size: size
+  end
 end

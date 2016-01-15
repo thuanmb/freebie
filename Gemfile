@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 gem 'simple_form'
 gem 'devise'
 gem 'omniauth-facebook'
@@ -40,6 +42,11 @@ gem 'active_link_to'
 gem 'font-awesome-rails'
 gem 'rails_admin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'mailboxer'
+gem 'gravatar_image_tag'
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
