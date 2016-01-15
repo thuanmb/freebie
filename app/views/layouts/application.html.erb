@@ -36,6 +36,12 @@
         <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
+        <%= active_link_to "Messages", conversations_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= active_link_to "Edit Profile", edit_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
         <%= active_link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
     <% end %>

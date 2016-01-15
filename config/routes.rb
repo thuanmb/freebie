@@ -13,6 +13,13 @@ Rails.application.routes.draw do
    resources :campaigns
   end
 
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
+  resources :messages, only: [:new, :create]
+
   root 'users#index'  # edit root path to correct post#index
 
   # The priority is based upon order of creation: first created -> highest priority.

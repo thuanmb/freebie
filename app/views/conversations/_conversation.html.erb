@@ -1,0 +1,19 @@
+<li class="list-group-item clearfix">
+  <div class="media">
+    <div class="media-body">
+      <%= link_to conversation.subject, conversation_path(conversation) %>
+      <p>
+        <%= conversation.last_message.body %>
+        <small>
+          <span class="text-muted"> — <%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>
+        </small>
+      </p>
+    </div>
+    <div class="media-right">
+      <span class="text-nowrap">
+        <%= render 'conversations/participants', conversation: conversation %>
+      </span>
+    </div>
+  </div>
+
+</li>
