@@ -10,7 +10,14 @@ Rails.application.routes.draw do
     resources :campaign_item
   end
 
-  root 'welcome#index'  # edit root path to correct post#index
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
+  resources :messages, only: [:new, :create]
+
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

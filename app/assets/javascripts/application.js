@@ -11,17 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require chosen-jquery
+//
+//= require users
+//= require messages
+//
 //= require_tree .
-
-function popupCenter(linkUrl, width, height, name) {
-    var separator = (linkUrl.indexOf('?') !== -1) ? '&' : '?',
-        url = linkUrl + separator + 'popup=true',
-        left = (screen.width - width) / 2,
-        top = (screen.height - height) / 2,
-        windowFeatures = 'menubar=no,toolbar=no,status=no,width=' + width +
-            ',height=' + height + ',left=' + left + ',top=' + top;
-    return window.open(url, name, windowFeatures);
-}
+//= require_tree ../../../vendor/assets/javascripts/.
