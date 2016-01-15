@@ -1,0 +1,30 @@
+<h2>Campaigns</h2>
+
+<%= link_to "New campaign", new_admin_campaign_path %>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaigns.each_with_index do |campaign, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to campaign.title, admin_campaign_path(campaign) %></td>
+        <td><%= campaign.status %></td>
+        <td><%= campaign.end_date %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_campaign_path(campaign) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

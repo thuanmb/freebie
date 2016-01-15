@@ -108,12 +108,9 @@ ActiveRecord::Schema.define(version: 20160115052444) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -148,7 +145,9 @@ ActiveRecord::Schema.define(version: 20160115052444) do
   add_foreign_key "campaign_items", "campaigns"
   add_foreign_key "campaigns", "users"
   add_foreign_key "donations", "campaigns"
+
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  
 end

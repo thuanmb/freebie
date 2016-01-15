@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @campaign.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag @campaign.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_admin_campaign_path(@campaign) %>
