@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-   resources :campaigns
+    resources :campaigns do
+      member do
+        put :publish
+      end
+    end 
   end
 
   resources :conversations, only: [:index, :show, :destroy] do
