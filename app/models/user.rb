@@ -36,4 +36,10 @@ class User < ActiveRecord::Base
     shouldSendEmail = false   # I don't want to send email just yet
     @email if shouldSendEmail
   end
+
+  def unread_messages_count
+    mailbox.inbox(read: false).count
+  end
+
+
 end
