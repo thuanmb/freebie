@@ -1,0 +1,17 @@
+<h1>Edit Campaign Item</h1>
+
+<%= simple_form_for @campaign_item, :url => admin_campaign_campaign_item_path(@campaign, @campaign_item), :method => :put do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :label %>
+    <%= f.input :target_qty, label: "Target Quantity" %>
+    <%= f.input :collected_qty, label: "Collected Quantity" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

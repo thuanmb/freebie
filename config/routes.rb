@@ -5,15 +5,14 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
-  resources :campaigns do
-    resources :campaign_item
-  end
+  resources :campaigns, only: [:index, :show, :new]
 
   namespace :admin do
     resources :campaigns do
       member do
         put :publish
       end
+      resources :campaign_items, only: [:edit, :update, :new, :create] 
     end
   end
 
