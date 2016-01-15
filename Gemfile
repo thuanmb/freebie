@@ -40,7 +40,7 @@ gem 'active_link_to'
 gem 'font-awesome-rails'
 gem 'rails_admin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-gem 'rmagick'
+gem 'rmagick', '2.13.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
