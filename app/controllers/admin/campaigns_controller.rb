@@ -1,6 +1,6 @@
 class Admin::CampaignsController < AdminController
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.order(created_at: :desc)
   end
 
   def new
@@ -35,6 +35,16 @@ class Admin::CampaignsController < AdminController
       redirect_to admin_campaign_path(@campaign)
     else       
       render 'admin/campaigns/edit'
+    end 
+  end
+
+  def publish
+    @campaign = Campaign.find(params[:id])
+    if @campaign.publish
+      flash[:success] = "Publish '#{@campaign.title}' successfully"
+      redirect_to admin_campaign_path(@campaign)
+    else       
+      render 'admin/campaigns/show'
     end 
   end
 

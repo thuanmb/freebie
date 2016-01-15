@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "View", campaign_path(@campaign) %>
+<%= link_to "View", campaign_path(@campaign) %> | 
+<%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %>
 
 <p>
   <strong>Title:</strong>
   <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
 </p>
 
 <p>
