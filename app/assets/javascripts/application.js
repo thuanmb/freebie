@@ -16,6 +16,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require chosen-jquery
+//
 //= require users
 //= require messages
+//
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/.
