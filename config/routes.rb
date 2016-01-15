@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     resources :campaign_item
   end
 
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
   resources :messages, only: [:new, :create]
 
   root 'users#index'  # edit root path to correct post#index
