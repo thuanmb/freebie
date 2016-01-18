@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :campaigns do
       member do
         put :publish
+        put :expire
+        put :finish
       end
       resources :campaign_items, only: [:edit, :update, :new, :create] 
       resources :donations

@@ -1,10 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "View", campaign_path(@campaign) %> | 
-<%= link_to 'Edit', edit_admin_campaign_path(@campaign) %> |
-<%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %> |
-<%= link_to "Add Item", new_admin_campaign_campaign_item_path(@campaign) %> |
-<%= link_to "Add Donation", new_admin_campaign_donation_path(@campaign) %>
+<p>
+  <%= link_to "View", campaign_path(@campaign) %> | 
+  <%= link_to 'Edit', edit_admin_campaign_path(@campaign) %> |
+  <%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %> |
+  <%= link_to "Add Item", new_admin_campaign_campaign_item_path(@campaign) %> |
+  <%= link_to "Add Donation", new_admin_campaign_donation_path(@campaign) %>
+</p>
+<p>
+  <%= link_to "Expire", expire_admin_campaign_path(@campaign), :method => 'put' %> |
+  <%= link_to "Finish", finish_admin_campaign_path(@campaign), :method => 'put' %>
+</p>
+
 
 <p>
   <strong>Title:</strong>
