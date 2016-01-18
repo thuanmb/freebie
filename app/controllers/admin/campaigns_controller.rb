@@ -48,6 +48,26 @@ class Admin::CampaignsController < AdminController
     end 
   end
 
+  def expire
+    @campaign = Campaign.find(params[:id])
+    if @campaign.expire
+      flash[:success] = "'#{@campaign.title}' is set to expired."
+      redirect_to admin_campaign_path(@campaign)
+    else
+      render 'admin/campaigns/show'
+    end 
+  end
+
+  def finish
+    @campaign = Campaign.find(params[:id])
+    if @campaign.finish
+      flash[:success] = "'#{@campaign.title}' is set to finished."
+      redirect_to admin_campaign_path(@campaign)
+    else       
+      render 'admin/campaigns/show'
+    end 
+  end
+
   private 
 
   def campaign_params

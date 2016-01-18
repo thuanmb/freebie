@@ -12,10 +12,20 @@ class Campaign < ActiveRecord::Base
     self.save
   end
 
-  def status_enum
-    ['Draft', 'Published', 'Collected', 'Delivered']
-  end 
+  def expire
+    self.status = 'Expired'
+    self.save
+  end
 
+  def finish
+    self.status = 'Finished'
+    self.save
+  end
+
+  def location
+    return '' unless self.gmap_location.present?
+    self.gmap_location.html_safe
+  end 
 
   def self.public_campaigns
     Campaign.where('status != ?', 'Draft')
