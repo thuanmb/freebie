@@ -5,53 +5,117 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 </head>
 <body>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569662315d82736c" async="async"></script>
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1683294941955616";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1683294941955616";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-<nav class="navbar navbar-light bg-faded">
-  <%= link_to 'Freebies', root_path, class: 'navbar-brand' %>
-  <ul class="nav navbar-nav">
-    <% unless user_signed_in? %>
-      <li class="nav-item">
-        <%= active_link_to 'Log in', new_user_session_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= active_link_to "Posts", root_path, class: 'nav-link' %> <!-- Edit root_path to correct post_path -->
-      </li>
-      <li class="nav-item">
-        <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= active_link_to "Messages", conversations_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= active_link_to "Edit Profile", edit_user_registration_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= active_link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete, class: 'nav-link' %>
-      </li>
-    <% end %>
-  </ul>
-</nav>
+<div class="header">
+  <div class="brand container">
+    <a href="/">
+      <%= fa_icon "recycle" %>
+      <span class="brand-name brand-first-name">Free</span>
+      <span class="brand-name brand-last-name">bie</span>
+    </a>
+  </div>
+  <div class="navbar-header">
+    <div class="navbar-container container">
+      <nav class="navbar navbar-light bg-faded">
+        <form class="form-inline pull-xs-right">
+          <input class="form-control" type="text" placeholder="<%= I18n.t "search_placeholder" %>">
+          <button class="btn" type="submit">
+            <%= fa_icon "search" %>
+          </button>
+        </form>
+        <a href="" class="cd-secondary-nav-trigger"><%= fa_icon "bars" %></a>
+        <ul class="nav navbar-nav">
+          <% unless user_signed_in? %>
+            <li class="nav-item login">
+              <%= active_link_to 'Log in', new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item signup">
+              <%= active_link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item posts">
+              <%= active_link_to "Posts", root_path, class: 'nav-link' %> <!-- Edit root_path to correct post_path -->
+            </li>
+            <li class="nav-item compaigns">
+              <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item messages">
+              <%= active_link_to "Messages", conversations_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item edit-profile">
+              <%= active_link_to "Edit Profile", edit_user_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item logout">
+              <%= active_link_to "Log out (#{current_user.email})", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
 
-<div class="container">
+<div class="main-content">
   <%= flash_messages %>
   <%= yield %>
 </div>
 
+<div class="onboarding-container">
+  <div class="content">
+    <%= fa_icon "close" %>
+    <ul>
+      <a href="">
+        <li>
+          <%= fa_icon "search" %>
+          <p><%= I18n.t "search_for_whole_post" %></p>
+        </li>
+      </a>
+      <a href="">
+        <li>
+          <%= fa_icon "archive" %>
+          <p><%= I18n.t "give_your_old_stuffs" %></p>
+        </li>
+      </a>
+      <a href="">
+        <li>
+          <%= fa_icon "life-ring" %>
+          <p><%= I18n.t "create_new_campaigns" %></p>
+        </li>
+      </a>
+    </ul>
+  </div>
+</div>
+
+<% if current_page?(root_path) %>
+  <script type="text/javascript">
+    // onboarding
+    if (typeof(Storage) !== "undefined") {
+      var onboardingView = $(".onboarding-container");
+      if (!localStorage.shouldNotShowOnboarding || localStorage.shouldNotShowOnboarding !== "true") {
+        localStorage.shouldNotShowOnboarding = true;
+
+        onboardingView.show();
+        onboardingView.find(".fa-close").click(function () {
+          onboardingView.fadeOut();
+        });
+      }
+    }
+  </script>
+<% end %>
 </body>
 </html>

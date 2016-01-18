@@ -1,0 +1,128 @@
+@import 'variables';
+
+@media only screen and (min-width: 769px) {
+  .header .navbar-header {
+    &.is-fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 70px;
+      width: 100%;
+    }
+
+    &.animate-children {
+      .nav-item {
+        .nav-link {
+          padding: 10px 30px !important;
+        }
+      }
+    }
+
+    .navbar-container {
+      .navbar {
+        .nav {
+          /* reset navigation values */
+          position: static;
+          width: auto;
+          max-width: 100%;
+          visibility: visible;
+          transform: scale(1);
+
+          .nav-item {
+            .nav-link {
+              padding: 15px 30px;
+              transition: padding 0.2s;
+              font-weight: bold;
+              font-size: 16px;
+            }
+          }
+        }
+
+        .cd-secondary-nav-trigger {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header .navbar-header {
+    &.is-visible {
+      .navbar {
+        padding-bottom: 30px;
+      }
+    }
+
+    .navbar-container {
+      .navbar {
+        form {
+          display: flex;
+          float: left !important;
+        }
+
+        .nav {
+          transition: display 0.5s;
+          display: none;
+
+          .nav-item {
+            display: block;
+            width: 100%;
+            border-bottom: 1px dashed #999;
+            padding-left: 20px;
+
+            a {
+              border-top: none !important;
+              padding-bottom: 0;
+            }
+
+            &.active {
+              a {
+                border-top: none;
+                padding-top: 7px;
+              }
+
+              border-bottom-color: $primary_color;
+            }
+
+            &:hover {
+              border-bottom-color: $primary_color;
+            }
+          }
+        }
+
+        .cd-secondary-nav-trigger {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .onboarding-container {
+    position: absolute;
+    top: 0;
+
+    .content {
+      width: 100%;
+      padding-top: 0;
+
+      overflow-y: scroll;
+
+      .fa-close {
+        top: 10px;
+      }
+
+      ul {
+        a {
+          li {
+            margin-top: 15px;
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  search_placeholder: "Search"
+  search_for_whole_post: "Search for old stuffs"
+  give_your_old_stuffs: "Give your old stuffs"
+  create_new_campaigns: "Create new campaigns"
+
+  raised_title: "Raised"
+  goal_title: "Goal"
+  value_unit: "VND"

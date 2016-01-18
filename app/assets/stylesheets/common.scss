@@ -1,0 +1,6 @@
+@import "variables";
+
+@mixin highlight() {
+	color: $primary_color;
+  border-top-color: #fe9322;
+}
