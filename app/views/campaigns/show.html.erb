@@ -4,7 +4,7 @@
     <meta property="og:published_time" content="<%= @campaign.created_at.strftime('%Y-%m-%d %H:%M') %>" />
     <meta property="og:description" content="<%= truncate(strip_tags( @campaign.description ), length: 50) %>" />
     <% if @campaign.image_url %>
-        <%= tag :meta, property: 'og:image', content: "http://#{request.host}#{@campaign.image_url}" %>
+        <%= tag :meta, property: 'og:image', content: "#{@campaign.image_url}" %>
     <% end %>
 <% end %>
 
