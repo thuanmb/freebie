@@ -1,0 +1,14 @@
+<h1>New Donation</h1>
+
+<%= simple_form_for @donation, :url => admin_campaign_donations_path(@campaign), :method => :post do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

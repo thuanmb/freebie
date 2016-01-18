@@ -13,6 +13,8 @@ Rails.application.routes.draw do
         put :publish
       end
       resources :campaign_items, only: [:edit, :update, :new, :create] 
+      resources :donations
+      #, only: [:edit, :update, :new, :create] 
     end
   end
 
