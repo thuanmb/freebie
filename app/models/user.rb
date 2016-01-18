@@ -37,9 +37,4 @@ class User < ActiveRecord::Base
     @email if shouldSendEmail
   end
 
-  def unread_messages_count
-    mailbox.inbox(read: false).count
-  end
-
-
 end

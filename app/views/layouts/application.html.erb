@@ -38,8 +38,8 @@
       <li class="nav-item">
         <%= active_link_to conversations_path, class: 'nav-link' do %>
           Messages
-          <% if current_user.unread_messages_count > 0 %>
-            <span class="label label-pill label-danger"><%= current_user.unread_messages_count %></span>
+          <% if current_user.unread_inbox_count > 0 %>
+            <span class="label label-pill label-danger"><%= current_user.unread_inbox_count %></span>
           <% end %>
         <% end %>
       </li>
