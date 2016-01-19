@@ -17,8 +17,8 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= image_tag post.image.url(:thumb) %></td>
+        <td><%= truncate( post.description, length: 50) %></td>
+        <td><%= image_tag post.main_image_url %></td>
         <td><%= post.location %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
