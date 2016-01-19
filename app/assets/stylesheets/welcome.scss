@@ -25,16 +25,22 @@
         background-color: rgba(0, 0, 0, 0.65);
 
         text-align: left;
-        padding: 10px;
+        padding: 10px 20px;
 
         color: #fff;
 
         h1 {
           color: $primary_color;
+          text-transform: uppercase;
         }
 
         p {
           font-size: 15px;
+          color: #ccc;
+        }
+
+        .raised {
+            margin-right: 7px;
         }
 
         .campaign-info {
@@ -144,5 +150,27 @@
   to {
     bottom: -16px;
     opacity: 1;
+  }
+}
+
+.post-list {
+
+  margin-top: 20px;
+
+  .row {
+    text-align: center;
+
+    .card {
+      margin: 10px 12px;
+      display: inline-block;
+
+      float: none;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-top: 7px;
+      }
+    }
   }
 }
