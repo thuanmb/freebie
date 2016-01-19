@@ -7,18 +7,30 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
-  resources :campaigns do
-    resources :campaign_item
-  end
+  resources :campaigns, only: [:index, :show, :new]
 
   namespace :admin do
-   resources :campaigns
+    resources :campaigns do
+      member do
+        put :publish
+        put :expire
+        put :finish
+      end
+      resources :campaign_items, only: [:edit, :update, :new, :create] 
+      resources :donations
+      #, only: [:edit, :update, :new, :create] 
+    end
   end
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
+      post :restore
     end
+    collection do
+      delete :empty_trash
+    end
+
   end
   resources :messages, only: [:new, :create]
 

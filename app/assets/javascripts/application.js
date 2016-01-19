@@ -22,7 +22,6 @@
 //
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
-
 var CAROUSEL_AMIN_CLASS = "carousel-anim";
 
 $(document).ready(function () {
@@ -53,4 +52,3 @@ $(document).ready(function () {
     $(e.relatedTarget).addClass(CAROUSEL_AMIN_CLASS)
   });
 });
-

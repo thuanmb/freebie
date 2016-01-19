@@ -36,4 +36,5 @@ class User < ActiveRecord::Base
     shouldSendEmail = false   # I don't want to send email just yet
     @email if shouldSendEmail
   end
+
 end

@@ -1,8 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= link_to "View", campaign_path(@campaign) %> | 
+  <%= link_to 'Edit', edit_admin_campaign_path(@campaign) %> |
+  <%= link_to "Publish", publish_admin_campaign_path(@campaign), :method => 'put' %> |
+  <%= link_to "Add Item", new_admin_campaign_campaign_item_path(@campaign) %> |
+  <%= link_to "Add Donation", new_admin_campaign_donation_path(@campaign) %>
+</p>
+<p>
+  <%= link_to "Expire", expire_admin_campaign_path(@campaign), :method => 'put' %> |
+  <%= link_to "Finish", finish_admin_campaign_path(@campaign), :method => 'put' %>
+</p>
+
+
+<p>
   <strong>Title:</strong>
   <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
 </p>
 
 <p>
@@ -11,8 +29,73 @@
 </p>
 
 <p>
+  <strong>End Date:</strong>
+  <%= @campaign.end_date %>
+</p>
+
+<p>
+  <strong>Donation Instruction:</strong>
+  <%= @campaign.donation_instruction %>
+</p>
+
+<p>
+  <strong>Gmap Location:</strong>
+  <%= @campaign.gmap_location %>
+</p>
+
+<p>
   <strong>Image url:</strong>
   <%= image_tag @campaign.image_url %>
 </p>
 
-<%= link_to 'Edit', edit_admin_campaign_path(@campaign) %>
+<h2>Items</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Label</th>
+        <th>Target</th>
+        <th>Collected</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaign.campaign_items.each_with_index do |item, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to item.name, admin_campaign_campaign_item_path(@campaign, item) %></td>
+        <td><%= item.label %></td>
+        <td><%= item.target_qty %></td>
+        <td><%= item.collected_qty %></td>
+        <td><%= link_to "Edit", edit_admin_campaign_campaign_item_path(@campaign, item) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<h2>Donations</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Donation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @campaign.donations.each_with_index do |donation, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= link_to donation.name, admin_campaign_donation_path(@campaign, donation) %></td>
+        <td><%= donation.description %></td>
+        <td><%= link_to "Edit", edit_admin_campaign_donation_path(@campaign, donation) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

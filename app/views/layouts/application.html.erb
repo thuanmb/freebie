@@ -5,7 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <% if content_for?(:meta_og) %>
+      <%= yield :meta_og %>
+  <% else %>
+      <meta property="og:title" content="Freebie Community" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="http://freebie.vn" />
+      <%= tag :meta, property: 'og:image', content: image_url('freebie.jpg') %>
+  <% end %>
+
 </head>
 <body>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -51,14 +61,13 @@
               <%= active_link_to 'Log in', new_user_session_path, class: 'nav-link' %>
             </li>
           <% else %>
-            <li class="nav-item posts">
-              <%= active_link_to "Posts", root_path, class: 'nav-link' %> <!-- Edit root_path to correct post_path -->
-            </li>
-            <li class="nav-item compaigns">
-              <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item messages">
-              <%= active_link_to "Messages", conversations_path, class: 'nav-link' %>
+            <li class="nav-item">
+              <%= active_link_to conversations_path, class: 'nav-link' do %>
+                Messages
+                <% if current_user.unread_inbox_count > 0 %>
+                  <span class="label label-pill label-danger"><%= current_user.unread_inbox_count %></span>
+                <% end %>
+              <% end %>
             </li>
             <li class="nav-item edit-profile">
               <%= active_link_to "Edit Profile", edit_user_registration_path, class: 'nav-link' %>

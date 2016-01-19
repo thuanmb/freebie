@@ -50,7 +50,7 @@ gem 'gravatar_image_tag'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
-gem 'rmagick', '2.13.2'
+gem 'rails_12factor', group: :production    
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
