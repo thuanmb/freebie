@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :posts
-  mount RailsAdmin::Engine => '/super', as: 'rails_admin'
+
+  mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
-  resources :campaigns, only: [:index, :show, :new]
+  resources :campaigns, only: [:index, :show]
 
   namespace :admin do
     resources :campaigns do

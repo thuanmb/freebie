@@ -49,14 +49,16 @@
           </button>
         </form>
         <a href="" class="cd-secondary-nav-trigger"><%= fa_icon "bars" %></a>
+        
         <ul class="nav navbar-nav">
-          <% unless user_signed_in? %>
             <li class="nav-item posts">
-              <%= active_link_to "Freebie", root_path, class: 'nav-link' %> <!-- Edit root_path to correct post_path -->
+              <%= active_link_to "Freebies", posts_path, class: 'nav-link' %> 
             </li>
             <li class="nav-item compaigns">
               <%= active_link_to "Our Campaigns", campaigns_path, class: 'nav-link' %>
             </li>
+
+          <% unless user_signed_in? %>
             <li class="nav-item login pull-xs-right">
               <%= active_link_to 'Log in', new_user_session_path, class: 'nav-link' %>
             </li>
