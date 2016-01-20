@@ -1,4 +1,7 @@
 vi:
+  commons:
+    or: "hoặc"
+
   search_placeholder: "Tìm Kiếm"
   search_for_whole_post: "Tìm đồ cũ"
   give_your_old_stuffs: "Cho đi đồ cũ"
