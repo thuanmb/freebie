@@ -1,12 +1,20 @@
 vi:
+  onboarding_welcome: "Chào mừng bạn đến với Freebie,"
+  onboarding_instruction: "Bạn đang tìm kiếm điều gì?"
   commons:
     or: "hoặc"
 
   search_placeholder: "Tìm Kiếm"
   search_for_whole_post: "Tìm đồ cũ"
-  give_your_old_stuffs: "Cho đi đồ cũ"
-  create_new_campaigns: "Tạo 1 sự kiện quyên góp"
+  give_your_old_stuffs: "Cho đồ cũ"
+  create_new_campaigns: "Quyên góp"
 
   raised_title: "Đạt được"
   goal_title: "Mục tiêu"
   value_unit: "VNĐ"
+
+  menu_item_posts: "Đồ Cũ"
+  menu_item_campaigns: "Quyên Góp"
+  menu_item_login: "Đăng Nhập"
+  menu_item_edit_profile: "Hồ Sơ Cá Nhân"
+  menu_item_logout: "Đăng Xuất"

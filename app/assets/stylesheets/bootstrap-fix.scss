@@ -1,3 +1,23 @@
 .checkbox label input {
   margin-right: 6px;
 }
+
+.btn.btn-primary {
+  background-color: $primary_color;
+  border-color: $primary_color;
+
+  &:hover {
+    background-color: $dark_primary_color;
+    border-color: $dark_primary_color;
+  }
+}
+
+.btn.btn-primary.btn-facebook {
+  background-color: #0275d8;
+  border-color: #0275d8;
+
+  &:hover {
+    background-color: #014682;
+    border-color: #01315a;
+  }
+}
