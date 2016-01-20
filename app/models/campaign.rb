@@ -31,4 +31,8 @@ class Campaign < ActiveRecord::Base
     Campaign.where('status != ?', 'Draft')
   end
 
+  def self.top3
+    @campaigns = Campaign.where('status != ?', 'Draft').take(3)
+  end
+
 end
