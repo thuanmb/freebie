@@ -345,4 +345,24 @@ body {
   margin-top: 178px;
 }
 
+.alert {
+  position: relative;
+  top: 7px;
+
+  i {
+    font-size: 20px;
+    position: relative;
+    top: -10px;
+    left: 7px;
+  }
+
+  &.alert-info {
+    background-color: #fe9322;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
 @import "multi-screen";
