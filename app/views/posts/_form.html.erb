@@ -1,3 +1,5 @@
+<div class="container">
+  <div class="col-md-6">
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
@@ -12,3 +14,7 @@
     <%= f.button :submit, value: @post.persisted? ? t(".submit_edit") : t(".submit_new"), class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
+</div>
+<div class="col-md-6">
+</div>
+</div>
