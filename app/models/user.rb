@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   acts_as_messageable
+  has_many :posts
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -26,7 +27,6 @@ class User < ActiveRecord::Base
 
   #Returning any kind of identification you want for the model
   def display_name
-    sdfalskgn
     @name || @email
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160120153839) do
+ActiveRecord::Schema.define(version: 20160120160925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,28 @@ ActiveRecord::Schema.define(version: 20160120153839) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.boolean  "unread"
+    t.datetime "read_time"
+    t.text     "images"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "participants", force: :cascade do |t|
+    t.integer  "message_id"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "participants", ["message_id"], name: "index_participants_on_message_id", using: :btree
+
   create_table "post_items", force: :cascade do |t|
     t.string   "category"
     t.string   "name"
@@ -113,6 +135,7 @@ ActiveRecord::Schema.define(version: 20160120153839) do
     t.integer  "quantity"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -126,7 +149,19 @@ ActiveRecord::Schema.define(version: 20160120153839) do
     t.string   "main_image_content_type"
     t.integer  "main_image_file_size"
     t.datetime "main_image_updated_at"
+    t.integer  "user_id"
   end
+
+  create_table "requests", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "requests", ["post_id"], name: "index_requests_on_post_id", using: :btree
+  add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -163,4 +198,6 @@ ActiveRecord::Schema.define(version: 20160120153839) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "requests", "posts"
+  add_foreign_key "requests", "users"
 end

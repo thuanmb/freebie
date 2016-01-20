@@ -18,3 +18,13 @@ vi:
   menu_item_login: "Đăng Nhập"
   menu_item_edit_profile: "Hồ Sơ Cá Nhân"
   menu_item_logout: "Đăng Xuất"
+  menu_item_new_posts: "Tạo bài đăng"
+
+  posts:
+    form:
+      title: "Tiêu đề"
+      description: "Mô tả"
+      location: "Chọn tỉnh/thành phố"
+      main_image: "Tải lên hình ảnh"
+      submit_edit: "Cập nhật"
+      submit_new: "Tạo"

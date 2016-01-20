@@ -19,3 +19,13 @@ en:
   menu_item_login: "Log in"
   menu_item_edit_profile: "Edit Profile"
   menu_item_logout: "Logout"
+  menu_item_new_posts: "Create new post"
+
+  posts:
+    form:
+      title: "Title"
+      description: "Description"
+      location: "Choose a city"
+      main_image: "Upload photos"
+      submit_edit: "Update"
+      submit_new: "Create"
