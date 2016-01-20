@@ -4,6 +4,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     @campaign = Campaign.find(params[:id])
   end
 
