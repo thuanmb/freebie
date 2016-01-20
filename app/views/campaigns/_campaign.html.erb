@@ -1,9 +1,18 @@
-<div class="card-block">
-  <h6 class="card-title" style="margin-bottom: 0">
-    <%= link_to campaign.title, campaign_path(campaign) %></h6>
-</div>
-
-<%= image_tag(campaign.image_url, class: "card-img-top img-responsive") %>
-<div class="card-block">
-  <p class="card-text"><%= campaign.description %></p>
+<div class="card col-md-6">
+  <%= image_tag(campaign.image_url, class: "card-img-center img-responsive") %>
+  <div class="card-block">
+    <h4 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h6></h4>
+    <p class="card-text"><%= truncate(campaign.description, length: 50) %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <% campaign.campaign_items.each do |item| %>
+    <li class="list-group-item">
+      <%= "#{item.label} - #{item.progress}%" %>
+      <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
+    </li>
+    <% end %> 
+  </ul>
+  <div class="card-block">
+    <a href="#" class="card-link" data-toggle="popover" data-placement="bottom" data-content="Content">Donate Now!</a>
+  </div>
 </div>
