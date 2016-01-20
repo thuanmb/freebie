@@ -1,10 +1,10 @@
 // Custom bootstrap variables must be set or import before bootstrap itself.
+@import "variables";
 @import "bootstrap";
 @import "bootstrap-fix";
 @import "font-awesome";
 @import 'chosen';
 @import 'ImageSelect';
-@import "variables";
 @import "common";
 
 @import "campaigns";
@@ -181,7 +181,8 @@ body {
                 margin-left: 4px;
                 transition: margin-left 0.3s;
 
-                &:hover {
+                &:hover,
+                &.active {
                   margin-left: 12px;
                   background-color: transparent;
                   color: $primary_color;
@@ -243,7 +244,7 @@ body {
       right: 20px;
       font-size: 26px;
       color: #fff;
-      
+
       cursor: pointer;
     }
 
