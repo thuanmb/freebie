@@ -1,19 +1,11 @@
 class Admin::ConversationsController < AdminController
-  
+
   before_action :get_mailbox
   before_action :get_conversation, except: [:index, :empty_trash]
-  before_action :get_box, only: [:index]
+  before_action :get_conversations, only: [:index, :show]
 
   def index
-    if @box.eql? "inbox"
-      mailbox = @mailbox.inbox
-    elsif @box.eql? "sent"
-      mailbox = @mailbox.sentbox
-    else
-      mailbox = @mailbox.trash
-    end
 
-    @conversations = mailbox.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -60,7 +52,21 @@ class Admin::ConversationsController < AdminController
     if params[:box].blank? or !["inbox","sent","trash"].include?(params[:box])
       params[:box] = 'inbox'
     end
-    @box = params[:box]
+    params[:box]
+  end
+
+  def get_conversations
+    @box = get_box
+
+    if @box.eql? "inbox"
+      mailbox = @mailbox.inbox
+    elsif @box.eql? "sent"
+      mailbox = @mailbox.sentbox
+    else
+      mailbox = @mailbox.trash
+    end
+
+    @conversations = mailbox.paginate(page: params[:page], per_page: 10)
   end
 
 end

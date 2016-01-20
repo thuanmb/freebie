@@ -1,6 +1,4 @@
-<div class="container">
-  <h2 class="section-header">Conversation</h2>
-
+<%= render layout: "layout" do %>
   <p>Chatting with
     <%= render 'admin/conversations/participants', conversation: @conversation %>
   </p>
@@ -37,4 +35,4 @@
       <% end %>
     </div>
   </div>
-</div>
+<% end %>
