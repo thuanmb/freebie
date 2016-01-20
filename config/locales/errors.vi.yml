@@ -1,0 +1,9 @@
+vi:
+  errors:
+    messages:
+      blank: "%{attribute} không được rỗng."
+    attributes:
+      email:
+        blank: "Địa chỉ thư điện tử không được rỗng."
+      password:
+        blank: "Mật khẩu không được rỗng."
