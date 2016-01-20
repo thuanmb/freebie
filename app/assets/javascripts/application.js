@@ -31,12 +31,12 @@ $(document).ready(function () {
   $(window).on('scroll', function(){
     
     if($(window).scrollTop() > secondaryNavTopPosition ) {
-      secondaryNav.addClass('is-fixed');  
+      $("body").addClass('is-fixed');  
       setTimeout(function() {
         secondaryNav.addClass('animate-children');
       }, 50);
     } else {
-      secondaryNav.removeClass('is-fixed');
+      $("body").removeClass('is-fixed');
       setTimeout(function() {
         secondaryNav.removeClass('animate-children');
       }, 50);

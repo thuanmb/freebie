@@ -147,6 +147,70 @@ body {
             line-height: 42px;
             padding-top: 0;
           }
+
+          &.edit-profile {
+            &:hover {
+              a {
+                color: inherit;
+              }
+            }
+
+            .dropdown-toggle {
+              cursor: pointer;
+
+              margin-top: 25px;
+              color: $primary_color;
+              font-size: 16px;
+              background-color: transparent;
+
+              &:hover {
+                color: #F0AD4E;
+              }
+            }
+
+            .dropdown-menu {
+              left: auto;
+              right: 0;
+              border-radius: 0;
+
+              a {
+                border: none;
+                line-height: 20px;
+
+                margin-left: 4px;
+                transition: margin-left 0.3s;
+
+                &:hover {
+                  margin-left: 12px;
+                  background-color: transparent;
+                  color: $primary_color;
+                }
+
+                &:first-child {
+                  position: relative;
+                  top: 3px;
+                }
+              }
+            }
+          }
+
+          &.message {
+            a {
+              border: none;
+
+              i {
+                font-size: 24px;
+                margin-top: 12px;
+              }
+
+              span {
+                position: relative;
+                top: 2px;
+                left: -13px;
+                font-size: 9px;
+              }
+            }
+          }
         }
       }
     }
@@ -157,31 +221,54 @@ body {
   display: none;
 
   position: fixed;
-  top: 200px;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   text-align: center;
   z-index: 9999;
 
   .content {
-    width: 800px;
+    width: 100%;
+    height: 100%;
     margin: auto;
     display: inline-block;
-
-    padding: 30px 50px;
 
     background-color: rgba(0, 0, 0, 0.85);
 
     .fa-close {
-      float: right;
-      position: relative;
-      top: -20px;
-      left: 40px;
-
+      position: absolute;
+      top: 20px;
+      right: 20px;
       font-size: 26px;
       color: #fff;
-      
       cursor: pointer;
+    }
+
+    section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .welcome-message {
+        align-self: center;
+
+        h1 {
+          color: $primary_color;
+          margin-top: 30px;
+        }
+
+        h4 {
+          color: $bg_color;
+          margin-top: 30px;
+          margin-bottom: 10px;
+        }
+      }
+
+      ul {
+        align-self: center;
+      }
     }
 
     ul {
@@ -205,6 +292,8 @@ body {
           padding: 20px;
 
           background-color: #5bc0de;
+
+          border: 1px dashed #fff;
 
           &:hover {
             box-shadow: 0px 6px 6px rgba(91, 192, 222, 0.39);
@@ -234,6 +323,7 @@ body {
         .fa {
           font-size: 50px;
           color: #CCC;
+          margin-top: 20px;
         }
 
         p {

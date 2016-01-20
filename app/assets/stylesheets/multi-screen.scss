@@ -1,6 +1,25 @@
 @import 'variables';
 
 @media only screen and (min-width: 769px) {
+  body {
+    &.is-fixed {
+      .header .navbar-header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 70px;
+        width: 100%;
+
+        .form-search {
+          transition: top 1s;
+
+          top: -4px;
+          right: 120px;
+        }
+      }
+    }
+  }
+
   .header .navbar-header {
     &.is-fixed {
       position: fixed;
@@ -103,6 +122,7 @@
   .onboarding-container {
     position: absolute;
     top: 0;
+    height: 105%;
 
     .content {
       width: 100%;
@@ -112,6 +132,12 @@
 
       .fa-close {
         top: 10px;
+      }
+
+      section {
+        h1 {
+          margin-top: 80px;
+        }
       }
 
       ul {
