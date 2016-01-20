@@ -1,6 +1,10 @@
 en:
   onboarding_welcome: "Welcome to Freebie,"
   onboarding_instruction: "What're you looking for?"
+
+  commons:
+    or: "or"
+
   search_placeholder: "Search"
   search_for_whole_post: "Search for old stuffs"
   give_your_old_stuffs: "Give your old stuffs"

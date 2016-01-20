@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>Freebie</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <% if content_for?(:meta_og) %>
@@ -49,9 +55,10 @@
           </button>
         </form>
         <a href="" class="cd-secondary-nav-trigger"><%= fa_icon "bars" %></a>
+
         <ul class="nav navbar-nav">
           <li class="nav-item posts">
-            <%= active_link_to I18n.t('menu_item_posts'), root_path, class: 'nav-link' %>
+            <%= active_link_to I18n.t('menu_item_posts'), posts_path, class: 'nav-link' %>
           </li>
           <li class="nav-item compaigns">
             <%= active_link_to I18n.t("menu_item_campaigns"), campaigns_path, class: 'nav-link' %>
@@ -76,9 +83,8 @@
             </li>
 
             <li class="nav-item message pull-xs-right">
-              <%= active_link_to conversations_path, class: 'nav-link' do %>
+              <%= active_link_to admin_conversations_path, class: 'nav-link' do %>
                 <%= fa_icon "comments" %>
-                <span class="label label-pill label-danger"><%= current_user.unread_inbox_count %></span>
                 <% if current_user.unread_inbox_count > 0 %>
                   <span class="label label-pill label-danger"><%= current_user.unread_inbox_count %></span>
                 <% end %>

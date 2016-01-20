@@ -1,0 +1,33 @@
+.or-divider .inner {
+    border-left: 1px dotted #b6b6b6;
+    margin-left: 50%;
+    padding: 70px 0 90px 0;
+}
+.or-divider .loginReg__or {
+    display: inline-block;
+    color: #666;
+    text-transform: capitalize;
+    background: #dcdcdc;
+    font-size: 12px;
+    transform: translateX(-50%);
+}
+.loginReg__or {
+    display: block;
+    margin: 10px 0;
+    font-size: 10px;
+    text-align: center;
+    line-height: 2.2;
+    background: #dcdcdc;
+    border-radius: 50%;
+    color: #666;
+    padding: 0 6px;
+}
+
+@media (min-width: 62em) {
+  .social-section {
+    margin-top: 70px;
+  }
+}
+
+
+

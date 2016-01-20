@@ -1,6 +1,6 @@
 class Admin::CampaignsController < AdminController
   def index
-    @campaigns = Campaign.all.order(created_at: :desc)
+    @campaigns = Campaign.where(user: current_user).order(created_at: :desc)
   end
 
   def new

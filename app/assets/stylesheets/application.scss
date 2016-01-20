@@ -1,5 +1,6 @@
 // Custom bootstrap variables must be set or import before bootstrap itself.
 @import "bootstrap";
+@import "bootstrap-fix";
 @import "font-awesome";
 @import 'chosen';
 @import 'ImageSelect';
@@ -9,6 +10,7 @@
 @import "campaigns";
 @import "conversations";
 @import "welcome";
+@import "devise";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -68,7 +70,7 @@ body {
 
     background: rgb(245, 245, 245);
     .navbar-container {
-      
+
       .navbar {
         background-color: transparent;
         border-radius: none;
@@ -114,17 +116,16 @@ body {
 
         .nav-item {
           margin-left: 0;
-          
+
           &:hover {
             a {
               @include highlight();
             }
           }
 
-          &.active {
-            a {
+          &.active a,
+          a.active {
               @include highlight();
-            }
           }
 
           a {
@@ -242,6 +243,7 @@ body {
       right: 20px;
       font-size: 26px;
       color: #fff;
+      
       cursor: pointer;
     }
 
@@ -287,7 +289,7 @@ body {
 
           width: 180px;
           height: 180px;
-          
+
           border-radius: 180px;
           padding: 20px;
 
@@ -297,7 +299,7 @@ body {
 
           &:hover {
             box-shadow: 0px 6px 6px rgba(91, 192, 222, 0.39);
-          }   
+          }
         }
 
         &:first-child {
@@ -306,9 +308,9 @@ body {
 
             &:hover {
               box-shadow: 0px 6px 6px rgba(217, 83, 79, 0.39);
-            } 
-          }           
-        } 
+            }
+          }
+        }
 
         &:last-child {
           li {
@@ -316,9 +318,9 @@ body {
 
             &:hover {
               box-shadow: 0px 6px 6px rgba(254, 147, 34, 0.39);
-            } 
-          }           
-        } 
+            }
+          }
+        }
 
         .fa {
           font-size: 50px;

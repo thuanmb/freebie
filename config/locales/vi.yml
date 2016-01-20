@@ -1,6 +1,9 @@
 vi:
   onboarding_welcome: "Chào mừng bạn đến với Freebie,"
   onboarding_instruction: "Bạn đang tìm kiếm điều gì?"
+  commons:
+    or: "hoặc"
+
   search_placeholder: "Tìm Kiếm"
   search_for_whole_post: "Tìm đồ cũ"
   give_your_old_stuffs: "Cho đồ cũ"

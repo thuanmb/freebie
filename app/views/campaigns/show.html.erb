@@ -8,7 +8,6 @@
     <% end %>
 <% end %>
 
-
 <div class="container-fluid no-pad events-detail">
   <div class="row no-pad">
     <div class="col-md-12 event-content">
@@ -35,13 +34,31 @@
           <h3> <%= "Quyên góp sẽ kết thúc trong #{@campaign.remaining_days} ngày nữa" %> </h3> 
           
           <% @campaign.campaign_items.each do |item| %>
-            <h4> <%= "#{item.label} - #{item.progress}%" %> </h4> 
-            <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
+            <h4> 
+              <%= "#{item.progress}% của #{item.target_qty} #{item.label}" %> 
+              <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
+              </h4> 
           <% end %>
 
-          <p><%= @campaign.donation_instruction %></p>
-          <p>
-          <span>Bạn muốn quyên góp? <button type="button" class="btn btn-success">Liên hệ</button></span></p>
+          <hr>
+          <p><%= @campaign.donation_instruction ? @campaign.donation_instruction : 'Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn' %></p>
+          <%= form_tag('/campaigns/' + @campaign.id.to_s + '/ask_to_donate', method: 'post') %>
+            <fieldset class="form-group">
+              <input type="text" class="form-control" name="donation[name]" placeholder="Tên của bạn">
+            </fieldset>
+            <fieldset class="form-group">
+              <input type="text" class="form-control" name="donation[email_or_phone]" placeholder="Email / số điện thoại">
+            </fieldset>
+            <fieldset class="form-group">
+              <input type="text" class="form-control" name="donation[address]" placeholder="Địa chỉ">
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea class="form-control" name="donation[message]" rows="3" placeholder="Nội dung đóng góp"></textarea>
+            </fieldset>
+            <button type="submit" class="btn btn-danger">
+              Nhắn tin cho chúng tôi
+            </button>
+          </form>
         </div>
 
         <div class="col-md-12">
@@ -56,6 +73,7 @@
             <% end %>
           </ul>
         </div>
+
       </div>  
     </div>
   </div>

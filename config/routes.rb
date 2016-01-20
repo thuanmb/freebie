@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :posts
-  mount RailsAdmin::Engine => '/super', as: 'rails_admin'
+
+  mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
-  resources :campaigns, only: [:index, :show, :new]
+
+  resources :campaigns, only: [:index, :show] do
+    member do
+      post :ask_to_donate
+    end
+  end
 
   namespace :admin do
     resources :campaigns do
@@ -20,19 +26,19 @@ Rails.application.routes.draw do
       resources :donations
       #, only: [:edit, :update, :new, :create] 
     end
-  end
 
-  resources :conversations, only: [:index, :show, :destroy] do
-    member do
-      post :reply
-      post :restore
-    end
-    collection do
-      delete :empty_trash
+    resources :conversations, only: [:index, :show, :destroy] do
+      member do
+        post :reply
+        post :restore
+      end
+      collection do
+        delete :empty_trash
+      end
     end
 
+    resources :messages, only: [:new, :create]
   end
-  resources :messages, only: [:new, :create]
 
   root 'welcome#index'
 
