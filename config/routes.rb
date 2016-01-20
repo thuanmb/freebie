@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :posts
-
+  
   mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -26,6 +25,10 @@ Rails.application.routes.draw do
       resources :donations
       #, only: [:edit, :update, :new, :create] 
     end
+  end
+  
+  resources :posts do
+    resources :post_items
   end
 
   resources :conversations, only: [:index, :show, :destroy] do

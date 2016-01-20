@@ -1,0 +1,14 @@
+<%= simple_form_for(@post_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :category %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

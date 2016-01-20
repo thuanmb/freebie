@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119082459) do
+ActiveRecord::Schema.define(version: 20160120085809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,27 +106,14 @@ ActiveRecord::Schema.define(version: 20160119082459) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
 
-  create_table "messages", force: :cascade do |t|
-    t.text     "content"
-    t.boolean  "unread"
-    t.datetime "read_time"
-    t.text     "images"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "participants", force: :cascade do |t|
-    t.integer  "message_id"
-    t.integer  "target_id"
-    t.string   "target_type"
+  create_table "post_items", force: :cascade do |t|
+    t.string   "category"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "quantity"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "participants", ["message_id"], name: "index_participants_on_message_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
