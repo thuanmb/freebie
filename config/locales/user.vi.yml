@@ -4,3 +4,7 @@ vi:
   email: "Thư điện tử"
   password: "Mật khẩu"
   remember_me: "Nhớ thông tin đăng nhập"
+  login_with_facebook: "Đăng nhập bằng Facebook"
+  forget_password?: "Quên mật khẩu của bạn?"
+  password_confirmation: "Xác nhận mật khẩu"
+  minimum_password_length: "tối thiểu %{length} ký tự"
