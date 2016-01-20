@@ -27,6 +27,11 @@ class Campaign < ActiveRecord::Base
     self.gmap_location.html_safe
   end 
 
+  def overall_progress
+    return 0 if self.campaign_items.size == 0
+    return self.campaign_items.inject(0.0) { |sum, e| sum + e.progress } / self.campaign_items.size
+  end
+
   def self.public_campaigns
     Campaign.where('status != ?', 'Draft')
   end
