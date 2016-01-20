@@ -27,7 +27,7 @@
           <ul class="nav nav-sidebar">
             <li><%= link_to "Campaigns", admin_campaigns_path, class: 'nav-item nav-link' %></li>
             <li><a href="#">Posts</a></li>
-            <li><a href="#">Messages</a></li>
+            <li><%= link_to "Messages", admin_conversations_path, class: 'nav-item nav-link' %></li>
             <li><a href="<%= edit_user_path(current_user) %>">Profile</a></li>
           </ul>
         </div>
