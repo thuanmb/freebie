@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :posts
+  resources :posts do
+    resources :post_items
+  end 
 
   mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 

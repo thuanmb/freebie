@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Post Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_items.each do |post_item| %>
+      <tr>
+        <td><%= post_item.category %></td>
+        <td><%= post_item.name %></td>
+        <td><%= post_item.description %></td>
+        <td><%= post_item.quantity %></td>
+        <td><%= link_to 'Show', post_item %></td>
+        <td><%= link_to 'Edit', edit_post_item_path(post_item) %></td>
+        <td><%= link_to 'Destroy', post_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post item', new_post_item_path %>
