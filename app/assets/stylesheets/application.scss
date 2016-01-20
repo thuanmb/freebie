@@ -167,6 +167,11 @@ body {
               &:hover {
                 color: #F0AD4E;
               }
+
+              img {
+                width: 30px;
+                height: 30px;
+              }
             }
 
             .dropdown-menu {
@@ -344,6 +349,26 @@ body {
 
 .main-content {
   margin-top: 178px;
+}
+
+.alert {
+  position: relative;
+  top: 7px;
+
+  i {
+    font-size: 20px;
+    position: relative;
+    top: -10px;
+    left: 7px;
+  }
+
+  &.alert-info {
+    background-color: $primary_color;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+  }
 }
 
 @import "multi-screen";
