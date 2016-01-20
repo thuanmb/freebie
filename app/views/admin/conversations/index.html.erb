@@ -1,29 +1,29 @@
-<h2>Your Conversations</h2>
+<div class="container">
+  <h2 class="section-header">Your Conversations</h2>
 
-<div class="row">
-  <ul class="nav nav-tabs" role="tablist">
-    <%= mailbox_section 'inbox', @box %>
-    <%= mailbox_section 'sent', @box %>
-    <%= mailbox_section 'trash', @box %>
+  <div class="row">
+    <ul class="nav nav-tabs" role="tablist">
+      <%= mailbox_section 'inbox', @box %>
+      <%= mailbox_section 'sent', @box %>
+      <%= mailbox_section 'trash', @box %>
 
-    <% if @box == 'trash' %>
-      <%= link_to 'Empty trash', empty_trash_admin_conversations_path, class: 'btn btn-danger pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
-    <% else %>
-      <%= link_to 'Start conversation', new_admin_message_path, class: 'btn btn-primary pull-right' %>
-    <% end %>
-  </ul>
+      <% if @box == 'trash' %>
+        <%= link_to 'Empty trash', empty_trash_admin_conversations_path, class: 'btn btn-danger pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% else %>
+        <%= link_to 'Start conversation', new_admin_message_path, class: 'btn btn-primary pull-right' %>
+      <% end %>
+    </ul>
 
-  <div class="tab-content m-t-1">
-    <div class="tab-pane active" id="home" role="tabpanel">
-      <div>
-        <ul class="list-group">
-          <%= render partial: 'admin/conversations/conversation', collection: @conversations %>
-        </ul>
+    <div class="tab-content m-t-1">
+      <div class="tab-pane active" id="home" role="tabpanel">
+        <div>
+          <ul class="list-group">
+            <%= render partial: 'admin/conversations/conversation', collection: @conversations %>
+          </ul>
 
-        <%= will_paginate %>
+          <%= will_paginate %>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
-

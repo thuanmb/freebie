@@ -18,6 +18,11 @@ body {
   color: #888;
   font-size: 13px;
   line-height: 1.5;
+
+  .section-header {
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
 }
 
 .header {
@@ -161,7 +166,6 @@ body {
               cursor: pointer;
 
               margin-top: 25px;
-              color: $primary_color;
               font-size: 16px;
               background-color: transparent;
 
