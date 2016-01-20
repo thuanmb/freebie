@@ -4,3 +4,4 @@ vi:
   email: "Thư điện tử"
   password: "Mật khẩu"
   remember_me: "Nhớ thông tin đăng nhập"
+  forgot_password: "Quên mật khẩu?"
