@@ -2,7 +2,7 @@
   <img src="<%= campaign.image_url %>">
    <div class="description">
     <h1><%= campaign.title %></h1>
-    <p><%= "#{truncate(campaign.description, length: 100)}..." %></p>
+    <p><%= truncate(campaign.description, length: 100) %></p>
     <div class="campaign-info">
       <span class="raised">
         <% campaign.campaign_items.each do |item| %>
