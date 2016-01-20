@@ -27,7 +27,7 @@
         </div>
 
         <div class="extended-description col-md-6">
-          <%= @campaign.description %>
+          <%= @markdown.render(@campaign.description).html_safe %>
           <div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5"></div></div>
 
         <div class="col-md-6">
