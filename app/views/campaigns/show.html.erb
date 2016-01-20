@@ -34,12 +34,14 @@
           <h3> <%= "Quyên góp sẽ kết thúc trong #{@campaign.remaining_days} ngày nữa" %> </h3> 
           
           <% @campaign.campaign_items.each do |item| %>
-            <h4> <%= "#{item.label} - #{item.progress}%" %> </h4> 
-            <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
+            <h4> 
+              <%= "#{item.progress}% của #{item.target_qty} #{item.label}" %> 
+              <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
+              </h4> 
           <% end %>
 
-          <p><%= @campaign.donation_instruction %></p>
-          <p><span>Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn</span></p>
+          <hr>
+          <p><%= @campaign.donation_instruction ? @campaign.donation_instruction : 'Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn' %></p>
           <%= form_tag('/campaigns/' + @campaign.id.to_s + '/ask_to_donate', method: 'post') %>
             <fieldset class="form-group">
               <input type="text" class="form-control" name="donation[name]" placeholder="Tên của bạn">
