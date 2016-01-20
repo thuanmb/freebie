@@ -29,7 +29,7 @@ class Campaign < ActiveRecord::Base
 
   def overall_progress
     return 0 if self.campaign_items.size == 0
-    return self.campaign_items.inject(0.0) { |sum, e| sum + e.progress } / self.campaign_items.size .round
+    return ( self.campaign_items.inject(0.0) { |sum, e| sum + e.progress } / self.campaign_items.size ).round
   end
 
   def self.public_campaigns
