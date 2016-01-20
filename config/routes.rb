@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
-  resources :campaigns, only: [:index, :show]
+
+  resources :campaigns, only: [:index, :show] do
+    member do
+      post :ask_to_donate
+    end
+  end
 
   namespace :admin do
     resources :campaigns do

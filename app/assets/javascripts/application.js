@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require chosen-jquery
 //
 //= require users
@@ -22,6 +21,7 @@
 //
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
+
 var CAROUSEL_AMIN_CLASS = "carousel-anim";
 
 $(document).ready(function () {
@@ -51,4 +51,7 @@ $(document).ready(function () {
     $(".carousel-item").removeClass(CAROUSEL_AMIN_CLASS)
     $(e.relatedTarget).addClass(CAROUSEL_AMIN_CLASS)
   });
+
+  $('[data-toggle="popover"]').popover();
 });
+
