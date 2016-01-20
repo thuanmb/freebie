@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119082459) do
+ActiveRecord::Schema.define(version: 20160120153839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,15 @@ ActiveRecord::Schema.define(version: 20160119082459) do
   end
 
   add_index "participants", ["message_id"], name: "index_participants_on_message_id", using: :btree
+
+  create_table "post_items", force: :cascade do |t|
+    t.string   "category"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "quantity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

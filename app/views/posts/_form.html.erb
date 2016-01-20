@@ -2,13 +2,13 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :main_image, as: :file, class: 'form-control' %>
+    <%= f.input :title, label: false, placeholder: t(".title") %>
+    <%= f.input :description, label: false, placeholder: t(".description") %>
+    <%= f.input :location, label: false, placeholder: t(".location") %>
+    <%= f.input :main_image, as: :file, class: 'form-control', label: t(".main_image") %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, value: @post.persisted? ? t(".submit_edit") : t(".submit_new"), class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
