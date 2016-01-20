@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @post_item.category %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post_item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post_item.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @post_item.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_post_item_path(@post_item) %> |
+<%= link_to 'Back', post_items_path %>
