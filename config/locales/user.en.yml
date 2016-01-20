@@ -1,4 +1,10 @@
 en:
   login: "Log in"
   signup: "Sign up"
-  forgot_password: "Forgot your password?"
+  email: "Email"
+  password: "Password"
+  remember_me: "Remember me"
+  login_with_facebook: "Sign in with Facebook"
+  forget_password?: "Forgt your password?"
+  password_confirmation: "Password confirmation"
+  minimum_password_length: "%{length} characters minimum"

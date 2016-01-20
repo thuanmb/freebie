@@ -27,7 +27,7 @@
   </div>
   <div class="social-section col-lg-5">
     <%= link_to(user_omniauth_authorize_path(:facebook), class: 'popup btn btn-primary btn-facebook m-b-1 p-t-5', :'data-width' => 600, :'data-height' => 400) do %>
-      <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp; Sign in with Facebook
+      <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp; <%= t "login_with_facebook" %>
     <% end %>
     <br/>
     <%= render "devise/shared/links" %>
