@@ -6,9 +6,9 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, label: t("email"), required: true, autofocus: true %>
-          <%= f.input :password, label: t("password"), required: true, hint: (t("minimum_password_length", length: @minimum_password_length.to_s) if @minimum_password_length) %>
-          <%= f.input :password_confirmation, label: t("password_confirmation"), required: true %>
+          <%= f.input :email, label: false, placeholder: t("email"), autofocus: true, required: true %>
+          <%= f.input :password, label: false, placeholder: t("password"), required: true, hint: (t("minimum_password_length", length: @minimum_password_length.to_s) if @minimum_password_length) %>
+          <%= f.input :password_confirmation, label: false, placeholder: t("password_confirmation"), required: true %>
         </div>
 
         <div class="form-actions">
