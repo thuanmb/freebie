@@ -159,13 +159,18 @@ body {
             .dropdown-toggle {
               cursor: pointer;
 
-              margin-top: 20px;
+              margin-top: 25px;
               color: $primary_color;
               font-size: 16px;
               background-color: transparent;
 
               &:hover {
                 color: #F0AD4E;
+              }
+
+              img {
+                width: 30px;
+                height: 30px;
               }
             }
 
