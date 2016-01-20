@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\Z/
 
   def main_image_url
-    image_url.present? ? image_url : remain_image.url
+    image_url.present? ? image_url : main_image.url
   end 
 
 end
