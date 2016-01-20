@@ -239,9 +239,6 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
 
-  # PREFER TO USE ENV VARIABLE, I'M JUST LAZY
-  # config.omniauth :facebook, '1674015322836916', 'b19da3e6f785721eb389a2d2568905e8', display: 'popup'
-  # config.omniauth :facebook, '648967545241129', '9663124362ec6d58475c8e2ad0bcb3d4', display: 'popup'
   config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_SECRET'], display: 'popup'
 
   # ==> Warden configuration
