@@ -241,8 +241,8 @@ Devise.setup do |config|
 
   # PREFER TO USE ENV VARIABLE, I'M JUST LAZY
   # config.omniauth :facebook, '1674015322836916', 'b19da3e6f785721eb389a2d2568905e8', display: 'popup'
-  config.omniauth :facebook, '648967545241129', '9663124362ec6d58475c8e2ad0bcb3d4', display: 'popup'
-  
+  # config.omniauth :facebook, '648967545241129', '9663124362ec6d58475c8e2ad0bcb3d4', display: 'popup'
+  config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_SECRET'], display: 'popup'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

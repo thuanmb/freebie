@@ -51,6 +51,7 @@ gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production    
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
