@@ -2,9 +2,9 @@
   <div class="row p-t-2">
     <div class="col-lg-4">
       <ul class="nav nav-tabs" role="tablist">
-        <%= mailbox_section 'inbox', @box %>
-        <%= mailbox_section 'sent', @box %>
-        <%= mailbox_section 'trash', @box %>
+        <%= mailbox_section 'inbox', @box, params %>
+        <%= mailbox_section 'sent', @box, params %>
+        <%= mailbox_section 'trash', @box, params %>
 
         <% if @box == 'trash' %>
           <%= link_to 'Empty trash', empty_trash_me_conversations_path, class: 'btn btn-danger btn-sm pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>

@@ -1,7 +1,7 @@
 <li class="list-group-item clearfix <%= 'unread' if conversation.is_unread?(current_user) %>">
   <div class="media">
     <div class="media-body">
-      <%= link_to conversation.subject, me_conversation_path(conversation) %>
+      <%= link_to conversation.subject, me_conversations_path({box: params[:box], conversation: conversation}) %>
 
       <div class="btn-group-vertical pull-right">
         <% if conversation.is_trashed?(current_user) %>

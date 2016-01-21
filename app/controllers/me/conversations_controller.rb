@@ -1,20 +1,20 @@
 class Me::ConversationsController < AdminController
   before_action :get_mailbox
   before_action :get_conversation, except: [:index, :empty_trash]
-  before_action :get_conversations, only: [:index, :show]
+  before_action :get_conversations, only: [:index]
 
   def index
-
-  end
-
-  def show
-    @conversation.mark_as_read(current_user)
+    conversation_id = params[:conversation]
+    if (conversation_id)
+      @conversation = @mailbox.conversations.find(conversation_id)
+      @conversation.mark_as_read(current_user)
+    end
   end
 
   def reply
     current_user.reply_to_conversation(@conversation, params[:body])
     flash[:success] = 'Reply sent'
-    redirect_to me_conversation_path(@conversation)
+    redirect_to me_conversations_path({box: params[:box], conversation: params[:id]})
   end
 
   def destroy
