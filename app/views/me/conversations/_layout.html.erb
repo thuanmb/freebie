@@ -2,12 +2,12 @@
   <div class="row p-t-2">
     <div class="col-lg-4">
       <ul class="nav nav-tabs" role="tablist">
-        <%= mailbox_section 'inbox', @box, params %>
-        <%= mailbox_section 'sent', @box, params %>
-        <%= mailbox_section 'trash', @box, params %>
+        <%= mailbox_section t('inbox'), 'inbox', @box, params %>
+        <%= mailbox_section t('sent'), 'sent', @box, params %>
+        <%= mailbox_section t('trash'), 'trash', @box, params %>
 
         <% if @box == 'trash' %>
-          <%= link_to 'Empty trash', empty_trash_me_conversations_path, class: 'btn btn-danger btn-sm pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <%= link_to t('empty_trash'), empty_trash_me_conversations_path, class: 'btn btn-danger btn-sm pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
         <% end %>
       </ul>
 
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="col-lg-8">
-      <%= link_to 'Start conversation', new_me_conversation_path(box: params[:box]), class: 'btn btn-primary pull-right' %>
+      <%= link_to t('new_conversation'), new_me_conversation_path(box: params[:box]), class: 'btn btn-primary pull-right' %>
       <%= yield %>
     </div>
   </div>

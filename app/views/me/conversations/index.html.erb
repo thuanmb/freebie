@@ -1,11 +1,12 @@
 <%= render layout: "layout" do %>
   <% if @conversation %>
-    <p>Chatting with
-      <%= render 'participants', conversation: @conversation %>
-    </p>
-
-    <div class="card">
-      <div class="card-header"><%= @conversation.subject %></div>
+    <div class="card m-t-3">
+      <div class="card-header">
+        <%= @conversation.subject %>
+        <div class="pull-right">
+          <%= render 'participants', conversation: @conversation %>
+        </div>
+      </div>
 
       <div class="card-block">
         <div class="messages">
