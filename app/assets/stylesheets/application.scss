@@ -26,6 +26,25 @@ body {
   }
 }
 
+.card {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    a {
+      color: $primary_color;
+
+      &:hover {
+        color: $primary_blur_color;
+        text-decoration: none;
+        text-shadow: 1px 2px 1px rgba(254, 147, 34, 0.5)
+      }
+    }
+  }
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -171,7 +190,7 @@ body {
               background-color: transparent;
 
               &:hover {
-                color: #F0AD4E;
+                color: $primary_color;
               }
 
               img {

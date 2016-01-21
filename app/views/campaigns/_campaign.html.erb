@@ -1,16 +1,18 @@
-<div class="card col-xs-12 col-sm-12 col-md-12 col-lg-6 ">
-  <center>
-    <%= image_tag(campaign.image_url, class: "card-img-center img-responsive") %>
-  </center>
-  <div class="card-block">
-    <h4 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h6></h4>
-    <p class="card-text"><%= truncate(campaign.description, length: 200) %></p>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 campaign-item">
+  <div class="card">
+    <center>
+      <%= link_to (image_tag campaign.image_url), campaign %>
+    </center>
+    <div class="card-block">
+      <h4 class="card-title"><%= link_to campaign.title, campaign_path(campaign) %></h6></h4>
+      <p class="card-text"><%= truncate(campaign.description, length: 200) %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <%= "#{campaign.overall_progress}%" %>
+        <progress class="progress progress-striped progress-success" value="<%= campaign.overall_progress %>" max="100"></progress>
+      </li>
+      
+    </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <%= "#{campaign.overall_progress}%" %>
-      <progress class="progress progress-striped progress-success" value="<%= campaign.overall_progress %>" max="100"></progress>
-    </li>
-    
-  </ul>
 </div>

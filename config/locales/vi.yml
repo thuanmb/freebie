@@ -28,3 +28,6 @@ vi:
       main_image: "Tải lên hình ảnh"
       submit_edit: "Cập nhật"
       submit_new: "Tạo"
+    show:
+      request_now: "Gửi yêu cầu"
+      send_message: "Gửi tin nhắn"

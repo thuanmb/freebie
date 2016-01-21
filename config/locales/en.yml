@@ -29,3 +29,6 @@ en:
       main_image: "Upload photos"
       submit_edit: "Update"
       submit_new: "Create"
+    show:
+      request_now: "Send request"
+      send_message: "Send message"

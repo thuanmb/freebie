@@ -1,18 +1,18 @@
 .posts {
-	.container {
-		margin-top: 210px;
-	}
-	
-	.card {
-		img {
-			width: 100%;
-			height: auto;
-		}
-	}
+  > .container {
+    margin-top: 220px;
 
-	form {
-		h1 {
-			text-align: center;
-		}
-	}
+    .row {
+
+      .col-md-4 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  form {
+    h1 {
+      text-align: center;
+    }
+  }
 }
