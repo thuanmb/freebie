@@ -9,4 +9,12 @@ class Post < ActiveRecord::Base
     image_url.present? ? image_url : main_image.url
   end 
 
+  def public?
+    status == 'public'
+  end
+
+  def closed?
+    status == 'closed'
+  end
+
 end

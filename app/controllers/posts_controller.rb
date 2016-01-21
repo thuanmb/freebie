@@ -22,6 +22,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  # GET /posts/1/edit
+  def my
+    @posts = Post.where(user: current_user).order(created_at: :desc)
+  end
+
   # POST /posts
   # POST /posts.json
   def create

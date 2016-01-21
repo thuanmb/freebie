@@ -77,6 +77,8 @@
                 <div class="dropdown-menu">
                   <%= active_link_to I18n.t("menu_item_new_posts"), new_post_path, class: 'dropdown-item' %>
                   <div class="dropdown-divider"></div>
+                  <%= active_link_to I18n.t("menu_item_my_posts"), my_posts_path, class: 'dropdown-item' %>
+                  <div class="dropdown-divider"></div>
                   <%= active_link_to I18n.t("menu_item_edit_profile"), edit_user_registration_path, class: 'dropdown-item' %>
                   <div class="dropdown-divider"></div>
                   <%= active_link_to I18n.t("menu_item_logout"), destroy_user_session_path, method: :delete, class: 'dropdown-item' %>

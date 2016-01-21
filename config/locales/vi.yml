@@ -19,6 +19,7 @@ vi:
   menu_item_edit_profile: "Hồ Sơ Cá Nhân"
   menu_item_logout: "Đăng Xuất"
   menu_item_new_posts: "Tạo bài đăng"
+  menu_item_my_posts: "Bài đăng của tôi"
 
   posts:
     form:
@@ -31,3 +32,9 @@ vi:
     show:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
+    status: 
+      public: 'Đang đăng'
+      closed: 'Đã đóng'
+  edit: "Sửa"
+  close: "Đóng"
+  reopen: "Mở lại"

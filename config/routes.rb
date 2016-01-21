@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_items
     resources :requests
+
+    collection do
+      get :my
+    end
   end
 
   mount RailsAdmin::Engine => '/secret', as: 'rails_admin'

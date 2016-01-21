@@ -20,6 +20,7 @@ en:
   menu_item_edit_profile: "Edit Profile"
   menu_item_logout: "Logout"
   menu_item_new_posts: "Create new post"
+  menu_item_my_posts: "My posts"
 
   posts:
     form:
@@ -32,3 +33,9 @@ en:
     show:
       request_now: "Send request"
       send_message: "Send message"
+    status: 
+      public: 'Public'
+      closed: 'Closed'
+  edit: "Edit"
+  close: "Close"
+  reopen: "Reopen"
