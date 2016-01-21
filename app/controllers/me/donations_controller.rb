@@ -1,4 +1,4 @@
-class Admin::DonationsController < AdminController
+class Me::DonationsController < AdminController
   def new
     @campaign = Campaign.find(params[:campaign_id])
     @donation = Donation.new
@@ -15,9 +15,9 @@ class Admin::DonationsController < AdminController
     @donation.campaign = @campaign
 
     if @donation.save
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else
-      render 'admin/donations/new'
+      render 'me/donations/new'
     end
   end
 
@@ -27,9 +27,9 @@ class Admin::DonationsController < AdminController
     @donation = Donation.find(params[:id])
 
     if @donation.update(donation_params)
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else
-      render 'admin/donations/edit'
+      render 'me/donations/edit'
     end
   end
 

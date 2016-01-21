@@ -85,7 +85,7 @@
             </li>
 
             <li class="nav-item message pull-xs-right">
-              <%= active_link_to admin_conversations_path, class: 'nav-link' do %>
+              <%= active_link_to me_conversations_path, class: 'nav-link' do %>
                 <%= fa_icon "comments" %>
                 <% if current_user.unread_inbox_count > 0 %>
                   <span class="label label-pill label-danger"><%= current_user.unread_inbox_count %></span>

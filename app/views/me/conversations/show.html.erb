@@ -1,6 +1,6 @@
 <%= render layout: "layout" do %>
   <p>Chatting with
-    <%= render 'admin/conversations/participants', conversation: @conversation %>
+    <%= render 'participants', conversation: @conversation %>
   </p>
 
   <div class="card">
@@ -12,7 +12,7 @@
           <div class="media">
             <% message = receipt.message %>
             <div class="media-left">
-              <%= render 'admin/conversations/avatar', user: message.sender %>
+              <%= render 'avatar', user: message.sender %>
             </div>
 
             <div class="media-body">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <%= form_tag reply_admin_conversation_path(@conversation), method: :post do %>
+      <%= form_tag reply_me_conversation_path(@conversation), method: :post do %>
         <div class="form-group">
           <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
         </div>

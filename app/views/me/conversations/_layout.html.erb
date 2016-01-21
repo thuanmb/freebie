@@ -7,7 +7,7 @@
         <%= mailbox_section 'trash', @box %>
 
         <% if @box == 'trash' %>
-          <%= link_to 'Empty trash', empty_trash_admin_conversations_path, class: 'btn btn-danger btn-sm pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <%= link_to 'Empty trash', empty_trash_me_conversations_path, class: 'btn btn-danger btn-sm pull-right', method: :delete, data: {confirm: 'Are you sure?'} %>
         <% end %>
       </ul>
 
@@ -15,7 +15,7 @@
         <div class="tab-pane active" id="home" role="tabpanel">
           <div>
             <ul class="list-group">
-              <%= render partial: 'admin/conversations/conversation', collection: @conversations %>
+              <%= render partial: 'conversation', collection: @conversations %>
             </ul>
             <%= will_paginate @conversations %>
           </div>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="col-lg-8">
-      <%= link_to 'Start conversation', new_admin_message_path, class: 'btn btn-primary pull-right' %>
+      <%= link_to 'Start conversation', new_me_message_path, class: 'btn btn-primary pull-right' %>
       <%= yield %>
     </div>
   </div>

@@ -1,13 +1,13 @@
 <li class="list-group-item clearfix <%= 'unread' if conversation.is_unread?(current_user) %>">
   <div class="media">
     <div class="media-body">
-      <%= link_to conversation.subject, admin_conversation_path(conversation) %>
+      <%= link_to conversation.subject, me_conversation_path(conversation) %>
 
       <div class="btn-group-vertical pull-right">
         <% if conversation.is_trashed?(current_user) %>
-          <%= link_to 'Restore', restore_admin_conversation_path(conversation), class: 'btn btn-sm btn-info', method: :post %>
+          <%= link_to 'Restore', restore_me_conversation_path(conversation), class: 'btn btn-sm btn-info', method: :post %>
         <% else %>
-          <%= link_to 'Move to trash', admin_conversation_path(conversation), class: 'btn btn-sm btn-secondary', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <%= link_to 'Move to trash', me_conversation_path(conversation), class: 'btn btn-sm btn-secondary', method: :delete, data: {confirm: 'Are you sure?'} %>
         <% end %>
       </div>
       <p>
@@ -19,7 +19,7 @@
     </div>
     <div class="media-right">
       <span class="text-nowrap">
-        <%= render 'admin/conversations/participants', conversation: conversation %>
+        <%= render 'participants', conversation: conversation %>
       </span>
     </div>
   </div>

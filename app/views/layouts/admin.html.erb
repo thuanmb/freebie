@@ -25,9 +25,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><%= link_to "Campaigns", admin_campaigns_path, class: 'nav-item nav-link' %></li>
+            <li><%= link_to "Campaigns", me_campaigns_path, class: 'nav-item nav-link' %></li>
             <li><a href="#">Posts</a></li>
-            <li><%= link_to "Messages", admin_conversations_path, class: 'nav-item nav-link' %></li>
+            <li><%= link_to "Messages", me_conversations_path, class: 'nav-item nav-link' %></li>
             <li><a href="<%= edit_user_path(current_user) %>">Profile</a></li>
           </ul>
         </div>
