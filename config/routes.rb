@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :admin do
+  namespace :me do
     resources :campaigns do
       member do
         put :publish

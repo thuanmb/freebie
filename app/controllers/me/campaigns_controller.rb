@@ -1,4 +1,4 @@
-class Admin::CampaignsController < AdminController
+class Me::CampaignsController < AdminController
   def index
     @campaigns = Campaign.where(user: current_user).order(created_at: :desc)
   end
@@ -22,9 +22,9 @@ class Admin::CampaignsController < AdminController
 
     if @campaign.save
       flash[:success] = "Create '#{@campaign.title}' successfully"
-      redirect_to admin_campaigns_path 
+      redirect_to me_campaigns_path 
     else
-      render 'admin/campaigns/new'
+      render 'me/campaigns/new'
     end
   end
 
@@ -32,9 +32,9 @@ class Admin::CampaignsController < AdminController
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)
       flash[:success] = "Update '#{@campaign.title}' successfully"
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else       
-      render 'admin/campaigns/edit'
+      render 'me/campaigns/edit'
     end 
   end
 
@@ -42,9 +42,9 @@ class Admin::CampaignsController < AdminController
     @campaign = Campaign.find(params[:id])
     if @campaign.publish
       flash[:success] = "Publish '#{@campaign.title}' successfully"
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else       
-      render 'admin/campaigns/show'
+      render 'me/campaigns/show'
     end 
   end
 
@@ -52,9 +52,9 @@ class Admin::CampaignsController < AdminController
     @campaign = Campaign.find(params[:id])
     if @campaign.expire
       flash[:success] = "'#{@campaign.title}' is set to expired."
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else
-      render 'admin/campaigns/show'
+      render 'me/campaigns/show'
     end 
   end
 
@@ -62,9 +62,9 @@ class Admin::CampaignsController < AdminController
     @campaign = Campaign.find(params[:id])
     if @campaign.finish
       flash[:success] = "'#{@campaign.title}' is set to finished."
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else       
-      render 'admin/campaigns/show'
+      render 'me/campaigns/show'
     end 
   end
 
