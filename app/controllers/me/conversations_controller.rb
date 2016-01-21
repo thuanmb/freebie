@@ -1,7 +1,6 @@
 class Me::ConversationsController < AdminController
   before_action :get_mailbox
-  before_action :get_conversation, except: [:index, :empty_trash]
-  before_action :get_conversations, only: [:index]
+  before_action :get_conversations, only: [:index, :new]
 
   def index
     conversation_id = params[:conversation]
@@ -11,19 +10,32 @@ class Me::ConversationsController < AdminController
     end
   end
 
+  def new
+  end
+
+  def create
+    recipients = User.where(id: params['recipients'])
+    conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
+    flash[:success] = "Message has been sent!"
+    redirect_to me_conversations_path({conversation: conversation.id})
+  end
+
   def reply
+    get_conversation
     current_user.reply_to_conversation(@conversation, params[:body])
     flash[:success] = 'Reply sent'
     redirect_to me_conversations_path({box: params[:box], conversation: params[:id]})
   end
 
   def destroy
+    get_conversation
     @conversation.move_to_trash(current_user)
     flash[:success] = 'The conversation was moved to trash.'
     redirect_to me_conversations_path
   end
 
   def restore
+    get_conversation
     @conversation.untrash(current_user)
     flash[:success] = 'The conversation was restored.'
     redirect_to me_conversations_path

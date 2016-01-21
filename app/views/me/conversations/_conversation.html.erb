@@ -2,14 +2,6 @@
   <div class="media">
     <div class="media-body">
       <%= link_to conversation.subject, me_conversations_path({box: params[:box], conversation: conversation}) %>
-
-      <div class="btn-group-vertical pull-right">
-        <% if conversation.is_trashed?(current_user) %>
-          <%= link_to 'Restore', restore_me_conversation_path(conversation), class: 'btn btn-sm btn-info', method: :post %>
-        <% else %>
-          <%= link_to 'Move to trash', me_conversation_path(conversation), class: 'btn btn-sm btn-secondary', method: :delete, data: {confirm: 'Are you sure?'} %>
-        <% end %>
-      </div>
       <p>
         <%= conversation.last_message.body %>
         <small>
@@ -23,5 +15,11 @@
       </span>
     </div>
   </div>
-
+  <div class="btn-group-vertical conversation-side-btn">
+    <% if conversation.is_trashed?(current_user) %>
+      <%= link_to 'Restore', restore_me_conversation_path(conversation), class: 'btn btn-sm btn-info', method: :post %>
+    <% else %>
+      <%= link_to 'x', me_conversation_path(conversation), class: 'btn btn-sm close', method: :delete, data: {confirm: 'Do you want to archieve this conversation?'} %>
+    <% end %>
+  </div>
 </li>

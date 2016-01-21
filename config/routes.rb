@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_items
     resources :requests
-  end 
+  end
 
   mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 
@@ -25,12 +25,12 @@ Rails.application.routes.draw do
         put :expire
         put :finish
       end
-      resources :campaign_items, only: [:edit, :update, :new, :create] 
+      resources :campaign_items, only: [:edit, :update, :new, :create]
       resources :donations
-      #, only: [:edit, :update, :new, :create] 
+      #, only: [:edit, :update, :new, :create]
     end
 
-    resources :conversations, only: [:index, :show, :destroy] do
+    resources :conversations do
       member do
         post :reply
         post :restore
@@ -39,8 +39,6 @@ Rails.application.routes.draw do
         delete :empty_trash
       end
     end
-
-    resources :messages, only: [:new, :create]
   end
 
   root 'welcome#index'
