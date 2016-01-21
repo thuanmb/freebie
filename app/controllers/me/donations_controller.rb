@@ -22,7 +22,6 @@ class Me::DonationsController < AdminController
   end
 
   def update
-    debugger
     @campaign = Campaign.find(params[:campaign_id])
     @donation = Donation.find(params[:id])
 
