@@ -41,7 +41,8 @@
           <% end %>
 
           <hr>
-          <p><%= @campaign.donation_instruction ? @campaign.donation_instruction : 'Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn' %></p>
+          <%= @markdown.render(@campaign.donation_instruction.present? ? @campaign.donation_instruction : 'Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn').html_safe %>
+  
           <%= form_tag('/campaigns/' + @campaign.id.to_s + '/ask_to_donate', method: 'post') %>
             <fieldset class="form-group">
               <input type="text" class="form-control" name="donation[name]" placeholder="Tên của bạn">
