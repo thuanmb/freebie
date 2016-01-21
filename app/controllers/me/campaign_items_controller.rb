@@ -1,4 +1,4 @@
-class Admin::CampaignItemsController < AdminController
+class Me::CampaignItemsController < AdminController
 
   def edit
     @campaign = Campaign.find(params[:campaign_id])
@@ -11,9 +11,9 @@ class Admin::CampaignItemsController < AdminController
 
     if @campaign_item.update(campaign_item_params)
       flash[:success] = "Update '#{@campaign_item.name}' successfully"
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else       
-      render 'admin/campaign_items/edit'
+      render 'me/campaign_items/edit'
     end 
   end 
 
@@ -29,9 +29,9 @@ class Admin::CampaignItemsController < AdminController
     @campaign_item.campaign = @campaign
 
     if @campaign_item.save
-      redirect_to admin_campaign_path(@campaign)
+      redirect_to me_campaign_path(@campaign)
     else
-      render 'admin/campaign_items/new'
+      render 'me/campaign_items/new'
     end
   end
 

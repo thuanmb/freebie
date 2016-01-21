@@ -1,6 +1,6 @@
 <h1>Edit Donation</h1>
 
-<%= simple_form_for @donation, :url => admin_campaign_donation_path(@campaign, @donation), :method => :put do |f| %>
+<%= simple_form_for @donation, :url => me_campaign_donation_path(@campaign, @donation), :method => :put do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

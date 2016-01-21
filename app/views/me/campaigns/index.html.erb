@@ -1,6 +1,6 @@
 <h2>Campaigns</h2>
 
-<%= link_to "New campaign", new_admin_campaign_path %>
+<%= link_to "New campaign", new_me_campaign_path %>
 
 <div class="table-responsive">
   <table class="table table-striped">
@@ -17,11 +17,11 @@
       <% @campaigns.each_with_index do |campaign, index| %>
       <tr>
         <td><%= index %></td>
-        <td><%= link_to campaign.title, admin_campaign_path(campaign) %></td>
+        <td><%= link_to campaign.title, me_campaign_path(campaign) %></td>
         <td><%= campaign.status %></td>
         <td><%= campaign.end_date %></td>
         <td>
-          <%= link_to "Edit", edit_admin_campaign_path(campaign) %>
+          <%= link_to "Edit", edit_me_campaign_path(campaign) %>
         </td>
       </tr>
       <% end %>
