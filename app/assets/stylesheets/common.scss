@@ -1,6 +1,54 @@
 @import "variables";
 
 @mixin highlight() {
-	color: $primary_color;
+  color: $primary_color;
   border-top-color: #fe9322;
+}
+
+.detail-page {
+  .sidebar {
+    padding-top: 220px;
+    color: #e9edf0;
+    background-color: #303B46;
+    float: left;
+
+    position: fixed;
+    top: 0;
+
+    min-height: 700px;
+    height: 100%;
+
+    .location {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .content {
+    float: right;
+    color: rgb(55, 58, 60);
+
+    .hero-img {
+      min-height: 400px;
+      background-size: cover;
+    }
+
+    .container {
+      margin-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+  }
 }
