@@ -35,6 +35,7 @@ vi:
     status: 
       public: 'Đang đăng'
       closed: 'Đã đóng'
+      draft: 'Lưu nháp'
   edit: "Sửa"
   close: "Đóng"
   reopen: "Mở lại"

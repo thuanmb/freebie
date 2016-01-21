@@ -36,6 +36,7 @@ en:
     status: 
       public: 'Public'
       closed: 'Closed'
+      draft: 'Draft'
   edit: "Edit"
   close: "Close"
   reopen: "Reopen"

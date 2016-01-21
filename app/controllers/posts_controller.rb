@@ -33,6 +33,7 @@ class PostsController < ApplicationController
     #@post = Post.new(post_params)
 
     @post = current_user.posts.build(post_params)
+    @post.status = 'draft'
 
     respond_to do |format|
       if @post.save
