@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  layout 'application'
+  layout 'me'
 
   before_action :authenticate_user!
 end

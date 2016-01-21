@@ -101,7 +101,7 @@
 
 <div class="main-content <%= controller_name %> <%= action_name %>">
   <%= flash_messages %>
-  <%= yield %>
+  <%= content_for?(:content) ? yield(:content) : yield %>
 </div>
 
 <div class="onboarding-container">
