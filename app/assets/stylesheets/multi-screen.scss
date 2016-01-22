@@ -10,11 +10,17 @@
         height: 70px;
         width: 100%;
 
+        .navbar-brand {
+          .fa {
+            transition: top 0.2s;
+            top: 11px;
+          }
+        }
+
         .form-search {
-          transition: top 1s;
+          transition: top 0.2s;
 
           top: -4px;
-          right: 120px;
         }
 
         .dropdown-toggle {
