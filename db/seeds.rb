@@ -43,7 +43,7 @@ post4 = Post.create({
   DESC
 })
 
-# campaigns 
+# campaigns
 campaign1 = Campaign.create({
   title: 'Campaign 1',
   end_date: Date.today + 10,
@@ -84,4 +84,25 @@ campaign4 = Campaign.create({
   description: <<-DESC
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
   DESC
+})
+
+category_money = Category.create({
+  name: 'money',
+  fa_icon: 'fa-usd',
+  img_url: 'http://images.askmen.com/1080x540/2015/11/02-040952-lending_money_to_friends.jpg',
+  color: '#c8bda0'
+})
+
+category_people = Category.create({
+  name: 'people',
+  fa_icon: 'fa-user',
+  img_url: 'http://images.askmen.com/1080x540/2015/11/02-040952-lending_money_to_friends.jpg',
+  color: '#91735b'
+})
+
+category_other = Category.create({
+  name: 'other',
+  fa_icon: 'fa-plus',
+  img_url: 'http://www.australiancharityguide.com/Charity%209.jpg',
+  color: '#95aa47'
 })

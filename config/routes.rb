@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
+  resources :categories
   get 'welcome/index'
 
   resources :posts do
     resources :post_items
     resources :requests
 
-    member do 
+    member do
       put :publish
       put :close
       put :reopen
-    end 
-    
+    end
+
     collection do
       get :my
     end
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   get 'giveaway' => "giveaway#index"
   get 'giveaway/edit_location' => 'giveaway#select_location'
   put 'giveaway/edit_location' => 'giveaway#edit_location'
+  get 'giveaway/select_category' => 'giveaway#select_category'
 
   resources :campaigns, only: [:index, :show] do
     member do

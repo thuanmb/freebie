@@ -1,0 +1,31 @@
+.category_block {
+  width: 100px;
+  height: 100px;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 5px;
+
+  i.fa {
+    font-size: 3rem;
+    padding: 3px;
+    transition: opacity 300ms;
+  }
+
+  .text {
+    text-transform: capitalize;
+    transition: font-size 300ms, margin-top 300ms;
+  }
+
+  &:hover {
+    i.fa {
+      opacity: 0;
+    }
+    .text {
+      font-size: 1.3rem;
+      margin-top: -30px;
+      font-weight: bold;
+    }
+  }
+}
