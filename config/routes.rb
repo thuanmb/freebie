@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     resources :post_items
     resources :requests
 
+    member do 
+      put :publish
+      put :close
+      put :reopen
+    end 
+    
     collection do
       get :my
     end
