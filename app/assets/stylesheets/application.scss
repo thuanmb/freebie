@@ -55,9 +55,10 @@ body {
 
   background-color: $bg_color;
 
-  .brand {
-    height: 100px;
-
+  .navbar-brand {
+    position: relative;
+    z-index: 2;
+    
     a {
       text-decoration: none;
     }
@@ -66,15 +67,13 @@ body {
       color: #FE9322;
       font-size: 50px;
       position: relative;
-      top: 11px;
-      padding: 10px;
+      top: 13px;
+      padding: 0 10px;
     }
 
     .brand-name {
       font-size: 26px;
       font-weight: bold;
-
-      line-height: 100px;
     }
 
     .brand-first-name {
@@ -109,8 +108,8 @@ body {
 
         form {
           position: absolute;
-          top: -88px;
-          right: 0;
+          top: 0;
+          right: 120px;
           padding: 20px 0;
 
           input {
@@ -292,10 +291,15 @@ body {
           margin-top: 30px;
         }
 
+        p {
+          padding: 0 12em;
+          color: #ccc;
+        }
+
         h4 {
           color: $bg_color;
           margin-top: 30px;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
         }
       }
 
@@ -316,7 +320,7 @@ body {
         li {
           display: inline-block;
           float: left;
-          margin: 0 10px;
+          margin: 0 20px;
 
           width: 180px;
           height: 180px;
@@ -355,7 +359,7 @@ body {
 
         .fa {
           font-size: 50px;
-          color: #CCC;
+          color: #fff;
           margin-top: 20px;
         }
 

@@ -1,5 +1,6 @@
 en:
   onboarding_welcome: "Welcome to Freebie,"
+  onboarding_about: "Freebie is a community for sharing old furniture in Vietnam. Freebie lets you give away old things and unnecessary, to hand those who truly need it than, to help save and protect the environment!"
   onboarding_instruction: "What're you looking for?"
 
   commons:
@@ -35,9 +36,12 @@ en:
       request_now: "Send request"
       send_message: "Send message"
     status:
-      public: 'Public'
+      published: 'Public'
       closed: 'Closed'
-      draft: 'Draft'
+      drafted: 'Draft'
+
+  publish: "Publish"
   edit: "Edit"
   close: "Close"
   reopen: "Reopen"
+  post_not_found: "Sorry, the post is not available or was deleted."

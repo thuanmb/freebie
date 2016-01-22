@@ -38,15 +38,13 @@
 </script>
 
 <div class="header">
-  <div class="brand container">
-    <a href="/">
-      <%= fa_icon "recycle" %>
-      <span class="brand-name brand-first-name">Free</span>
-      <span class="brand-name brand-last-name">bie</span>
-    </a>
-  </div>
   <div class="navbar-header">
     <div class="navbar-container container">
+      <a class="navbar-brand" href="<%= root_path %>">
+        <%= fa_icon "recycle" %>
+        <span class="brand-name brand-first-name">Free</span>
+        <span class="brand-name brand-last-name">bie</span>
+      </a>
       <nav class="navbar navbar-light bg-faded">
         <form class="form-search form-inline pull-xs-right">
           <input class="form-control" type="text" placeholder="<%= I18n.t "search_placeholder" %>">
@@ -115,6 +113,7 @@
     <section>
       <div class="welcome-message">
         <h1><%= I18n.t "onboarding_welcome" %></h1>
+        <p><%= I18n.t "onboarding_about" %></p>
         <h4><%= I18n.t "onboarding_instruction" %></h4>
       </div>
       <ul>
@@ -130,12 +129,6 @@
             <p><%= I18n.t "give_your_old_stuffs" %></p>
           </li>
         </a>
-        <a href="<%= campaigns_path %>">
-          <li>
-            <%= fa_icon "life-ring" %>
-            <p><%= I18n.t "create_new_campaigns" %></p>
-          </li>
-        </a>
       </ul>
     </section>
   </div>
@@ -143,18 +136,34 @@
 
 <% if current_page?(root_path) %>
   <script type="text/javascript">
-    // onboarding
-    if (typeof(Storage) !== "undefined") {
-      var onboardingView = $(".onboarding-container");
-      if (!localStorage.shouldNotShowOnboarding || localStorage.shouldNotShowOnboarding !== "true") {
-        localStorage.shouldNotShowOnboarding = true;
-
-        onboardingView.show();
-        onboardingView.find(".fa-close").click(function () {
-          onboardingView.fadeOut();
+    $(document).ready(function () {
+      // onboarding
+      if (typeof(Storage) !== "undefined" && location.pathname == "/") {
+        $(window).bind('beforeunload', function(){ 
+          localStorage.isVisitedFirstTimes = true;
         });
+
+        var onboardingView = $(".onboarding-container");
+        if (!localStorage.shouldNotShowOnboarding) {
+          localStorage.shouldNotShowOnboarding = 0;
+        }
+
+        var count = parseInt(localStorage.shouldNotShowOnboarding, 10);
+        count++;
+        localStorage.shouldNotShowOnboarding = count;
+
+        if ((!localStorage.isVisitedFirstTimes || localStorage.isVisitedFirstTimes === "true") && count >= 2) {
+          onboardingView.show();
+          onboardingView.find(".fa-close").click(function () {
+            onboardingView.fadeOut();
+          });
+
+          localStorage.isVisitedFirstTimes = false;
+        } else {
+          onboardingView.hide();
+        }
       }
-    }
+    });
   </script>
 <% end %>
 </body>

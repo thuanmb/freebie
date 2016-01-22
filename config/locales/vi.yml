@@ -1,5 +1,6 @@
 vi:
   onboarding_welcome: "Chào mừng bạn đến với Freebie,"
+  onboarding_about: "Freebie là một cộng đồng để chia sẻ đồ cũ ở Việt Nam. Freebie cho phép bạn cho đi những đồ vật cũ và không cần thiết, đến tay những người thật cần nó hơn, để góp phần tiết kiệm và bảo vệ môi trường!"
   onboarding_instruction: "Bạn đang tìm kiếm điều gì?"
   commons:
     or: "hoặc"
@@ -34,9 +35,12 @@ vi:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
     status:
-      public: 'Đang đăng'
+      published: 'Đang đăng'
       closed: 'Đã đóng'
-      draft: 'Lưu nháp'
+      drafted: 'Lưu nháp'
+
+  publish: "Đăng"
   edit: "Sửa"
   close: "Đóng"
   reopen: "Mở lại"
+  post_not_found: "Rất tiếc chúng tôi không tìm thấy bài đăng này!"
