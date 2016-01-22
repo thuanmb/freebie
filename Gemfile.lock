@@ -59,6 +59,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    animate-rails (1.0.9)
+      rails
     arel (6.0.3)
     autoprefixer-rails (6.3.0)
       execjs
@@ -293,6 +295,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  animate-rails
   bootstrap (~> 4.0.0.alpha3)
   bootstrap-will_paginate
   byebug

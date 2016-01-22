@@ -2,3 +2,15 @@
   <h2>Choose a category</h2>
   <%= render partial: 'category', collection: @categories %>
 </div>
+<script>
+  $(function () {
+    $(".category_block").each(function (index) {
+      var $ele = $(this);
+      $ele.hide();
+      setTimeout(function () {
+        $ele.show();
+        $ele.addClass('animated flipInY');
+      }, index * 100);
+    });
+  });
+</script>

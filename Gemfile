@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bootstrap-will_paginate'
+gem 'animate-rails'
 gem 'will_paginate'
 gem 'simple_form'
 gem 'devise'
@@ -50,7 +51,7 @@ gem 'gravatar_image_tag'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
-gem 'rails_12factor', group: :production    
+gem 'rails_12factor', group: :production
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'redcarpet'
 
