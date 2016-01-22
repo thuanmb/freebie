@@ -11,6 +11,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    if @post.user == current_user || @post.published?
+      render :show
+    else
+      render :post_not_found, status: 404
+    end
   end
 
   # GET /posts/new
