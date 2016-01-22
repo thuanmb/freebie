@@ -1,5 +1,4 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
 
 <div class="row">
 <% @posts.each do |post| %>
@@ -10,14 +9,14 @@
       <h4 class="card-title"><%= link_to post.title, post_path(post) %> </h6></h4>
       <p class="card-text"><%= truncate(post.description, length: 50) %></p>
 
-      <span class="label label-pill <%= post_style_class %> post-status"><%= I18n.t post_status(post) %></span>
-      <%= active_link_to I18n.t(".edit"), '#', class: 'card-link' %>
+      <span class="label label-pill <%= post_style_class(post) %> post-status"><%= I18n.t post_status(post) %></span>
+      <%= active_link_to I18n.t(".edit"), edit_post_path(post), class: 'card-link' %>
 
-      <% if post.public? %>
-      <%= active_link_to I18n.t(".close"), '#', class: 'card-link' %>
+      <% unless post.published? %>
+      <%= active_link_to I18n.t(".publish"), publish_post_path(post), method: :put, class: 'card-link' %>
       <% end %>
-      <% if post.closed? %>
-      <%= active_link_to I18n.t(".reopen"), '#', class: 'card-link' %>
+      <% unless post.closed? %>
+      <%= active_link_to I18n.t(".close"), close_post_path(post), method: :put, class: 'card-link' %>
       <% end %>
     </div>
   </div> 

@@ -33,9 +33,11 @@ vi:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
     status: 
-      public: 'Đang đăng'
+      published: 'Đang đăng'
       closed: 'Đã đóng'
-      draft: 'Lưu nháp'
+      drafted: 'Lưu nháp'
+      
+  publish: "Đăng"
   edit: "Sửa"
   close: "Đóng"
   reopen: "Mở lại"
