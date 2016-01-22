@@ -35,9 +35,11 @@ en:
       request_now: "Send request"
       send_message: "Send message"
     status: 
-      public: 'Public'
+      published: 'Public'
       closed: 'Closed'
-      draft: 'Draft'
+      drafted: 'Draft'
+      
+  publish: "Publish"      
   edit: "Edit"
   close: "Close"
   reopen: "Reopen"
