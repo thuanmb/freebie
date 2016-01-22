@@ -396,4 +396,13 @@ body {
   }
 }
 
+.main-content  {
+  form {
+    .help-block {
+      color: $error_color;
+    }
+  }
+}
+
+
 @import "multi-screen";

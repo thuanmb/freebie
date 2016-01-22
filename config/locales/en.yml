@@ -14,7 +14,8 @@ en:
   goal_title: "Goal"
   value_unit: "VND"
 
-  menu_item_posts: "Freebie"
+  menu_item_giveaway: "Giveaway"
+  menu_item_find_posts: "Find old stuff"
   menu_item_campaigns: "Our Campaigns"
   menu_item_login: "Log in"
   menu_item_edit_profile: "Edit Profile"
@@ -33,7 +34,7 @@ en:
     show:
       request_now: "Send request"
       send_message: "Send message"
-    status: 
+    status:
       public: 'Public'
       closed: 'Closed'
       draft: 'Draft'

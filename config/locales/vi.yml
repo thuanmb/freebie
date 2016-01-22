@@ -13,7 +13,8 @@ vi:
   goal_title: "Mục tiêu"
   value_unit: "VNĐ"
 
-  menu_item_posts: "Đồ Cũ"
+  menu_item_giveaway: "Cho đồ cũ"
+  menu_item_find_posts: "Tìm đồ cũ"
   menu_item_campaigns: "Quyên Góp"
   menu_item_login: "Đăng Nhập"
   menu_item_edit_profile: "Hồ Sơ Cá Nhân"
@@ -32,7 +33,7 @@ vi:
     show:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
-    status: 
+    status:
       public: 'Đang đăng'
       closed: 'Đã đóng'
       draft: 'Lưu nháp'

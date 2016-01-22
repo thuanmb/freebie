@@ -8,3 +8,5 @@ en:
   forget_password?: "Forgt your password?"
   password_confirmation: "Password confirmation"
   minimum_password_length: "%{length} characters minimum"
+  contact_address: "Contact address"
+  contact_city: "Contact city"

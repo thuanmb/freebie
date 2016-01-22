@@ -8,3 +8,5 @@ vi:
   forget_password?: "Quên mật khẩu?"
   password_confirmation: "Xác nhận mật khẩu"
   minimum_password_length: "tối thiểu %{length} ký tự"
+  contact_address: "Địa chỉ liên lạc"
+  contact_city: "Thành phố"

@@ -1,7 +1,7 @@
 vi:
   errors:
     messages:
-      blank: "%{attribute} không được rỗng."
+      blank: "Thông tin này không được rỗng."
     attributes:
       email:
         blank: "Địa chỉ thư điện tử không được rỗng."

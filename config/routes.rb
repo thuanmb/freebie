@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
 
+  get 'giveaway' => "giveaway#index"
+  get 'giveaway/edit_location' => 'giveaway#select_location'
+  put 'giveaway/edit_location' => 'giveaway#edit_location'
+
   resources :campaigns, only: [:index, :show] do
     member do
       post :ask_to_donate
