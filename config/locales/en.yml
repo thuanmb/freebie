@@ -39,8 +39,9 @@ en:
       published: 'Public'
       closed: 'Closed'
       drafted: 'Draft'
+    claim: "Claim"
 
-  publish: "Publish"
+  publish: "Publish"      
   edit: "Edit"
   close: "Close"
   reopen: "Reopen"

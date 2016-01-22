@@ -38,7 +38,8 @@ vi:
       published: 'Đang đăng'
       closed: 'Đã đóng'
       drafted: 'Lưu nháp'
-
+    claim: "Yêu cầu"
+      
   publish: "Đăng"
   edit: "Sửa"
   close: "Đóng"
