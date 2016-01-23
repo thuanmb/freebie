@@ -25,3 +25,15 @@
 .close {
   font-size: 1rem;
 }
+
+.btn.btn-inverse {
+  color: #FFF;
+  background-image: none;
+  background-color: transparent;
+  border-color: #fff;
+
+  &:hover {
+    color: $primary_color;
+    border-color: $primary_color;
+  }
+}

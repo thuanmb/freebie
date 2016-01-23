@@ -1,13 +1,7 @@
 $introduction_height: 550px;
 
-.main-content {
-  margin-top: 77px !important;
-
-  &.welcome .btn {
-    color: #FFF;
-    background-image: none;
-    background-color: transparent;
-    border-color: #fff;
+.main-content.welcome {
+  .btn {
     margin-top: 45px;
   }
 
@@ -77,7 +71,7 @@ $introduction_height: 550px;
   .campaign {
     font-family: "Gotham SSm A";
     color: #fff;
-    background-color: #f0ad4e;
+    background-color: #CD2348;
     margin-top: 45px;
 
 
