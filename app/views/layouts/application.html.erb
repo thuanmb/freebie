@@ -128,13 +128,20 @@
             <%= fa_icon "search" %>
             <p><%= I18n.t "search_for_whole_post" %></p>
           </li>
-        </a>
+        </archive>
 
         <a href="<%= new_post_path %>">
           <li>
             <%= fa_icon "archive" %>
             <p><%= I18n.t "give_your_old_stuffs" %></p>
           </li>
+        </a>
+
+        <a href="<%= campaigns_path %>">
+            <li>
+              <%= fa_icon "life-ring" %>
+              <p><%= I18n.t "create_new_campaigns" %></p>
+            </li>
         </a>
       </ul>
     </section>

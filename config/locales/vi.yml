@@ -1,7 +1,7 @@
 vi:
   onboarding_welcome: "Chào mừng bạn đến với Freebie,"
-  onboarding_about: "Freebie là một cộng đồng để chia sẻ đồ cũ ở Việt Nam. Freebie cho phép bạn cho đi những đồ vật cũ và không cần thiết, đến tay những người thật cần nó hơn, để góp phần tiết kiệm và bảo vệ môi trường!"
-  onboarding_instruction: "Bạn đang tìm kiếm điều gì?"
+  onboarding_about: "Freebie là một cộng đồng để chia sẻ đồ cũ ở Việt Nam. Freebie cho phép bạn cho đi những đồ vật cũ và không cần thiết, đến tay những người thật sự cần nó hơn, để góp phần tiết kiệm và bảo vệ môi trường!"
+  onboarding_instruction: "Bạn muốn gì?"
   commons:
     or: "hoặc"
 
@@ -56,4 +56,23 @@ vi:
     second_column:
       title: "Các Bài Đăng Mới Nhất"
     third_column:
-      title: "Các Bài Đăng Lân Cận Chỗ Của Bạn"
+      title: "Các Bài Đăng Gần Đây"
+
+  welcome:
+    index:
+      title_1: "Những thứ không thiết với bạn,"
+      title_2: "đôi khi lại mang niềm hạnh phúc cho người khác."
+      message: "Hãy cho đi những đồ vật cũ và không cần thiết. Nó sẽ được đến tay những người thật sự cần nó hơn, để góp phần tiết kiệm và bảo vệ môi trường."
+      btn_action: "Cho ngay đồ cũ"
+      description: "Với mục tiêu tạo ra một cộng đồng để cùng nhau chia sẽ những món đồ không thật cần thiết! Bạn không phải bỏ đi những món đồ không còn cần thiết của bạn vào thùng rác nữa. Từ đó góp phần tái sử dụng, tiết kiệm, bảo vệ môi trường và mang đến hạnh phúc cho nhiều người khác!"
+
+      overview:
+        title: "Tìm đồ cũ"
+        message: "Bạn đang muốn tìm những bộ quần áo và sách cũ cho trẻ em nghèo, để các em có điều kiện đến trường? Bạn muốn có tìm ngay một chiếc bàn làm việc cho riêng mình?"
+        btn_action: "Tìm ngay"
+
+      campaign:
+        title: "Quyên góp"
+        message: "Quyên góp những món đồ cũ hay không còn cần thiết của bạn cho các tổ chức từ thiện. Để mang đến nụ cười cho người nghèo và trẻ em Việt Nam."
+        btn_action: "Quyên góp ngay"
+
