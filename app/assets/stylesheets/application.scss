@@ -82,10 +82,10 @@ body {
 
 
 .header {
-  position: absolute;
+  position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 999;
 
   background-color: $bg_color;
@@ -386,7 +386,7 @@ body {
 }
 
 .main-content {
-  min-height: 230px;
+  min-height: 298px;
   margin-top: 77px !important;
   padding-bottom: 80px;
 }
