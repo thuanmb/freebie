@@ -1,5 +1,5 @@
 <%= link_to category_path(category) do %>
-  <div class="category_block pull-left" style="background-color: <%= category.color %>;">
+  <div class="category_block pull-left" style="display: none; background-color: <%= category.color %>;">
     <i class="fa <%= category.fa_icon %>">&#xfeff;</i>
     <div class="text"><%= category.name %></div>
   </div>
