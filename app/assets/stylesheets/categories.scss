@@ -1,11 +1,12 @@
 .category_block {
-  width: 100px;
+  width: 120px;
   height: 100px;
   color: white;
   text-align: center;
   padding: 12px;
   margin: 12px;
   border-radius: 5px;
+  position: relative;
 
   i.fa {
     font-size: 3rem;
@@ -15,7 +16,11 @@
 
   .text {
     text-transform: capitalize;
-    transition: font-size 300ms, margin-top 300ms;
+    transition: font-size 300ms, top 300ms;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &:hover {
@@ -24,8 +29,8 @@
     }
     .text {
       font-size: 1.3rem;
-      margin-top: -30px;
       font-weight: bold;
+      top: 50%;
     }
   }
 }
