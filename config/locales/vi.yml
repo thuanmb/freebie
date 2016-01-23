@@ -39,9 +39,21 @@ vi:
       closed: 'Đã đóng'
       drafted: 'Lưu nháp'
     claim: "Yêu cầu"
-      
+
   publish: "Đăng"
   edit: "Sửa"
   close: "Đóng"
   reopen: "Mở lại"
   post_not_found: "Rất tiếc chúng tôi không tìm thấy bài đăng này!"
+
+  footer:
+    first_column:
+      contact_us: "Liên Hệ"
+      instruction: "Hộ trợ trực tuyến 24/7, hãy giữ liên lạc qua thông tin bên dưới:"
+      address: "1234 Tên Đường, Tên Thành Phố, Tên Quốc Gia"
+      phone_number: "(123) 456-7890"
+      email: "maill@youcompany.com"
+    second_column:
+      title: "Các Bài Đăng Mới Nhất"
+    third_column:
+      title: "Các Bài Đăng Lân Cận Chỗ Của Bạn"

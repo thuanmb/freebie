@@ -46,3 +46,15 @@ en:
   close: "Close"
   reopen: "Reopen"
   post_not_found: "Sorry, the post is not available or was deleted."
+
+  footer:
+    first_column:
+      contact_us: "Contact Us"
+      instruction: "Support online is available 24 hours a day, get in touch:"
+      address: "1234 Street Name, City Name, Country Name"
+      phone_number: "(123) 456-7890"
+      email: "maill@youcompany.com"
+    second_column:
+      title: "Latest Posts"
+    third_column:
+      title: "Nearby Posts"

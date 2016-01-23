@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
     collection do
       get :my
+      get :byLocation
     end
   end
 
