@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xl-5">
+    <div class="col-xl-5 col-lg-6 col-md-8">
       <h2 class="section-header"><%= t('giveaway.tell_location') %></h2>
       <p><%= t('giveaway.tell_location_description', profile_url: edit_user_registration_path) %></p>
       <%= simple_form_for(@user, url: edit_location_giveaways_path, html: { method: :put }) do |f| %>

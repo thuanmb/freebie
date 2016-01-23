@@ -15,6 +15,7 @@
 @import "users";
 @import "posts";
 @import "categories";
+@import "giveaways";
 @import "footer";
 
 body {
@@ -385,8 +386,8 @@ body {
 
 .main-content {
   min-height: 230px;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 80px;
 }
 
 .alert {
