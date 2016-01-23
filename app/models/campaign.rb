@@ -2,8 +2,10 @@ class Campaign < ActiveRecord::Base
   belongs_to :user
   has_many :campaign_items
   has_many :donations
+  has_many :category_links, as: :item
+  has_many :categories, through: :category_links, source: :category
 
-  def remaining_days 
+  def remaining_days
     (self.end_date - Date.today).to_i
   end
 
@@ -25,7 +27,7 @@ class Campaign < ActiveRecord::Base
   def location
     return '' unless self.gmap_location.present?
     self.gmap_location.html_safe
-  end 
+  end
 
   def overall_progress
     return 0 if self.campaign_items.size == 0
