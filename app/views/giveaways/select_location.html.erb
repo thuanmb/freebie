@@ -3,7 +3,7 @@
     <div class="col-xl-5">
       <h2 class="section-header"><%= t('giveaway.tell_location') %></h2>
       <p><%= t('giveaway.tell_location_description', profile_url: edit_user_registration_path) %></p>
-      <%= simple_form_for(@user, url: giveaway_edit_location_path, html: { method: :put }) do |f| %>
+      <%= simple_form_for(@user, url: edit_location_giveaways_path, html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">

@@ -1,10 +1,3 @@
 <div class="container events-list">
-    <% @campaigns.in_groups_of(3) do |g| %>
-      <div class="row">
-        <% g.compact.each do |campaign| %>
-            <%= render partial: 'campaign', locals: {campaign: campaign} %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'campaigns' %>
 </div>

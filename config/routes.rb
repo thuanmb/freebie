@@ -24,10 +24,14 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
 
-  get 'giveaway' => "giveaway#index"
-  get 'giveaway/edit_location' => 'giveaway#select_location'
-  put 'giveaway/edit_location' => 'giveaway#edit_location'
-  get 'giveaway/select_category' => 'giveaway#select_category'
+  resources :giveaways, only: [:index] do
+    collection do
+      get :select_location
+      put :edit_location
+      get :select_category
+      get :select_campaign
+    end
+  end
 
   resources :campaigns, only: [:index, :show] do
     member do

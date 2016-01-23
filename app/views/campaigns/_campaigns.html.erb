@@ -1,0 +1,7 @@
+<% @campaigns.in_groups_of(3) do |g| %>
+  <div class="row">
+    <% g.compact.each do |campaign| %>
+        <%= render partial: 'campaigns/campaign', locals: {campaign: campaign} %>
+    <% end %>
+  </div>
+<% end %>

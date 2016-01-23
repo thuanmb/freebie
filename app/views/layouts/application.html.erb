@@ -56,7 +56,7 @@
 
         <ul class="nav navbar-nav">
           <li class="nav-item giveaway">
-            <%= active_link_to giveaway_path, class: 'nav-link' do %>
+            <%= active_link_to giveaways_path, class: 'nav-link' do %>
               <%= fa_icon "archive" %>
               <%= I18n.t('menu_item_giveaway') %>
             <% end %>
@@ -129,7 +129,7 @@
             <p><%= I18n.t "search_for_whole_post" %></p>
           </li>
         </a>
-        
+
         <a href="<%= new_post_path %>">
           <li>
             <%= fa_icon "archive" %>
@@ -165,7 +165,7 @@
               <li><a href="http://linkedin.com" target="blank"><i class=" fa fa-linkedin"></i></a></li>
               <li><a href="http://instagram.com" target="blank"><i class=" fa fa-instagram"></i></a></li>
             </ul>
-          </div>                              
+          </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
           <div id="contact-details-3" class="sidebar_widget widget widget_contact_details"><h5><%= t("footer.first_column.contact_us") %></h5>
@@ -177,21 +177,21 @@
                 <li><i class="fa fa fa-envelope"><%= t("footer.first_column.email") %></i></li>
               </ul>
             </div>
-          </div>                              
+          </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
-          <div id="latest-posts-5" class="sidebar_widget widget widget_latest_posts_entries">     
+          <div id="latest-posts-5" class="sidebar_widget widget widget_latest_posts_entries">
             <h5><%= t("footer.second_column.title") %></h5>
             <% Post.published_posts.limit(3).each do |post| %>
               <div class="post-entry">
                 <%= link_to post.title, post_path(post), class: "post-title" %>
               </div>
             <% end %>
-          </div>                              
+          </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
-          <div id="popular-posts-2" class="sidebar_widget widget widget_popular_posts_entries">     
-            <h5><%= t("footer.third_column.title") %></h5> 
+          <div id="popular-posts-2" class="sidebar_widget widget widget_popular_posts_entries">
+            <h5><%= t("footer.third_column.title") %></h5>
             <div id="nearby-posts-container">
               <div class="post-entry">
                 <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/04/27/hello-world/" title="Hello world, This is Splendid!">Hello world, This is Splendid!</a>
@@ -203,7 +203,7 @@
                 <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/07/24/blog-single-extended/" title="Blog Single Extended">Blog Single Extended</a>
               </div>
             </div>
-          </div>                              
+          </div>
         </div>
       </div>
     </div>
@@ -216,7 +216,7 @@
         <div class="col-md-12 align-center">
           <p class="copyright">© Copyright 2015. All Rights Reserved | Powered by Diglett Team</p>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -227,7 +227,7 @@
     $(document).ready(function () {
       // onboarding
       if (typeof(Storage) !== "undefined" && location.pathname == "/") {
-        $(window).bind('beforeunload', function(){ 
+        $(window).bind('beforeunload', function(){
           localStorage.isVisitedFirstTimes = true;
         });
 
@@ -265,7 +265,7 @@
           console.log(data);
           var htmlString = "";
           for (var index = 0; index < data.length; index++) {
-            htmlString += '<div class="post-entry">' + 
+            htmlString += '<div class="post-entry">' +
               '<a class="post-title" href="posts/' + data[index].id + '">' + data[index].title  + '</a>' +
             '</div>';
           }

@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="section-header">Have a look at these campaigns</h2>
+  <div class="row">
+    <div class="col-lg-6">
+      <p>
+        Joining a campaign is a great way to bring your stuff to people in need in distance area.
+      </p>
+      <p>
+        Alternative you can post your stuff.
+        <%= link_to 'Create a new post', new_post_path, class: 'btn btn-info-outline btn-sm' %>
+      </p>
+    </div>
+    <div class="col-lg-3">
+
+    </div>
+  </div>
+
+  <%= render 'campaigns/campaigns' %>
+</div>

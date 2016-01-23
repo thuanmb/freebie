@@ -1,4 +1,4 @@
-<%= link_to category_path(category) do %>
+<%= link_to select_campaign_giveaways_path({category: category}) do %>
   <div class="category_block pull-left" style="display: none; background-color: <%= category.color %>;">
     <i class="fa <%= category.fa_icon %>">&#xfeff;</i>
     <div class="text"><%= category.name %></div>
