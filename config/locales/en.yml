@@ -1,7 +1,7 @@
 en:
   onboarding_welcome: "Welcome to Freebie,"
   onboarding_about: "Freebie is a community for sharing old furniture in Vietnam. Freebie lets you give away old things and unnecessary, to hand those who truly need it than, to help save and protect the environment!"
-  onboarding_instruction: "What're you looking for?"
+  onboarding_instruction: "What do you want?"
 
   commons:
     or: "or"
@@ -9,7 +9,7 @@ en:
   search_placeholder: "Search"
   search_for_whole_post: "Search for old stuffs"
   give_your_old_stuffs: "Give your old stuffs"
-  create_new_campaigns: "Create new campaigns"
+  create_new_campaigns: "Donates"
 
   raised_title: "Raised"
   goal_title: "Goal"
@@ -58,3 +58,22 @@ en:
       title: "Latest Posts"
     third_column:
       title: "Nearby Posts"
+
+  welcome:
+    index:
+      title_1: "Things are not necessarily for you,"
+      title_2: "sometimes it brings happiness to others."
+      message: "Give away old and unnecessary things. It would be to hand the person really needs it more, to help save and protect the environment."
+      btn_action: "Give it away now"
+      description: "With the goal of creating a community to work together to share the things are not really necessary! You do not have to throw your unnecessary things in the trash anymore. Thereby contributing to reuse, saving, environmental protection and bring happiness to many people!"
+
+      overview:
+        title: "Find old stuffs"
+        message: "You're looking for the clothes and old books to needy children, so that they can go to school? Want to find even a desk for your own?"
+        btn_action: "Search now"
+
+      campaign:
+        title: "Campaign"
+        message: "Donates your old or unnecessary things to charitable organizations. To bring smile to the poor and children in Vietnam."
+        btn_action: "Contribute now"
+

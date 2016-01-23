@@ -1,176 +1,95 @@
-#carousel-campaign-list {
-  .carousel-inner {
-    text-align: center;
+$introduction_height: 550px;
 
-    .carousel-item {
-      height: 500px;
-      overflow: hidden;
+.main-content {
+  margin-top: 77px !important;
+
+  .btn {
+    color: #FFF;
+    background-image: none;
+    background-color: transparent;
+    border-color: #fff;
+    margin-top: 45px;
+  }
+  
+  .introduction {
+    width: 100%;
+    font-family: "Gotham SSm A";
+
+    .ads {
+      width: 100%;
+      height: $introduction_height;
+      overflow-y: hidden;
 
       img {
         width: 100%;
         height: auto;
+        position: relative;
+        top: -100px;
       }
 
-      progress {
+      .info {
         position: absolute;
-        bottom: -16px;
-      }
-
-      .description {
-        position: absolute;
-        bottom: 16px;
-        overflow: hidden;
-
+        z-index: 1;
+        top: 77px;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.65);
+        height: $introduction_height;
+        text-align: center;
+        font-weight: 400;
 
-        text-align: left;
-        padding: 10px 20px;
-
+        padding-top: 15%;
         color: #fff;
-
-        h1 {
-          color: $primary_color;
-          text-transform: uppercase;
-        }
+        background-color: rgba(0,0,0, 0.35);
 
         p {
-          font-size: 15px;
-          color: #ccc;
-        }
-
-        .raised {
-            margin-right: 7px;
-        }
-
-        .campaign-info {
-          float: right;
-
-          .title {
-            font-weight: bold;
-            font-size: 10px;
-            vertical-align: bottom;
-          }
-
-          .value {
-            font-size: 13px;
-          }
-        }
-      }
-
-      &.carousel-anim {
-        progress {
-          opacity: 0;
-          animation: amin_for_progress 1s ease-in-out 2.6s forwards;
-        }
-
-        .description {
-          h1 {
-            position: relative;
-            opacity: 0;
-            animation: top_down 1s ease-in-out 0.3s forwards;
-          }
-
-          p {
-            position: relative;
-            opacity: 0;
-            animation: right_to_left 1s ease-in 1s forwards;
-          }
-
-          .campaign-info {
-            position: relative;
-            opacity: 0;
-            animation: bottom_up 0.6s ease-out 2s forwards;
-          }
+          font-size: 14px;
+          margin-top: 20px;
         }
       }
     }
-  }
 
-  .carousel-control {
-    background-image: none;
+    .description {
+      font-size: 20px;
+      text-align: center;
 
-    &:hover {
-      color: $primary_color;
-    }
-
-    .icon-prev, .icon-next {
-      font-size: 80px;
-      top: 42%;
+      padding: 30px 10em;
+      color: #222;
     }
   }
-}
+
+  .overview {
+    font-family: "Gotham SSm A";
+    color: #fff;
+    background-color: #5bc0de;
 
 
-
-
-
-@keyframes top_down {
-  from {
-    top: -60px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes right_to_left {
-  from {
-    left: 105%;
-    opacity: 0;
-  }
-
-  to {
-    left: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes bottom_up {
-  from {
-    top: 30px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes amin_for_progress {
-  from {
-    bottom: -32px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: -16px;
-    opacity: 1;
-  }
-}
-
-.post-list {
-
-  margin-top: 20px;
-
-  .row {
-    text-align: center;
-
-    .card {
-      margin: 10px 12px;
-      display: inline-block;
-
-      float: none;
-
-      img {
-        width: 100%;
-        height: auto;
-        margin-top: 7px;
-      }
+    img, .content {
+      padding: 0;
     }
+
+    .content {
+      padding-top: 6em;
+      padding-left: 12em;
+      padding-right: 5em;
+    }
+
+  }
+
+  .campaign {
+    font-family: "Gotham SSm A";
+    color: #fff;
+    background-color: #f0ad4e;
+    margin-top: 45px;
+
+
+    img, .content {
+      padding: 0;
+    }
+
+    .content {
+      padding-top: 6em;
+      padding-left: 12em;
+      padding-right: 5em;
+    }
+
   }
 }

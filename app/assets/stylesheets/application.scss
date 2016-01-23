@@ -1,4 +1,5 @@
 // Custom bootstrap variables must be set or import before bootstrap itself.
+@import "gotham_font";
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-fix";
@@ -298,7 +299,7 @@ body {
         }
 
         p {
-          padding: 0 30em;
+          padding: 0 24em;
           color: #ccc;
           font-size: 14px;
         }
