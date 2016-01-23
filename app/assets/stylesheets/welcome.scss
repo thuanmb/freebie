@@ -3,14 +3,14 @@ $introduction_height: 550px;
 .main-content {
   margin-top: 77px !important;
 
-  .btn {
+  &.welcome .btn {
     color: #FFF;
     background-image: none;
     background-color: transparent;
     border-color: #fff;
     margin-top: 45px;
   }
-  
+
   .introduction {
     width: 100%;
     font-family: "Gotham SSm A";
