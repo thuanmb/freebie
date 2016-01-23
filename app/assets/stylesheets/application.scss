@@ -112,7 +112,7 @@ body {
         form {
           position: absolute;
           top: 0;
-          right: 120px;
+          right: 140px;
           padding: 20px 0;
 
           input {
@@ -228,6 +228,10 @@ body {
             }
           }
 
+          .fa {
+            padding-right: 5px;
+          }
+
           &.message {
             a {
               border: none;
@@ -295,8 +299,9 @@ body {
         }
 
         p {
-          padding: 0 12em;
+          padding: 0 30em;
           color: #ccc;
+          font-size: 14px;
         }
 
         h4 {

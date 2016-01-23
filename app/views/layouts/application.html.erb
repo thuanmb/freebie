@@ -55,16 +55,25 @@
         <a href="" class="cd-secondary-nav-trigger"><%= fa_icon "bars" %></a>
 
         <ul class="nav navbar-nav">
-          <li class="nav-item posts">
-            <%= active_link_to I18n.t('menu_item_giveaway'), giveaway_path, class: 'nav-link' %>
+          <li class="nav-item giveaway">
+            <%= active_link_to giveaway_path, class: 'nav-link' do %>
+              <%= fa_icon "archive" %>
+              <%= I18n.t('menu_item_giveaway') %>
+            <% end %>
           </li>
           <li class="nav-item posts">
-            <%= active_link_to I18n.t('menu_item_find_posts'), posts_path, :active => :exclusive, class: 'nav-link' %>
+            <%= active_link_to posts_path, :active => :exclusive, class: 'nav-link' do %>
+              <%= fa_icon "search" %>
+              <%= I18n.t('menu_item_find_posts') %>
+            <% end %>
           </li>
 
           <% unless user_signed_in? %>
             <li class="nav-item login pull-xs-right">
-              <%= active_link_to I18n.t("menu_item_login"), new_user_session_path, class: 'nav-link' %>
+              <%= active_link_to new_user_session_path, class: 'nav-link' do %>
+                <%= fa_icon "user" %>
+                <%= I18n.t('menu_item_login') %>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-item edit-profile pull-xs-right">
@@ -120,6 +129,7 @@
             <p><%= I18n.t "search_for_whole_post" %></p>
           </li>
         </a>
+        
         <a href="<%= new_post_path %>">
           <li>
             <%= fa_icon "archive" %>
@@ -130,10 +140,10 @@
     </section>
   </div>
 </div>
+
 <footer id="footer" class="light-color alternative">
   <a href="#" class="back-to-top slideIn"><i class="fa fa-angle-up"></i></a>
-      
-        <!-- Main Footer -->
+
   <div id="main-footer">
     <div class="container">
       <div class="row">
