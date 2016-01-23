@@ -93,6 +93,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def byLocation
+    # TODO: get the posts by its location
+    # location = params[:location] // for example: Hồ Chí Minh
+    render json: Post.published_posts
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

@@ -55,19 +55,25 @@
         <a href="" class="cd-secondary-nav-trigger"><%= fa_icon "bars" %></a>
 
         <ul class="nav navbar-nav">
-          <li class="nav-item posts">
-            <%= active_link_to I18n.t('menu_item_giveaway'), giveaway_path, class: 'nav-link' %>
+          <li class="nav-item giveaway">
+            <%= active_link_to giveaway_path, class: 'nav-link' do %>
+              <%= fa_icon "archive" %>
+              <%= I18n.t('menu_item_giveaway') %>
+            <% end %>
           </li>
           <li class="nav-item posts">
-            <%= active_link_to I18n.t('menu_item_find_posts'), posts_path, :active => :exclusive, class: 'nav-link' %>
-          </li>
-          <li class="nav-item compaigns">
-            <%= active_link_to I18n.t("menu_item_campaigns"), campaigns_path, class: 'nav-link' %>
+            <%= active_link_to posts_path, :active => :exclusive, class: 'nav-link' do %>
+              <%= fa_icon "search" %>
+              <%= I18n.t('menu_item_find_posts') %>
+            <% end %>
           </li>
 
           <% unless user_signed_in? %>
             <li class="nav-item login pull-xs-right">
-              <%= active_link_to I18n.t("menu_item_login"), new_user_session_path, class: 'nav-link' %>
+              <%= active_link_to new_user_session_path, class: 'nav-link' do %>
+                <%= fa_icon "user" %>
+                <%= I18n.t('menu_item_login') %>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-item edit-profile pull-xs-right">
@@ -123,6 +129,7 @@
             <p><%= I18n.t "search_for_whole_post" %></p>
           </li>
         </a>
+        
         <a href="<%= new_post_path %>">
           <li>
             <%= fa_icon "archive" %>
@@ -133,6 +140,87 @@
     </section>
   </div>
 </div>
+
+<footer id="footer" class="light-color alternative">
+  <a href="#" class="back-to-top slideIn"><i class="fa fa-angle-up"></i></a>
+
+  <div id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div id="text-3" class="sidebar_widget widget widget_text">
+            <div class="textwidget">
+              <a class="navbar-brand" href="<%= root_path %>">
+                <%= fa_icon "recycle" %>
+                <span class="brand-name brand-first-name">Free</span>
+                <span class="brand-name brand-last-name">bie</span>
+              </a>
+            </div>
+          </div>
+          <div id="follow-us-3" class="sidebar_widget widget widget_social_media">
+            <ul class="social-media">
+              <li><a href="http://facebook.com" target="blank"><i class=" fa fa-facebook"></i></a></li>
+              <li><a href="http://twitter.com" target="blank"><i class=" fa fa-twitter"></i></a></li>
+              <li><a href="http://plus.google.com" target="blank"><i class=" fa fa-google-plus"></i></a></li>
+              <li><a href="http://linkedin.com" target="blank"><i class=" fa fa-linkedin"></i></a></li>
+              <li><a href="http://instagram.com" target="blank"><i class=" fa fa-instagram"></i></a></li>
+            </ul>
+          </div>                              
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div id="contact-details-3" class="sidebar_widget widget widget_contact_details"><h5><%= t("footer.first_column.contact_us") %></h5>
+            <div class="textwidget">
+              <p><%= t("footer.first_column.instruction") %></p>
+              <ul class="iconic-list ">
+                <li><i class="fa fa fa-map-marker"><%= t("footer.first_column.address") %></i></li>
+                <li><i class="fa fa fa-phone"><%= t("footer.first_column.phone_number") %></i></li>
+                <li><i class="fa fa fa-envelope"><%= t("footer.first_column.email") %></i></li>
+              </ul>
+            </div>
+          </div>                              
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div id="latest-posts-5" class="sidebar_widget widget widget_latest_posts_entries">     
+            <h5><%= t("footer.second_column.title") %></h5>
+            <% Post.published_posts.limit(3).each do |post| %>
+              <div class="post-entry">
+                <%= link_to post.title, post_path(post), class: "post-title" %>
+              </div>
+            <% end %>
+          </div>                              
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div id="popular-posts-2" class="sidebar_widget widget widget_popular_posts_entries">     
+            <h5><%= t("footer.third_column.title") %></h5> 
+            <div id="nearby-posts-container">
+              <div class="post-entry">
+                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/04/27/hello-world/" title="Hello world, This is Splendid!">Hello world, This is Splendid!</a>
+              </div>
+              <div class="post-entry">
+                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/07/03/introducing-a-great-post-from-the-blog/" title="Introducing a Great Post">Introducing a Great Post</a>
+              </div>
+              <div class="post-entry">
+                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/07/24/blog-single-extended/" title="Blog Single Extended">Blog Single Extended</a>
+              </div>
+            </div>
+          </div>                              
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lower-footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 align-center">
+          <p class="copyright">© Copyright 2015. All Rights Reserved | Powered by Diglett Team</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</footer>
 
 <% if current_page?(root_path) %>
   <script type="text/javascript">
@@ -166,5 +254,29 @@
     });
   </script>
 <% end %>
+
+<!-- Get near by posts -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    // only load in home page
+    if (location.pathname == "/") {
+      var geoLocation = new GeoLocation(function (city) {
+        $.getJSON("/posts/byLocation?location=" + city.longName, function (data) {
+          console.log(data);
+          var htmlString = "";
+          for (var index = 0; index < data.length; index++) {
+            htmlString += '<div class="post-entry">' + 
+              '<a class="post-title" href="posts/' + data[index].id + '">' + data[index].title  + '</a>' +
+            '</div>';
+          }
+
+          $("#nearby-posts-container").html(htmlString);
+        });
+      })
+
+      geoLocation.getLocation();
+    }
+  });
+</script>
 </body>
 </html>

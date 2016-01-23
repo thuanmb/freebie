@@ -15,6 +15,7 @@
 @import "users";
 @import "posts";
 @import "categories";
+@import "footer";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -49,6 +50,35 @@ body {
   }
 }
 
+.navbar-brand {
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+
+  .fa {
+    color: #FE9322;
+    font-size: 50px;
+    position: relative;
+    top: 13px;
+    padding: 0 10px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .brand-first-name {
+    color: $primary_color;
+  }
+
+  .brand-last-name {
+    color: $secondary_color;
+    margin-left: -2px;
+  }
+}
+
+
 .header {
   position: absolute;
   top: 0;
@@ -58,37 +88,6 @@ body {
   z-index: 999;
 
   background-color: $bg_color;
-
-  .navbar-brand {
-    position: relative;
-    z-index: 2;
-
-    a {
-      text-decoration: none;
-    }
-
-    .fa {
-      color: #FE9322;
-      font-size: 50px;
-      position: relative;
-      top: 13px;
-      padding: 0 10px;
-    }
-
-    .brand-name {
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .brand-first-name {
-      color: $primary_color;
-    }
-
-    .brand-last-name {
-      color: $secondary_color;
-      margin-left: -2px;
-    }
-  }
 
   .navbar-header {
     &.is-visible {
@@ -113,7 +112,7 @@ body {
         form {
           position: absolute;
           top: 0;
-          right: 120px;
+          right: 140px;
           padding: 20px 0;
 
           input {
@@ -229,6 +228,10 @@ body {
             }
           }
 
+          .fa {
+            padding-right: 5px;
+          }
+
           &.message {
             a {
               border: none;
@@ -296,8 +299,9 @@ body {
         }
 
         p {
-          padding: 0 12em;
+          padding: 0 30em;
           color: #ccc;
+          font-size: 14px;
         }
 
         h4 {
@@ -387,6 +391,11 @@ body {
 .alert {
   position: relative;
   top: 7px;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  text-align: center;
+  width: 300px;
 
   i {
     font-size: 20px;
@@ -396,11 +405,7 @@ body {
   }
 
   &.alert-info {
-    background-color: $primary_color;
-    color: #fff;
-    border: none;
-    font-size: 22px;
-    text-align: center;
+    background-color: #f0ad4e;
   }
 }
 

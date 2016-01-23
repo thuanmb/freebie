@@ -19,6 +19,7 @@
 //
 //= require users
 //= require messages
+//= require geo_location
 //
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
