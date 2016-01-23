@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122140927) do
+ActiveRecord::Schema.define(version: 20160123062450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 20160122140927) do
     t.datetime "updated_at",           null: false
     t.string   "gmap_location"
     t.string   "donation_instruction"
+    t.integer  "category_link_id"
   end
 
+  add_index "campaigns", ["category_link_id"], name: "index_campaigns_on_category_link_id", using: :btree
   add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
@@ -50,6 +52,14 @@ ActiveRecord::Schema.define(version: 20160122140927) do
     t.string   "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_links", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "donations", force: :cascade do |t|
@@ -138,7 +148,10 @@ ActiveRecord::Schema.define(version: 20160122140927) do
     t.datetime "main_image_updated_at"
     t.integer  "user_id"
     t.string   "status"
+    t.integer  "category_link_id"
   end
+
+  add_index "posts", ["category_link_id"], name: "index_posts_on_category_link_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.text     "content"
@@ -181,11 +194,13 @@ ActiveRecord::Schema.define(version: 20160122140927) do
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   add_foreign_key "campaign_items", "campaigns"
+  add_foreign_key "campaigns", "category_links"
   add_foreign_key "campaigns", "users"
   add_foreign_key "donations", "campaigns"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "posts", "category_links"
   add_foreign_key "requests", "posts"
   add_foreign_key "requests", "users"
 end
