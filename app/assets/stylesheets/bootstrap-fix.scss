@@ -37,3 +37,25 @@
     border-color: $primary_color;
   }
 }
+
+.split-layout {
+  margin-left: 0;
+  margin-right: 0;
+
+  img {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .content {
+    color: #fff;
+    padding: 5%;
+    padding-left: 10%;
+  }
+
+  img ~ .content {
+    padding-right: 10%;
+    padding-left: 5%;
+  }
+
+}
