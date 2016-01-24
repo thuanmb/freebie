@@ -26,7 +26,7 @@ module ApplicationHelper
 
     s << "<optgroup label=\"#{t("search_category_group")}\">"
     Category.all.each do |category|
-      s << "<option value='#{category.id}'>#{category.name}</option>"
+      s << "<option value='#{category.id}'>#{category.display_name}</option>"
     end
     s << "</optgroup>"
 
