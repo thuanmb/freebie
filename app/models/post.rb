@@ -38,6 +38,12 @@ class Post < ActiveRecord::Base.extend(Textacular)
     self.status = 'closed' unless self.status == 'closed'
   end
 
+  def set_category category_id
+    if category_id
+      self.category = Category.where(id: category_id).first
+    end
+  end
+
   def self.search(query)
   	posts = published_posts
   	posts.basic_search(query)

@@ -34,6 +34,12 @@ class Campaign < ActiveRecord::Base
     return ( self.campaign_items.inject(0.0) { |sum, e| sum + e.progress } / self.campaign_items.size ).round
   end
 
+  def set_categories category_ids
+    if category_ids
+      self.categories = Category.where(id: category_ids)
+    end
+  end
+
   def self.public_campaigns
     Campaign.where('status != ?', 'Draft')
   end

@@ -8,6 +8,8 @@
     <%= f.input :description, as: :text, :input_html => { :rows => 10 } %>
     <%= f.input :donation_instruction, as: :text, :input_html => { :rows => 4 } %>
     <%= f.input :gmap_location, as: :text %>
+    <%= f.input :categories, collection: Category.all, label_method: :display_name, selected: @campaign.categories.map{|category| category.id}, input_html: { multiple: true, class: 'form-control chosen-it' }, include_blank: false %>
+
   </div>
 
   <div class="form-actions">

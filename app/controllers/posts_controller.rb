@@ -43,6 +43,7 @@ class PostsController < ApplicationController
 
     @post = current_user.posts.build(post_params)
     @post.status = 'drafted'
+    @post.set_category params[:post][:category]
 
     respond_to do |format|
       if @post.save
@@ -60,6 +61,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        @post.set_category params[:post][:category]
         format.html { redirect_to my_posts_path, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -133,6 +135,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :main_image, :location, :category)
+      params.require(:post).permit(:title, :description, :main_image, :location)
     end
 end

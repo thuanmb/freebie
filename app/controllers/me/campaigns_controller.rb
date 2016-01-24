@@ -21,8 +21,9 @@ class Me::CampaignsController < AdminController
     @campaign.user = current_user
 
     if @campaign.save
+      @campaign.set_categories params[:campaign][:categories]
       flash[:success] = "Create '#{@campaign.title}' successfully"
-      redirect_to me_campaigns_path 
+      redirect_to me_campaigns_path
     else
       render 'me/campaigns/new'
     end
@@ -31,11 +32,12 @@ class Me::CampaignsController < AdminController
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)
+      @campaign.set_categories params[:campaign][:categories]
       flash[:success] = "Update '#{@campaign.title}' successfully"
       redirect_to me_campaign_path(@campaign)
-    else       
+    else
       render 'me/campaigns/edit'
-    end 
+    end
   end
 
   def publish
@@ -43,9 +45,9 @@ class Me::CampaignsController < AdminController
     if @campaign.publish
       flash[:success] = "Publish '#{@campaign.title}' successfully"
       redirect_to me_campaign_path(@campaign)
-    else       
+    else
       render 'me/campaigns/show'
-    end 
+    end
   end
 
   def expire
@@ -55,7 +57,7 @@ class Me::CampaignsController < AdminController
       redirect_to me_campaign_path(@campaign)
     else
       render 'me/campaigns/show'
-    end 
+    end
   end
 
   def finish
@@ -63,14 +65,14 @@ class Me::CampaignsController < AdminController
     if @campaign.finish
       flash[:success] = "'#{@campaign.title}' is set to finished."
       redirect_to me_campaign_path(@campaign)
-    else       
+    else
       render 'me/campaigns/show'
-    end 
+    end
   end
 
-  private 
+  private
 
   def campaign_params
-    params.require(:campaign).permit(:title, :description, :image_url, :gmap_location, :donation_instruction, :end_date)
-  end 
+    params.require(:campaign).permit(:title, :description, :image_url, :gmap_location, :donation_instruction, :end_date, :categories)
+  end
 end
