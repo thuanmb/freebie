@@ -8,15 +8,15 @@
 @category_people = Category.create({
   name: 'people',
   fa_icon: 'fa-user',
-  img_url: 'http://images.askmen.com/1080x540/2015/11/02-040952-lending_money_to_friends.jpg',
-  color: '#91735b'
+  img_url: 'http://www.bstrust.org/images/blog%20photos/ML_South_Africa_1923.jpg',
+  color: '#b86b35'
 })
 
 @category_clothes = Category.create({
   name: 'clothes',
   fa_icon: 'fa-shopping-bag',
-  img_url: 'http://www.effortlessgent.com/wp-content/uploads/2010/09/gettingRidOfClothes.jpg',
-  color: '#cb3635'
+  img_url: 'http://192.163.240.212/~careerk8/wp-content/uploads/2014/01/donation.jpg',
+  color: '#ea462c'
 });
 
 @category_furniture = Category.create({

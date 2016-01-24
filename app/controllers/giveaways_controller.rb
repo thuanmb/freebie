@@ -40,6 +40,7 @@ class GiveawaysController < ApplicationController
   def select_campaign
     @category = Category.find(params[:category])
     @campaigns = @category.campaigns
+    redirect_to new_post_path(category: @category) if @campaigns.empty?
   end
 
   private
