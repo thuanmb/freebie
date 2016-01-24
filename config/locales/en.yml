@@ -31,6 +31,7 @@ en:
       title: "Title"
       description: "Description"
       location: "Choose a city"
+      category: "Category"
       main_image: "Upload photos"
       submit_edit: "Update"
       submit_new: "Create"
@@ -43,7 +44,7 @@ en:
       drafted: 'Draft'
     claim: "Claim"
 
-  publish: "Publish"      
+  publish: "Publish"
   edit: "Edit"
   close: "Close"
   reopen: "Reopen"

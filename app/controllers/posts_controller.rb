@@ -21,10 +21,14 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = current_user.posts.build
+    @categories = Category.all
+    @location = current_user.contact_city
   end
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
+    @location = current_user.contact_city
   end
 
   # GET /posts/1/edit
@@ -79,7 +83,7 @@ class PostsController < ApplicationController
     @post.publish
     if @post.save
       redirect_to my_posts_path, notice: "'#{@post.title}' is published"
-    else 
+    else
       redirect_to my_posts_path
     end
   end
@@ -88,7 +92,7 @@ class PostsController < ApplicationController
     @post.close
     if @post.save
       redirect_to my_posts_path, notice: "'#{@post.title}' is closed"
-    else 
+    else
       redirect_to my_posts_path
     end
   end
@@ -103,11 +107,11 @@ class PostsController < ApplicationController
     if params[:category] != nil
       categories = params[:category].split(",")
     end
-    
+
     if params[:city] != nil
       cities = params[:city].split(",")
     end
-    
+
     # TODO: filter post by categories
     # TODO: filter post by cities
 
@@ -129,6 +133,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :main_image, :location)
+      params.require(:post).permit(:title, :description, :main_image, :location, :category)
     end
 end

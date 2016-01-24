@@ -30,6 +30,7 @@ vi:
       title: "Tiêu đề"
       description: "Mô tả"
       location: "Chọn tỉnh/thành phố"
+      category: "Phân loại"
       main_image: "Tải lên hình ảnh"
       submit_edit: "Cập nhật"
       submit_new: "Tạo"
