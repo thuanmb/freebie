@@ -6,7 +6,9 @@ en:
   commons:
     or: "or"
 
-  search_placeholder: "Search"
+  search_placeholder: "Post title, district or city name, category"
+  search_location_group: "Province or City"
+  search_category_group: "Categories"
   search_for_whole_post: "Search for old stuffs"
   give_your_old_stuffs: "Give your old stuffs"
   create_new_campaigns: "Donates"

@@ -99,6 +99,28 @@ class PostsController < ApplicationController
     render json: Post.published_posts
   end
 
+  def search
+    if params[:category] != nil
+      categories = params[:category].split(",")
+    end
+    
+    if params[:city] != nil
+      cities = params[:city].split(",")
+    end
+    
+    # TODO: filter post by categories
+    # TODO: filter post by cities
+
+    # TODO: use the filtered list
+
+    if params[:keyword] != nil
+      keyword = params[:keyword]
+      @posts = Post.search(title: keyword)
+    end
+
+    render :template => 'posts/index'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

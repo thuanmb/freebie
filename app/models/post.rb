@@ -1,4 +1,6 @@
-class Post < ActiveRecord::Base
+require 'textacular'
+
+class Post < ActiveRecord::Base.extend(Textacular)
   belongs_to :user
   has_many :post_items
   validates :status, inclusion: { in: %w(drafted published closed) }
@@ -34,6 +36,11 @@ class Post < ActiveRecord::Base
 
   def close
     self.status = 'closed' unless self.status == 'closed'
+  end
+
+  def self.search(query)
+  	posts = published_posts
+  	posts.basic_search(query)
   end
 
 end

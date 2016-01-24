@@ -1,6 +1,14 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
+<!-- searching -->
+<div class="row search-container">
+    <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
+    	<%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
+    </form>
+    <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
+</div>
+
 <div class="row">
 <% @posts.each do |post| %>
  <div class="col-md-4"> 

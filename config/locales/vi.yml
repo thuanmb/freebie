@@ -5,7 +5,9 @@ vi:
   commons:
     or: "hoặc"
 
-  search_placeholder: "Tìm Kiếm"
+  search_placeholder: "Tiêu đề, tên tỉnh hoặc thành phố, loại vật dụng"
+  search_location_group: "Tỉnh hoặc Thành phố"
+  search_category_group: "Phân loại"
   search_for_whole_post: "Tìm đồ cũ"
   give_your_old_stuffs: "Cho đồ cũ"
   create_new_campaigns: "Quyên góp"

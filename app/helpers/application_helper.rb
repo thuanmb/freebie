@@ -20,4 +20,23 @@ module ApplicationHelper
   def avatar_url_for(user, size = 50, title = user.name)
     user.avatar_url || gravatar_image_url(user.email, size: size)
   end
+
+  def search_options
+    s = ''
+
+    s << "<optgroup label=\"#{t("search_category_group")}\">"
+    Category.all.each do |category|
+      s << "<option value='#{category.id}'>#{category.name}</option>"
+    end
+    s << "</optgroup>"
+
+    s << "<optgroup label=\"#{t("search_location_group")}\">"
+    LOCATION_LIST.each do |location|
+      name = I18n.locale == :en ? location[:displayNameEN] : location[:displayName]
+      s << "<option value='#{location[:id]}'>#{name}</option>"
+    end
+    s << "</optgroup>"
+
+    s.html_safe
+  end
 end

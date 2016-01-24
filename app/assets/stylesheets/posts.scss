@@ -1,6 +1,6 @@
 .posts {
   > .container {
-    margin-top: 220px;
+    margin-top: 110px;
 
     .row {
 
@@ -22,6 +22,45 @@
   form {
     h1 {
       text-align: center;
+    }
+  }
+
+  .search-container {
+    .btn {
+      height: 53px;
+    }
+    
+    #search_chosen {
+      width: 100% !important;
+
+      .chosen-choices {
+        width: 100%;
+        border-radius: 4px;
+
+        .search-choice {
+          background-color: #5bc0de;
+          color: #fff;
+          border: none;
+          padding: 7px 20px 7px 12px;
+          background-image: none;
+          box-shadow: none;
+
+          .search-choice-close {
+            top: 8px;
+            right: 4px;
+          }
+        }
+
+        .search-field {
+          width: 100%;
+          padding: 12px 24px;
+
+          input {
+            width: 100%;
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 }

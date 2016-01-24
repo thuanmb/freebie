@@ -37,3 +37,7 @@
     border-color: $primary_color;
   }
 }
+
+.form-control:focus {
+    border-color: $primary_color;
+}
