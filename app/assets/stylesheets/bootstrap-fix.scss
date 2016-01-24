@@ -38,6 +38,10 @@
   }
 }
 
+.form-control:focus {
+    border-color: $primary_color;
+}
+
 .split-layout {
   margin-left: 0;
   margin-right: 0;
@@ -57,5 +61,4 @@
     padding-right: 10%;
     padding-left: 5%;
   }
-
 }
