@@ -36,4 +36,15 @@ class Post < ActiveRecord::Base
     self.status = 'closed' unless self.status == 'closed'
   end
 
+  def Post.find_by_categories category_ids
+    # post_relations = CategoryLink.select(:item_id).distinct.where(category: category_ids, item_type: 'Post')
+    posts = []
+    category_ids.each do |id|
+      Category.find(id).posts.each do |post|
+        posts << post
+      end
+    end
+    posts
+  end
+
 end
