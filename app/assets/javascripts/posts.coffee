@@ -46,9 +46,6 @@ $ ->
   $(".search-btn").click (e) ->
     $(".form-search").submit()
 
-  $(".location-alert").hide()
-  $(".location-select").hide()
-
   $(".location-select .yes-btn").click (e) ->
     city = $(".location-select option:selected").text()
     localStorage.currentLocation = city
@@ -71,6 +68,10 @@ $ ->
           )
 
         $(".location-alert").fadeIn()
+      else
+        if location.search.indexOf("city=") == -1
+          $(".location-loading").fadeIn()
+          window.location.href = "/posts?city=" + city.longName
     ), (-> 
       $(".location-select").fadeIn()
     )
