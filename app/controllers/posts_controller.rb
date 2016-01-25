@@ -116,7 +116,7 @@ class PostsController < ApplicationController
     categories = params[:category].split(",") if params[:category].present?
     cities = params[:city].split(",") if params[:city].present?
     keyword = params[:keyword] if params[:keyword].present?
-  
+
     # debugger
     @posts = keyword.present? ? Post.by_keyword(keyword) : Post.published
     @posts = @posts.by_location(cities) if cities.present? && !cities.empty?
