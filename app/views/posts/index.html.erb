@@ -1,47 +1,79 @@
 <div class="container">
-	<p id="notice"><%= notice %></p>
-	<section class="alert alert-success location-alert">
-		<span>
-			<span><%= t(".suggest_location_message_1") %></span>
-			<span class="city label label-success"></span>
-			<span><%= t(".suggest_location_message_2") %></span>
-		</span>
-		<div class="btn-container">
-			<button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
-			<button class="btn btn-info yes-btn"><%= t(".yes_btn") %></button>
-		</div>
-	</section>
+  <!-- notice -->
+  <p id="notice"><%= notice %></p>
 
-	<section class="alert alert-success location-select">
-		<p><%= t(".location_selection_message") %></p>
-		<%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
-		<div class="btn-container">
-			<button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
-			<button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>
-		</div>
-	</section>
+  <!-- location selection -->
+  <section class="alert alert-success location-alert">
+    <span>
+      <span><%= t(".suggest_location_message_1") %></span>
+      <span class="city label label-success"></span>
+      <span><%= t(".suggest_location_message_2") %></span>
+    </span>
+    <div class="btn-container">
+      <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
+      <button class="btn btn-info yes-btn"><%= t(".yes_btn") %></button>
+    </div>
+  </section>
 
-	<!-- searching -->
-	<div class="row search-container">
-	    <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
-	    	<%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
-	    </form>
-	    <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
-	</div>
+  <section class="alert alert-success location-select">
+    <p><%= t(".location_selection_message") %></p>
+    <%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
+    <div class="btn-container">
+      <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
+      <button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>
+    </div>
+  </section>
 
-	<div class="row">
-	<% @posts.each do |post| %>
-	 <div class="col-md-4"> 
-	  <div class="card">
-	  <%= link_to (image_tag post.main_image_url), post %>
-	    <div class="card-block">
-	    	<h4 class="card-title"><%= link_to post.title, post_path(post) %></h6></h4>
-	      <p class="card-text"><%= truncate(post.description, length: 50) %></p>
-	      <span class="card-text"><i class="fa fa-map-marker"></i> <%= post.location %></span>
-	      <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
-	    </div>
-	  </div> 
-	  </div> 
-	<% end %>
-	</div>
+  <!-- searching -->
+  <!-- <div class="row search-container">
+      <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
+        <%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
+      </form>
+      <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
+  </div> -->
+
+<!-- searching -->
+<div class="row search-container">
+  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline col-xs-11 col-md-11 col-lg-11") do %>
+    <%= text_field_tag :keyword, nil, class: "form-control warning-outline", id: "search-box" %>
+    <input type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn">
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-2"> 
+    
+    <ul class="category-list">
+    <%= form_tag('/posts', method: :get) do %>
+      <%= label_tag I18n.t('posts.form.location') %>
+      <%= select_tag :location_id, options_for_select(location_options) %>
+
+      <hr/>
+      <%= label_tag I18n.t('posts.form.category') %>
+      <% Category.all.each do |c| %>
+        <li>
+          <%= check_box_tag c.display_name %>
+          <%= label_tag c.display_name %>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-9"> 
+    <% @posts.each do |post| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to (image_tag post.main_image_url), post %>
+          <div class="card-block">
+            <h4 class="card-title"><%= link_to post.title, post_path(post) %></h6></h4>
+            <p class="card-text"><%= truncate(post.description, length: 50) %></p>
+            <span class="card-text"><i class="fa fa-map-marker"></i> <%= location_name(post.location) %></span>
+            <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
+          </div> 
+        </div> 
+      </div> 
+    <% end %>
+  </div>
 </div>

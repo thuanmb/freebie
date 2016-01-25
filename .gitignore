@@ -16,3 +16,4 @@ run.sh
 /public/system/posts/images/
 /public/system/posts/
 .idea
+.byebug_history

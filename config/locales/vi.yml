@@ -30,7 +30,7 @@ vi:
       header: "Cho đồ cũ"
       title: "Tiêu đề, ví dụ áo thun bamboo cũ đã dùng 2 năm"
       description: "Mô tả về món đồ bạn đang muốn cho"
-      location: "Chọn tỉnh/thành phố"
+      location: "Khu vực"
       category: "Phân loại"
       main_image: "Tải lên hình ảnh"
       submit_edit: "Cập nhật"
@@ -50,6 +50,7 @@ vi:
       reload_page_btn: "Tải lại trang với vị trí này"
       yes_btn: "Có"
       no_btn: "Không. Cảm ơn!"
+    location: "Khu vực"
 
   publish: "Đăng"
   edit: "Sửa"

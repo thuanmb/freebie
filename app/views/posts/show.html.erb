@@ -3,7 +3,7 @@
     <div class="col-md-3 sidebar">
       <h4 class="location">
         <%= fa_icon "map-marker" %>
-        <%= @post.location %>
+        <%= location_name(@post.location) %>
       </h4>
       <div class="clearfix"></div>
       <a href="#">
@@ -16,9 +16,12 @@
       </div>
     </div>
     <div class="col-md-9 content">
-      <div class="hero-img hidden-sm-down" style="background-image: url('http://pattayatoday.net/wp-content/uploads/2015/09/CHARITY-MIDNIGHT-RUN-2015-600x315.jpg')"><!-- url(@post.main_image.url) --></div>
+      <div class="hero-img hidden-sm-down" style="background-image: url(<%= @post.main_image_url %>)"><!-- url(@post.main_image.url) --></div>
       <div class="container">
         <h3><%= @post.title %></h3>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_sharing_toolbox"></div>
+
         <div class="extended-description">
           <%= @post.description %>
         </div>

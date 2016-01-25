@@ -39,4 +39,19 @@ module ApplicationHelper
 
     s.html_safe
   end
+
+  def location_options
+    location_arr = []
+    LOCATION_LIST.each do |location|
+      name = I18n.locale == :en ? location[:displayNameEN] : location[:displayName]
+      location_arr << [ name, location[:id] ]
+    end
+    location_arr
+  end 
+
+  def location_name(location_id)
+    location = LOCATION_LIST.find { |e| e[:id] = location_id }
+    I18n.locale == :en ? location[:displayNameEN] : location[:displayName]
+  end 
+
 end
