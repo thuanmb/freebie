@@ -39,10 +39,17 @@ vi:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
     status:
-      published: 'Đang đăng'
-      closed: 'Đã đóng'
-      drafted: 'Lưu nháp'
+      published: "Đang đăng"
+      closed: "Đã đóng"
+      drafted: "Lưu nháp"
     claim: "Yêu cầu"
+    index:
+      suggest_location_message_1: "Đã xác định vị trí của bạn là "
+      suggest_location_message_2: ". Bạn có muốn tải lại trang với vị trí này?"
+      location_selection_message: "Xin hãy chọn tỉnh hoặc thành phố của bài đăng bạn đang muốn tìm kiếm!"
+      reload_page_btn: "Tải lại trang với vị trí này"
+      yes_btn: "Có"
+      no_btn: "Không. Cảm ơn!"
     location: "Khu vực"
 
   publish: "Đăng"

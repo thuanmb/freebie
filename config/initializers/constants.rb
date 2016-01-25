@@ -2,7 +2,7 @@ LOCATION_LIST = [
   {
     id: "location_0",
     name: [
-      "Hà Nội"
+      "Hà Nội", "Ha Noi"
     ],
     displayName: "Hà Nội",
     displayNameEN: "Ha Noi"
@@ -10,7 +10,7 @@ LOCATION_LIST = [
   {
     id: "location_1",
     name: [
-      "Hồ Chí Minh", "TP. Hồ Chính Minh", "Sài Gòn"
+      "Hồ Chí Minh", "TP. Hồ Chính Minh", "Sài Gòn", "Ho Chi Minh"
     ],
     displayName: "Hồ Chí Minh",
     displayNameEN: "Ho Chi Minh"
@@ -18,7 +18,7 @@ LOCATION_LIST = [
   {
     id: "location_2",
     name: [
-      "Đà Nẵng"
+      "Đà Nẵng", "Da Nang"
     ],
     displayName: "Đà Nẵng",
     displayNameEN: "Da Nang"
@@ -26,7 +26,7 @@ LOCATION_LIST = [
   {
     id: "location_3",
     name: [
-      "Cần Thơ"
+      "Cần Thơ", "Can Tho"
     ],
     displayName: "Cần Thơ",
     displayNameEN: "Can Tho"
@@ -34,7 +34,7 @@ LOCATION_LIST = [
   {
     id: "location_4",
     name: [
-      "Hải Phòng"
+      "Hải Phòng", "Hai Phong"
     ],
     displayName: "Hải Phòng",
     displayNameEN: "Hai Phong"
@@ -50,7 +50,7 @@ LOCATION_LIST = [
   {
     id: "location_6",
     name: [
-      "Bà Rịa - Vũng Tàu"
+      "Bà Rịa - Vũng Tàu", "Ba Ria - Vung Tau"
     ],
     displayName: "Bà Rịa - Vũng Tàu",
     displayNameEN: "Ba Ria - Vung Tau"
@@ -58,7 +58,7 @@ LOCATION_LIST = [
   {
     id: "location_7",
     name: [
-      "Bạc Liêu"
+      "Bạc Liêu", "Bac Lieu"
     ],
     displayName: "Bạc Liêu",
     displayNameEN: "Bac Lieu"
@@ -66,7 +66,7 @@ LOCATION_LIST = [
   {
     id: "location_8",
     name: [
-      "Bắc Giang"
+      "Bắc Giang", "Bac Giang"
     ],
     displayName: "Bắc Giang",
     displayNameEN: "Bac Giang"
@@ -74,7 +74,7 @@ LOCATION_LIST = [
   {
     id: "location_9",
     name: [
-      "Bắc Kạn"
+      "Bắc Kạn", "Bac Kan"
     ],
     displayName: "Bắc Kạn",
     displayNameEN: "Bac Kan"
@@ -82,7 +82,7 @@ LOCATION_LIST = [
   {
     id: "location_10",
     name: [
-      "Bắc Ninh"
+      "Bắc Ninh", "Bac Ninh"
     ],
     displayName: "Bắc Ninh",
     displayNameEN: "Bac Ninh"
@@ -90,7 +90,7 @@ LOCATION_LIST = [
   {
     id: "location_11",
     name: [
-      "Bến Tre"
+      "Bến Tre", "Ben Tre"
     ],
     displayName: "Bến Tre",
     displayNameEN: "Ben Tre"
@@ -98,7 +98,7 @@ LOCATION_LIST = [
   {
     id: "location_12",
     name: [
-      "Bình Dương"
+      "Bình Dương", "Binh Duong"
     ],
     displayName: "Bình Dương",
     displayNameEN: "Binh Duong"
@@ -106,7 +106,7 @@ LOCATION_LIST = [
   {
     id: "location_13",
     name: [
-      "Bình Định"
+      "Bình Định", "Binh Dinh"
     ],
     displayName: "Bình Định",
     displayNameEN: "Binh Dinh"
@@ -114,7 +114,7 @@ LOCATION_LIST = [
   {
     id: "location_14",
     name: [
-      "Bình Phước"
+      "Bình Phước", "Binh Phuoc"
     ],
     displayName: "Bình Phước",
     displayNameEN: "Binh Phuoc"
@@ -122,7 +122,7 @@ LOCATION_LIST = [
   {
     id: "location_15",
     name: [
-      "Bình Thuận"
+      "Bình Thuận", "Binh Thuan"
     ],
     displayName: "Bình Thuận",
     displayNameEN: "Binh Thuan"
@@ -130,7 +130,7 @@ LOCATION_LIST = [
   {
     id: "location_16",
     name: [
-      "Cà Mau"
+      "Cà Mau", "Ca Mau"
     ],
     displayName: "Cà Mau",
     displayNameEN: "Ca Mau"
@@ -138,7 +138,7 @@ LOCATION_LIST = [
   {
     id: "location_17",
     name: [
-      "Cao Bằng"
+      "Cao Bằng", "Cao Bang"
     ],
     displayName: "Cao Bằng",
     displayNameEN: "Cao Bang"
@@ -146,7 +146,7 @@ LOCATION_LIST = [
   {
     id: "location_18",
     name: [
-      "Đắk Lắk"
+      "Đắk Lắk", "Dak Lak"
     ],
     displayName: "Đắk Lắk",
     displayNameEN: "Dak Lak"
@@ -154,7 +154,7 @@ LOCATION_LIST = [
   {
     id: "location_19",
     name: [
-      "Đắk Nông"
+      "Đắk Nông", "Dak Nong"
     ],
     displayName: "Đắk Nông",
     displayNameEN: "Dak Nong"
@@ -162,7 +162,7 @@ LOCATION_LIST = [
   {
     id: "location_20",
     name: [
-      "Điện Biên"
+      "Điện Biên", "Dien Bien"
     ],
     displayName: "Điện Biên",
     displayNameEN: "Dien Bien"
@@ -170,7 +170,7 @@ LOCATION_LIST = [
   {
     id: "location_21",
     name: [
-      "Đồng Nai"
+      "Đồng Nai", "Dong Nai"
     ],
     displayName: "Đồng Nai",
     displayNameEN: "Dong Nai"
@@ -178,7 +178,7 @@ LOCATION_LIST = [
   {
     id: "location_22",
     name: [
-      "Đồng Tháp"
+      "Đồng Tháp", "Dong Thap"
     ],
     displayName: "Đồng Tháp",
     displayNameEN: "Dong Thap"
@@ -186,7 +186,7 @@ LOCATION_LIST = [
   {
     id: "location_23",
     name: [
-      "Gia Lai"
+      "Gia Lai", "Gia Lai"
     ],
     displayName: "Gia Lai",
     displayNameEN: "Gia Lai"
@@ -194,7 +194,7 @@ LOCATION_LIST = [
   {
     id: "location_24",
     name: [
-      "Hà Giang"
+      "Hà Giang", "Ha Giang"
     ],
     displayName: "Hà Giang",
     displayNameEN: "Ha Giang"
@@ -202,7 +202,7 @@ LOCATION_LIST = [
   {
     id: "location_25",
     name: [
-      "Hà Nam"
+      "Hà Nam", "Ha Nam"
     ],
     displayName: "Hà Nam",
     displayNameEN: "Ha Nam"
@@ -210,7 +210,7 @@ LOCATION_LIST = [
   {
     id: "location_26",
     name: [
-      "Hà Tĩnh"
+      "Hà Tĩnh", "Ha Tinh"
     ],
     displayName: "Hà Tĩnh",
     displayNameEN: "Ha Tinh"
@@ -218,7 +218,7 @@ LOCATION_LIST = [
   {
     id: "location_27",
     name: [
-      "Hải Dương"
+      "Hải Dương", "Hai Duong"
     ],
     displayName: "Hải Dương",
     displayNameEN: "Hai Duong"
@@ -226,7 +226,7 @@ LOCATION_LIST = [
   {
     id: "location_28",
     name: [
-      "Hậu Giang"
+      "Hậu Giang", "Hau Giang"
     ],
     displayName: "Hậu Giang",
     displayNameEN: "Hau Giang"
@@ -234,7 +234,7 @@ LOCATION_LIST = [
   {
     id: "location_29",
     name: [
-      "Hoà Bình"
+      "Hoà Bình", "Hoa Binh"
     ],
     displayName: "Hoà Bình",
     displayNameEN: "Hoa Binh"
@@ -242,7 +242,7 @@ LOCATION_LIST = [
   {
     id: "location_30",
     name: [
-      "Hưng Yên"
+      "Hưng Yên", "Hung Yen"
     ],
     displayName: "Hưng Yên",
     displayNameEN: "Hung Yen"
@@ -250,7 +250,7 @@ LOCATION_LIST = [
   {
     id: "location_31",
     name: [
-      "Khánh Hoà"
+      "Khánh Hoà", "Khanh Hoa"
     ],
     displayName: "Khánh Hoà",
     displayNameEN: "Khanh Hoa"
@@ -258,7 +258,7 @@ LOCATION_LIST = [
   {
     id: "location_32",
     name: [
-      "Kiên Giang"
+      "Kiên Giang", "Kien Giang"
     ],
     displayName: "Kiên Giang",
     displayNameEN: "Kien Giang"
@@ -274,7 +274,7 @@ LOCATION_LIST = [
   {
     id: "location_34",
     name: [
-      "Lai Châu"
+      "Lai Châu", "Lai Chau"
     ],
     displayName: "Lai Châu",
     displayNameEN: "Lai Chau"
@@ -282,7 +282,7 @@ LOCATION_LIST = [
   {
     id: "location_35",
     name: [
-      "Lạng Sơn"
+      "Lạng Sơn", "Lang Son"
     ],
     displayName: "Lạng Sơn",
     displayNameEN: "Lang Son"
@@ -290,7 +290,7 @@ LOCATION_LIST = [
   {
     id: "location_36",
     name: [
-      "Lào Cai"
+      "Lào Cai", "Lao Cai"
     ],
     displayName: "Lào Cai",
     displayNameEN: "Lao Cai"
@@ -298,7 +298,7 @@ LOCATION_LIST = [
   {
     id: "location_37",
     name: [
-      "Lâm Đồng"
+      "Lâm Đồng", "Lam Dong"
     ],
     displayName: "Lâm Đồng",
     displayNameEN: "Lam Dong"
@@ -314,7 +314,7 @@ LOCATION_LIST = [
   {
     id: "location_39",
     name: [
-      "Nam Định"
+      "Nam Định", "Nam Dinh"
     ],
     displayName: "Nam Định",
     displayNameEN: "Nam Dinh"
@@ -322,7 +322,7 @@ LOCATION_LIST = [
   {
     id: "location_40",
     name: [
-      "Nghệ An"
+      "Nghệ An", "Nghe An"
     ],
     displayName: "Nghệ An",
     displayNameEN: "Nghe An"
@@ -330,7 +330,7 @@ LOCATION_LIST = [
   {
     id: "location_41",
     name: [
-      "Ninh Bình"
+      "Ninh Bình", "Ninh Binh"
     ],
     displayName: "Ninh Bình",
     displayNameEN: "Ninh Binh"
@@ -338,7 +338,7 @@ LOCATION_LIST = [
   {
     id: "location_42",
     name: [
-      "Ninh Thuận"
+      "Ninh Thuận", "Ninh Thuan"
     ],
     displayName: "Ninh Thuận",
     displayNameEN: "Ninh Thuan"
@@ -346,7 +346,7 @@ LOCATION_LIST = [
   {
     id: "location_43",
     name: [
-      "Phú Thọ"
+      "Phú Thọ", "Phu Tho"
     ],
     displayName: "Phú Thọ",
     displayNameEN: "Phu Tho"
@@ -354,7 +354,7 @@ LOCATION_LIST = [
   {
     id: "location_44",
     name: [
-      "Phú Yên"
+      "Phú Yên", "Phu Yen"
     ],
     displayName: "Phú Yên",
     displayNameEN: "Phu Yen"
@@ -362,7 +362,7 @@ LOCATION_LIST = [
   {
     id: "location_45",
     name: [
-      "Quảng Bình"
+      "Quảng Bình", "Quang Binh"
     ],
     displayName: "Quảng Bình",
     displayNameEN: "Quang Binh"
@@ -370,7 +370,7 @@ LOCATION_LIST = [
   {
     id: "location_46",
     name: [
-      "Quảng Nam"
+      "Quảng Nam", "Quang Nam"
     ],
     displayName: "Quảng Nam",
     displayNameEN: "Quang Nam"
@@ -378,7 +378,7 @@ LOCATION_LIST = [
   {
     id: "location_47",
     name: [
-      "Quảng Ngãi"
+      "Quảng Ngãi", "Quang Ngai"
     ],
     displayName: "Quảng Ngãi",
     displayNameEN: "Quang Ngai"
@@ -386,7 +386,7 @@ LOCATION_LIST = [
   {
     id: "location_48",
     name: [
-      "Quảng Ninh"
+      "Quảng Ninh", "Quang Ninh"
     ],
     displayName: "Quảng Ninh",
     displayNameEN: "Quang Ninh"
@@ -394,7 +394,7 @@ LOCATION_LIST = [
   {
     id: "location_49",
     name: [
-      "Quảng Trị"
+      "Quảng Trị", "Quang Tri"
     ],
     displayName: "Quảng Trị",
     displayNameEN: "Quang Tri"
@@ -402,7 +402,7 @@ LOCATION_LIST = [
   {
     id: "location_50",
     name: [
-      "Sóc Trăng"
+      "Sóc Trăng", "Soc Trang"
     ],
     displayName: "Sóc Trăng",
     displayNameEN: "Soc Trang"
@@ -410,7 +410,7 @@ LOCATION_LIST = [
   {
     id: "location_51",
     name: [
-      "Sơn La"
+      "Sơn La", "Son La"
     ],
     displayName: "Sơn La",
     displayNameEN: "Son La"
@@ -418,7 +418,7 @@ LOCATION_LIST = [
   {
     id: "location_52",
     name: [
-      "Tây Ninh"
+      "Tây Ninh", "Tay Ninh"
     ],
     displayName: "Tây Ninh",
     displayNameEN: "Tay Ninh"
@@ -426,7 +426,7 @@ LOCATION_LIST = [
   {
     id: "location_53",
     name: [
-      "Thái Bình"
+      "Thái Bình", "Thai Binh"
     ],
     displayName: "Thái Bình",
     displayNameEN: "Thai Binh"
@@ -434,7 +434,7 @@ LOCATION_LIST = [
   {
     id: "location_54",
     name: [
-      "Thái Nguyên"
+      "Thái Nguyên", "Thai Nguyen"
     ],
     displayName: "Thái Nguyên",
     displayNameEN: "Thai Nguyen"
@@ -442,7 +442,7 @@ LOCATION_LIST = [
   {
     id: "location_55",
     name: [
-      "Thanh Hoá"
+      "Thanh Hoá", "Thanh Hoa"
     ],
     displayName: "Thanh Hoá",
     displayNameEN: "Thanh Hoa"
@@ -450,7 +450,7 @@ LOCATION_LIST = [
   {
     id: "location_56",
     name: [
-      "Thừa Thiên - Huế"
+      "Thừa Thiên - Huế", "Thua Thien - Hue"
     ],
     displayName: "Thừa Thiên - Huế",
     displayNameEN: "Thua Thien - Hue"
@@ -458,7 +458,7 @@ LOCATION_LIST = [
   {
     id: "location_57",
     name: [
-      "Tiền Giang"
+      "Tiền Giang", "Tien Giang"
     ],
     displayName: "Tiền Giang",
     displayNameEN: "Tien Giang"
@@ -466,7 +466,7 @@ LOCATION_LIST = [
   {
     id: "location_58",
     name: [
-      "Trà Vinh"
+      "Trà Vinh", "Tra Vinh"
     ],
     displayName: "Trà Vinh",
     displayNameEN: "Tra Vinh"
@@ -474,7 +474,7 @@ LOCATION_LIST = [
   {
     id: "location_59",
     name: [
-      "Tuyên Quang"
+      "Tuyên Quang", "Tuyen Quang"
     ],
     displayName: "Tuyên Quang",
     displayNameEN: "Tuyen Quang"
@@ -482,7 +482,7 @@ LOCATION_LIST = [
   {
     id: "location_60",
     name: [
-      "Vĩnh Long"
+      "Vĩnh Long", "Vinh Long"
     ],
     displayName: "Vĩnh Long",
     displayNameEN: "Vinh Long"
@@ -490,7 +490,7 @@ LOCATION_LIST = [
   {
     id: "location_61",
     name: [
-      "Vĩnh Phúc"
+      "Vĩnh Phúc", "Vinh Phuc"
     ],
     displayName: "Vĩnh Phúc",
     displayNameEN: "Vinh Phuc"
@@ -498,7 +498,7 @@ LOCATION_LIST = [
   {
     id: "location_62",
     name: [
-      "Yên Bái"
+      "Yên Bái", "Yen Bai"
     ],
     displayName: "Yên Bái",
     displayNameEN: "Yen Bai"

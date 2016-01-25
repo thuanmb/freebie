@@ -1,5 +1,36 @@
 <div class="container">
+  <!-- notice -->
   <p id="notice"><%= notice %></p>
+
+  <!-- location selection -->
+  <section class="alert alert-success location-alert">
+    <span>
+      <span><%= t(".suggest_location_message_1") %></span>
+      <span class="city label label-success"></span>
+      <span><%= t(".suggest_location_message_2") %></span>
+    </span>
+    <div class="btn-container">
+      <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
+      <button class="btn btn-info yes-btn"><%= t(".yes_btn") %></button>
+    </div>
+  </section>
+
+  <section class="alert alert-success location-select">
+    <p><%= t(".location_selection_message") %></p>
+    <%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
+    <div class="btn-container">
+      <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
+      <button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>
+    </div>
+  </section>
+
+  <!-- searching -->
+  <!-- <div class="row search-container">
+      <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
+        <%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
+      </form>
+      <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
+  </div> -->
 
 <!-- searching -->
 <div class="row search-container">

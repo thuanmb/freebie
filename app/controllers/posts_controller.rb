@@ -6,6 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.published_posts
+
+    location_id = get_location_id
+
+    if location_id != nil
+      @posts = @posts.by_location(location_id)
+    end
   end
 
   # GET /posts/1
@@ -128,5 +134,15 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :description, :main_image, :location)
+    end
+
+    def get_location_id
+      if params[:city] != nil
+        LOCATION_LIST.each do |location|
+          if location[:name].include?(params[:city])
+            return location[:id]
+          end
+        end
+      end
     end
 end

@@ -13,8 +13,9 @@ class GeoLocation
         @successCb @getCity data
 
   getCity: (data) =>
-    if data.results && data.results.length > 0
-      addressComponents = data.results[0].address_components
+    index = if isENLocale then 4 else 0
+    if data.results && data.results.length > index
+      addressComponents = data.results[index].address_components
 
       result = null
       for component in addressComponents

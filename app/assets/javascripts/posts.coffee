@@ -45,3 +45,35 @@ $ ->
 
   $(".search-btn").click (e) ->
     $(".form-search").submit()
+
+  $(".location-alert").hide()
+  $(".location-select").hide()
+
+  $(".location-select .yes-btn").click (e) ->
+    city = $(".location-select option:selected").text()
+    localStorage.currentLocation = city
+    window.location.href = "/posts?city=" + city
+  
+  $(".location-select .no-btn").click (e) ->
+    $(".location-select").fadeOut()
+
+  if location.pathname == "/posts"
+    geoLocation = new GeoLocation ((city) ->
+      if typeof(Storage) != "undefined" && city.longName != localStorage.currentLocation
+        $(".location-alert .city").text city.longName
+        $(".location-alert .yes-btn").click (e) ->
+          localStorage.currentLocation = city.longName
+          window.location.href = "/posts?city=" + city.longName
+        
+        $(".location-alert .no-btn").click (e) ->
+          $(".location-alert").fadeOut(-> 
+            $(".location-select").fadeIn()
+          )
+
+        $(".location-alert").fadeIn()
+    ), (-> 
+      $(".location-select").fadeIn()
+    )
+      
+      
+    geoLocation.getLocation()

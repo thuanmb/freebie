@@ -44,6 +44,13 @@ en:
       closed: 'Closed'
       drafted: 'Draft'
     claim: "Claim"
+    index:
+      suggest_location_message_1: "Detect your current location at "
+      suggest_location_message_2: ". Do you want to reload the page with this location?"
+      location_selection_message: "Please select a province or city of the posts you're looking for!"
+      reload_page_btn: "Reload page with this location"
+      yes_btn: "Yes"
+      no_btn: "No. Thanks!"
     location: "Area"
 
   publish: "Publish"
