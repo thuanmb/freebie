@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     location_id = get_location_id
 
     if location_id != nil
-      @posts = Post.by_location(@posts, location_id)
+      @posts = @posts.by_location(location_id)
     end
   end
 
