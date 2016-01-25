@@ -55,7 +55,7 @@
     .btn {
       height: 53px;
     }
-    
+
     #search_chosen {
       width: 100% !important;
 
@@ -102,6 +102,11 @@
     background-image: none;
     background-color: transparent;
     border-color: #f0ad4e;
+  }
+
+  .btn-file {
+    display: block;
+    height: initial;
   }
 
 }

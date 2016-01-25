@@ -6,7 +6,7 @@
     <%= f.input :description, label: false, as: :text, placeholder: t(".description"), :input_html => { :rows => 10 }  %>
     <%= f.input :location, label: t(".location"), collection: location_options, selected: @location, input_html: { class: 'chosen-it' }  %>
     <%= f.input :category, collection: @categories, label_method: :display_name, label: t(".category"), selected: params[:category], include_blank: true, placeholder: t(".location"), input_html: { class: 'chosen-it'} %>
-    <%= f.input :main_image, as: :file, class: 'form-control fileinput-button', label: t(".main_image") %>
+    <%= f.input :main_image, as: :file, label: t(".main_image"), label_html: {class: 'form-control btn btn-secondary btn-sm btn-file btn-block'}, input_html: {class: 'hidden-xl-down'} %>
   </div>
 
   <div class="form-actions">
