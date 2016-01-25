@@ -8,7 +8,10 @@ class PostsController < ApplicationController
     @posts = Post.published_posts
 
     location_id = get_location_id
-    @posts = Post.by_location(@posts, location_id)
+
+    if location_id != nil
+      @posts = Post.by_location(@posts, location_id)
+    end
   end
 
   # GET /posts/1
@@ -142,9 +145,9 @@ class PostsController < ApplicationController
     end
 
     def get_location_id
-      if params[:location] != nil
+      if params[:city] != nil
         LOCATION_LIST.each do |location|
-          if location[:name].include?(params[:location])
+          if location[:name].include?(params[:city])
             return location[:id]
           end
         end

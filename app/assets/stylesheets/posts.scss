@@ -34,6 +34,17 @@
     }
   }
 
+  .location-select {
+    select {
+      height: 40px;
+      width: 35%;
+      padding: 20px;
+      margin-top: 15px;
+      color: #f4f4f4;
+      background-color: #5cb85c;
+    }
+  }
+
   .search-container {
     padding-right: 15px;
 

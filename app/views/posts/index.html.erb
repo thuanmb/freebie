@@ -3,7 +3,7 @@
 	<section class="alert alert-success location-alert">
 		<span>
 			<span><%= t(".suggest_location_message_1") %></span>
-			<span class="city label label-info"></span>
+			<span class="city label label-success"></span>
 			<span><%= t(".suggest_location_message_2") %></span>
 		</span>
 		<div class="btn-container">
@@ -14,6 +14,7 @@
 
 	<section class="alert alert-success location-select">
 		<p><%= t(".location_selection_message") %></p>
+		<%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
 		<div class="btn-container">
 			<button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
 			<button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>

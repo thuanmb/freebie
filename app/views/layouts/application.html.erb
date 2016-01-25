@@ -286,5 +286,9 @@
     }
   });
 </script>
+
+<%= javascript_tag do %>
+  window.isENLocale = <%= I18n.locale == :en %>;
+<% end %>
 </body>
 </html>

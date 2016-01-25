@@ -47,7 +47,7 @@ vi:
       suggest_location_message_1: "Đã xác định vị trí của bạn là "
       suggest_location_message_2: ". Bạn có muốn tải lại trang với vị trí này?"
       location_selection_message: "Xin hãy chọn tỉnh hoặc thành phố của bài đăng bạn đang muốn tìm kiếm!"
-      reload_page_btn: "Tải lại"
+      reload_page_btn: "Tải lại trang với vị trí này"
       yes_btn: "Có"
       no_btn: "Không. Cảm ơn!"
 
