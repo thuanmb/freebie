@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.published_posts
+    @posts = Post.published
 
     location_id = get_location_id
 
@@ -109,7 +109,7 @@ class PostsController < ApplicationController
   def byLocation
     # TODO: get the posts by its location
     # location = params[:location] // for example: Hồ Chí Minh
-    render json: Post.published_posts
+    render json: Post.published
   end
 
   def search
@@ -120,8 +120,7 @@ class PostsController < ApplicationController
     # debugger
     @posts = keyword.present? ? Post.by_keyword(keyword) : Post.published
     @posts = @posts.by_location(cities) if cities.present? && !cities.empty?
-    # TODO: filter post by categories
-    # @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
+    @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
 
     render :template => 'posts/index'
   end
@@ -138,12 +137,16 @@ class PostsController < ApplicationController
     end
 
     def get_location_id
+      # debugger
       if params[:city] != nil
         LOCATION_LIST.each do |location|
           if location[:name].include?(params[:city])
             return location[:id]
           end
         end
+        params[:city]
+      else 
+        ""
       end
     end
 end
