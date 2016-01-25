@@ -25,7 +25,18 @@
     }
   }
 
+  .location-alert, .location-select {
+    font-size: 16px;
+    width: 100%;
+
+    .btn-container {
+      margin-top: 14px;
+    }
+  }
+
   .search-container {
+    padding-right: 15px;
+
     .btn {
       height: 53px;
     }

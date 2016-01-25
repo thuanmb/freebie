@@ -45,3 +45,27 @@ $ ->
 
   $(".search-btn").click (e) ->
     $(".form-search").submit()
+
+  $(".location-alert").hide()
+  $(".location-select").hide()
+
+  if location.pathname == "/posts"
+    geoLocation = new GeoLocation ((city) ->
+      if typeof(Storage) != "undefined" && city.longName != localStorage.currentLocation
+        $(".location-alert .city").text city.longName
+        $(".location-alert .yes-btn").click (e) ->
+          localStorage.currentLocation = city.longName
+          window.location.href = "/posts?location=" + city.longName;
+        
+        $(".location-alert .no-btn").click (e) ->
+          $(".location-alert").fadeOut(-> 
+            $(".location-select").fadeIn()
+          )
+
+        $(".location-alert").fadeIn()
+    ), (-> 
+      $(".location-select").fadeIn()
+    )
+      
+      
+    geoLocation.getLocation()
