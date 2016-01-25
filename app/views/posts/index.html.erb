@@ -3,10 +3,10 @@
 
 <!-- searching -->
 <div class="row search-container">
-    <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
-    	<%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
-    </form>
-    <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
+  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline col-xs-11 col-md-11 col-lg-11") do %>
+    <%= text_field_tag :keyword, nil, class: "form-control warning-outline", id: "search-box" %>
+    <input type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn">
+  <% end %>
 </div>
 
 <div class="row">
@@ -38,7 +38,7 @@
           <div class="card-block">
             <h4 class="card-title"><%= link_to post.title, post_path(post) %></h6></h4>
             <p class="card-text"><%= truncate(post.description, length: 50) %></p>
-            <span class="card-text"><i class="fa fa-map-marker"></i> <%= post.location %></span>
+            <span class="card-text"><i class="fa fa-map-marker"></i> <%= location_name(post.location) %></span>
             <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
           </div> 
         </div> 
