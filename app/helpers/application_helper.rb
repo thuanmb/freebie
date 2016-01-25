@@ -49,4 +49,9 @@ module ApplicationHelper
     location_arr
   end 
 
+  def location_name(location_id)
+    location = LOCATION_LIST.find { |e| e[:id] = location_id }
+    I18n.locale == :en ? location[:displayNameEN] : location[:displayName]
+  end 
+
 end

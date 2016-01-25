@@ -106,24 +106,15 @@ class PostsController < ApplicationController
   end
 
   def search
-    if params[:category] != nil
-      categories = params[:category].split(",")
-    end
-
-    if params[:city] != nil
-      cities = params[:city].split(",")
-    end
-
+    categories = params[:category].split(",") if params[:category].present?
+    cities = params[:city].split(",") if params[:city].present?
+    keyword = params[:keyword] if params[:keyword].present?
+  
+    # debugger
+    @posts = keyword.present? ? Post.by_keyword(keyword) : Post.published
+    @posts = @posts.by_location(cities) if cities.present? && !cities.empty?
     # TODO: filter post by categories
-    # TODO: filter post by cities
-    # TODO: use the filtered list
-
-    if params[:keyword] != nil
-      keyword = params[:keyword]
-      @posts = Post.search(title: keyword)
-    else
-      @posts = Post.published_posts
-    end
+    # @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
 
     render :template => 'posts/index'
   end

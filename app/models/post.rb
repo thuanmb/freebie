@@ -10,6 +10,11 @@ class Post < ActiveRecord::Base.extend(Textacular)
   has_attached_file :main_image, styles: {medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\Z/
 
+  scope :published, ->()                    { where('status = ?', 'published') }
+  scope :by_keyword, ->( keyword )          { basic_search(keyword) }
+  scope :by_location, ->( location_id )     { where( location: location_id) }
+  scope :by_categories, ->( category_ids )  { where( category: category_ids) }
+
   def self.published_posts
     Post.where('status = ?', 'published')
   end
