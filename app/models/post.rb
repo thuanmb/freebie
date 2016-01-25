@@ -26,10 +26,6 @@ class Post < ActiveRecord::Base.extend(Textacular)
     self.status == 'closed'
   end
 
-  def drafted?
-    self.status == 'drafted'
-  end
-
   def publish
     self.status = 'published' unless self.status == 'published'
   end
@@ -45,8 +41,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
   end
 
   def self.search(query)
-  	posts = published_posts
-  	posts.basic_search(query)
+    Post.basic_search(query)
   end
 
   def Post.find_by_categories category_ids

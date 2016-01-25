@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col-md-9 content">
-      <div class="hero-img hidden-sm-down" style="background-image: url('http://pattayatoday.net/wp-content/uploads/2015/09/CHARITY-MIDNIGHT-RUN-2015-600x315.jpg')"><!-- url(@post.main_image.url) --></div>
+      <div class="hero-img hidden-sm-down" style="background-image: url(<%= @post.main_image_url %>)"><!-- url(@post.main_image.url) --></div>
       <div class="container">
         <h3><%= @post.title %></h3>
         <div class="extended-description">

@@ -44,6 +44,7 @@ en:
       closed: 'Closed'
       drafted: 'Draft'
     claim: "Claim"
+    location: "Area"
 
   publish: "Publish"
   edit: "Edit"
