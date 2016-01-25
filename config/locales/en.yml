@@ -28,6 +28,7 @@ en:
 
   posts:
     form:
+      header: "Giveaway"
       title: "Title"
       description: "Description"
       location: "Choose a city"

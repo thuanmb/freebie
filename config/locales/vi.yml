@@ -27,8 +27,9 @@ vi:
 
   posts:
     form:
-      title: "Tiêu đề"
-      description: "Mô tả"
+      header: "Cho đồ cũ"
+      title: "Tiêu đề, ví dụ áo thun bamboo cũ đã dùng 2 năm"
+      description: "Mô tả về món đồ bạn đang muốn cho"
       location: "Chọn tỉnh/thành phố"
       category: "Phân loại"
       main_image: "Tải lên hình ảnh"
@@ -55,7 +56,7 @@ vi:
       instruction: "Hộ trợ trực tuyến 24/7, hãy giữ liên lạc qua thông tin bên dưới:"
       address: "1234 Tên Đường, Tên Thành Phố, Tên Quốc Gia"
       phone_number: "(123) 456-7890"
-      email: "maill@youcompany.com"
+      email: "admin@freebie.vn"
     second_column:
       title: "Các Bài Đăng Mới Nhất"
     third_column:
