@@ -27,7 +27,7 @@
   <section class="alert alert-success location-loading" style="display: none">
     <p><%= t(".location_loading_message") %></p>
   </section>
-  
+
   <!-- searching -->
   <div class="row search-container">
       <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
@@ -37,13 +37,13 @@
   </div>
 
 <div class="row post-content">
-  <div class="col-md-2"> 
-    
+  <div class="col-md-2">
+
     <div>
       <h6><%= I18n.t('posts.form.location') %></h6>
-      <%= select_tag :location_id, options_for_select(location_options, current_location) %>
+      <%= select_tag :location_id, options_for_select(location_options, current_location), class: 'chosen-it' %>
     </div>
-    
+
     <hr/>
     <div>
       <ul class="category-list" style="padding: 0">
@@ -51,8 +51,8 @@
 
         <% Category.all.each do |c| %>
           <li>
-            <%= link_to search_posts_path({category: c.id, city: current_location}) do %>
-              <i class="fa <%= c.fa_icon %>">&#xfeff;</i>
+            <%= link_to search_posts_path({category: c.id, city: current_location}), class: 'btn btn-outline btn-sm btn-category' do %>
+              <i class="fa <%= c.fa_icon %>"></i>
               <span class="text"><%= c.display_name %></span>
             <% end %>
           </li>
@@ -62,7 +62,7 @@
 
   </div>
 
-  <div class="col-md-9"> 
+  <div class="col-md-9">
     <% @posts.each do |post| %>
       <div class="col-md-4">
         <div class="card">
@@ -72,9 +72,9 @@
             <p class="card-text"><%= truncate(post.description, length: 50) %></p>
             <span class="card-text"><i class="fa fa-map-marker"></i> <%= location_name(post.location) %></span>
             <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
-          </div> 
-        </div> 
-      </div> 
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
