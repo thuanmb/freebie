@@ -7,15 +7,21 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :contact_address, label: false, placeholder: t('contact_address') %>
-          <%= f.input :contact_city, label: false, placeholder: t('contact_city') %>
+          <%= f.input :contact_city, label: false, collection: LOCATION_LIST, label_method: lambda{|l| I18n.locale == :en ? l[:displayNameEN] : l[:displayName]}, key_method: lambda{|l| l[:id]}, input_html: {class: 'chosen-it', :'data-placeholder' => t('giveaway.choose_location'), autofocus: true} %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, 'Save location', class: 'btn-inverse' %>
+          <%= f.button :submit, t('giveaway.save_location'), class: 'btn btn-primary' %>
         </div>
       <% end %>
     </div>
+    <div class="col-xl-6 col-xl-offset-1 col-lg-6 hidden-md-down">
+      <%= image_tag 'location.png' %>
+    </div>
   </div>
 </div>
-
+<script>
+  $(function () {
+    $('select.chosen-it').trigger('chosen:activate');
+  });
+</script>

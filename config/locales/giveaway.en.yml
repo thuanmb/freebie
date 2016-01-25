@@ -2,3 +2,5 @@ en:
   giveaway:
     tell_location: "Tell us your location"
     tell_location_description: "Your location will be used to filter posts and campaigns in your area. We will just ask this once and you can change this information later in user profile."
+    choose_location: "Choose a location"
+    save_location: "Save location"

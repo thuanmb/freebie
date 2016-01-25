@@ -2,3 +2,5 @@ vi:
   giveaway:
     tell_location: "Bạn đang ở đâu?"
     tell_location_description: "Địa chỉ của bạn được dùng để tìm những bài đăng và hoạt động từ thiện xung quanh bạn. Bạn chỉ cần nhập thông tin này một lần và sau này có thể thay đổi nó trong hồ sơ cá nhân của bạn."
+    choose_location: "Chọn thành phố"
+    save_location: "Lưu lại thành phố"

@@ -1,8 +1,8 @@
 .main-content.giveaways.select_location {
-  background-image: url('location.png');
-  background-position: 0;
-  background-color: rgba(0,0,0, 0.8);
-  background-size: 100%;
-  color: #fff;
   padding-top: 24px;
+  padding-bottom: 24px;
+
+  img {
+    width: 100%;
+  }
 }
