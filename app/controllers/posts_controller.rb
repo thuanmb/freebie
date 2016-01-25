@@ -116,12 +116,13 @@ class PostsController < ApplicationController
 
     # TODO: filter post by categories
     # TODO: filter post by cities
-
     # TODO: use the filtered list
 
     if params[:keyword] != nil
       keyword = params[:keyword]
       @posts = Post.search(title: keyword)
+    else
+      @posts = Post.published_posts
     end
 
     render :template => 'posts/index'

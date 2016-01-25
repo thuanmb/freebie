@@ -1,5 +1,5 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 <!-- searching -->
 <div class="row search-container">
@@ -10,18 +10,39 @@
 </div>
 
 <div class="row">
-<% @posts.each do |post| %>
- <div class="col-md-4"> 
-  <div class="card">
-  <%= link_to (image_tag post.main_image_url), post %>
-    <div class="card-block">
-    	<h4 class="card-title"><%= link_to post.title, post_path(post) %></h6></h4>
-      <p class="card-text"><%= truncate(post.description, length: 50) %></p>
-      <span class="card-text"><i class="fa fa-map-marker"></i> <%= post.location %></span>
-      <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
-    </div>
-  </div> 
-  </div> 
-<% end %>
-</div>
+  <div class="col-md-2"> 
+    
+    <ul class="category-list">
+    <%= form_tag('/posts', method: :get) do %>
+      <%= label_tag I18n.t('posts.form.location') %>
+      <%= select_tag :location_id, options_for_select(location_options) %>
+
+      <hr/>
+      <%= label_tag I18n.t('posts.form.category') %>
+      <% Category.all.each do |c| %>
+        <li>
+          <%= check_box_tag c.display_name %>
+          <%= label_tag c.display_name %>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-9"> 
+    <% @posts.each do |post| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to (image_tag post.main_image_url), post %>
+          <div class="card-block">
+            <h4 class="card-title"><%= link_to post.title, post_path(post) %></h6></h4>
+            <p class="card-text"><%= truncate(post.description, length: 50) %></p>
+            <span class="card-text"><i class="fa fa-map-marker"></i> <%= post.location %></span>
+            <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
+          </div> 
+        </div> 
+      </div> 
+    <% end %>
+  </div>
 </div>
