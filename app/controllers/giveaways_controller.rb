@@ -7,7 +7,7 @@ class GiveawaysController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.contact_city.blank? || current_user.contact_address.blank?
+    if current_user.contact_city.blank?
       redirect_to :select_location_giveaways
     else
       redirect_to :select_category_giveaways
@@ -22,8 +22,7 @@ class GiveawaysController < ApplicationController
   # PUT /giveaway/edit_location
   def edit_location
     @user = current_user
-    if user_params[:contact_address].blank? && user_params[:contact_city].blank?
-      @user.errors.add(:contact_address, I18n.t('errors.messages.blank'))
+    if user_params[:contact_city].blank?
       @user.errors.add(:contact_city, I18n.t('errors.messages.blank'))
       render :select_location
     elsif  @user.update(user_params)

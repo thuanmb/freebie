@@ -5,7 +5,7 @@ $ ->
   keyword = null
   searchInput.on 'chosen:hiding_dropdown', (evt, params) ->
     keyword = $(".search-field input").val()
-  
+
   $(".form-search").submit (e) ->
     getPathSignal = (url) ->
       return if url.indexOf("?") > -1 then "&" else "?"
@@ -31,14 +31,14 @@ $ ->
       index++
 
     url = "/posts/search"
-     
+
     if categories.length > 0
       url += getPathSignal(url) + "category=" + categories.join(",")
 
     if cities.length > 0
       url += getPathSignal(url) + "city=" + cities.join(",")
-    
-    if keyword  
+
+    if keyword
       url += getPathSignal(url) + "keyword=" + keyword
 
     window.location.href = url
@@ -53,27 +53,27 @@ $ ->
     city = $(".location-select option:selected").text()
     localStorage.currentLocation = city
     window.location.href = "/posts?city=" + city
-  
+
   $(".location-select .no-btn").click (e) ->
     $(".location-select").fadeOut()
 
-  if location.pathname == "/posts"
+  if location.pathname == "/posts" || location.pathname == "/select_location"
     geoLocation = new GeoLocation ((city) ->
       if typeof(Storage) != "undefined" && city.longName != localStorage.currentLocation
         $(".location-alert .city").text city.longName
         $(".location-alert .yes-btn").click (e) ->
           localStorage.currentLocation = city.longName
           window.location.href = "/posts?city=" + city.longName
-        
+
         $(".location-alert .no-btn").click (e) ->
-          $(".location-alert").fadeOut(-> 
+          $(".location-alert").fadeOut(->
             $(".location-select").fadeIn()
           )
 
         $(".location-alert").fadeIn()
-    ), (-> 
+    ), (->
       $(".location-select").fadeIn()
     )
-      
-      
+
+
     geoLocation.getLocation()

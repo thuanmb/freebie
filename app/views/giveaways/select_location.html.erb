@@ -3,11 +3,12 @@
     <div class="col-xl-5 col-lg-6 col-md-8">
       <h2 class="section-header"><%= t('giveaway.tell_location') %></h2>
       <p><%= t('giveaway.tell_location_description', profile_url: edit_user_registration_path) %></p>
+      <p class="current_location"><i class="fa fa-refresh animated rotateIn infinite"></i> <%= t 'giveaway.detecting_location' %></p>
       <%= simple_form_for(@user, url: edit_location_giveaways_path, html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :contact_city, label: false, collection: LOCATION_LIST, label_method: lambda{|l| I18n.locale == :en ? l[:displayNameEN] : l[:displayName]}, key_method: lambda{|l| l[:id]}, input_html: {class: 'chosen-it', :'data-placeholder' => t('giveaway.choose_location'), autofocus: true} %>
+          <%= f.input :contact_city, label: false, collection: LOCATION_LIST, label_method: lambda{|l| I18n.locale == :en ? l[:displayNameEN] : l[:displayName]}, value_method: lambda{|l| l[:id]}, input_html: {class: 'chosen-it', :'data-placeholder' => t('giveaway.choose_location'), autofocus: true} %>
         </div>
 
         <div class="form-actions">
@@ -23,5 +24,26 @@
 <script>
   $(function () {
     $('select.chosen-it').trigger('chosen:activate');
+
+
+    var geoLocation = new GeoLocation(function (city) {
+      set_current_location(city.longName);
+    }, function () {
+      console.log("cannot get location");
+    });
+    geoLocation.getLocation();
+
   });
+
+  function set_current_location (location) {
+    if ($('.chosen-single.chosen-default').length) {
+      $('select.chosen-it option:contains('+location+')').attr('selected', '');
+      $('select.chosen-it').trigger('chosen:updated');
+      $('.current_location').hide();
+    } else {
+      $('.current_location').html('<%= t 'giveaway.detected_location' %> <span class="label label-pill label-success">'+location+'</span>')
+    }
+  }
+
+  locations = <%= LOCATION_LIST.to_json.html_safe %>;
 </script>

@@ -269,17 +269,18 @@
     // only load in home page
     if (location.pathname == "/") {
       var geoLocation = new GeoLocation(function (city) {
-        $.getJSON("/posts/byLocation?location=" + city.longName, function (data) {
-          console.log(data);
-          var htmlString = "";
-          for (var index = 0; index < data.length; index++) {
-            htmlString += '<div class="post-entry">' +
-              '<a class="post-title" href="posts/' + data[index].id + '">' + data[index].title  + '</a>' +
-            '</div>';
-          }
+        localStorage.currentLocation = city.longName;
+        // $.getJSON("/posts/byLocation?location=" + city.longName, function (data) {
+        //   console.log(data);
+        //   var htmlString = "";
+        //   for (var index = 0; index < data.length; index++) {
+        //     htmlString += '<div class="post-entry">' +
+        //       '<a class="post-title" href="posts/' + data[index].id + '">' + data[index].title  + '</a>' +
+        //     '</div>';
+        //   }
 
-          $("#nearby-posts-container").html(htmlString);
-        });
+        //   $("#nearby-posts-container").html(htmlString);
+        // });
       })
 
       geoLocation.getLocation();
