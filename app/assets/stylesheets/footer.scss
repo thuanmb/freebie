@@ -101,6 +101,13 @@
       font-size: 16px;
       font-weight: 700;
       text-transform: uppercase;
+      line-height: 24px;
+
+      .textwidget {
+        p {
+          line-height: 18px;
+        }
+      }
     }
     #lower-footer {
       padding: 15px 0;
@@ -474,4 +481,8 @@
   border-radius:50%;
   -webkit-border-radius:50%;
   -moz-border-radius:50%;
+}
+
+.textwidget ul li i {
+  line-height: 20px;
 }

@@ -2,6 +2,10 @@
   > .container {
     margin-top: 110px;
 
+    .post-content {
+      margin-top: 30px;
+    }
+
     .row {
 
       .col-md-4 {
@@ -25,7 +29,7 @@
     }
   }
 
-  .location-alert, .location-select {
+  .location-alert, .location-select, .location-loading {
     font-size: 16px;
     width: 100%;
 
@@ -50,6 +54,7 @@
 
     .btn {
       height: 53px;
+      margin-left: 2%;
     }
     
     #search_chosen {
@@ -93,11 +98,12 @@
   }
 
   #search-box {
-    width: 100%;
+    width: 82.77777%;
     height: 53px;
     background-image: none;
     background-color: transparent;
     border-color: #f0ad4e;
+    margin-left: 6%;
   }
 
 }

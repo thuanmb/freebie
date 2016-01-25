@@ -133,16 +133,9 @@
 
         <a href="<%= campaigns_path %>">
           <li>
-            <%= fa_icon "archive" %>
+            <%= fa_icon "life-ring" %>
             <p><%= I18n.t "menu_item_campaigns" %></p>
           </li>
-        </a>
-
-        <a href="<%= campaigns_path %>">
-            <li>
-              <%= fa_icon "life-ring" %>
-              <p><%= I18n.t "create_new_campaigns" %></p>
-            </li>
         </a>
       </ul>
     </section>
@@ -201,15 +194,6 @@
           <div id="popular-posts-2" class="sidebar_widget widget widget_popular_posts_entries">
             <h5><%= t("footer.third_column.title") %></h5>
             <div id="nearby-posts-container">
-              <div class="post-entry">
-                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/04/27/hello-world/" title="Hello world, This is Splendid!">Hello world, This is Splendid!</a>
-              </div>
-              <div class="post-entry">
-                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/07/03/introducing-a-great-post-from-the-blog/" title="Introducing a Great Post">Introducing a Great Post</a>
-              </div>
-              <div class="post-entry">
-                <a class="post-title" href="http://splendidwp.staging.wpengine.com/blog/2015/07/24/blog-single-extended/" title="Blog Single Extended">Blog Single Extended</a>
-              </div>
             </div>
           </div>
         </div>
@@ -272,7 +256,8 @@
         $.getJSON("/posts/byLocation?location=" + city.longName, function (data) {
           console.log(data);
           var htmlString = "";
-          for (var index = 0; index < data.length; index++) {
+          var numItem = Math.min(data.length, 3);
+          for (var index = 0; index < numItem; index++) {
             htmlString += '<div class="post-entry">' +
               '<a class="post-title" href="posts/' + data[index].id + '">' + data[index].title  + '</a>' +
             '</div>';

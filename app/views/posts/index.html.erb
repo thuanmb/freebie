@@ -37,14 +37,15 @@
   </div> -->
 
 <!-- searching -->
-<div class="row search-container">
-  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline col-xs-11 col-md-11 col-lg-11") do %>
-    <%= text_field_tag :keyword, nil, class: "form-control warning-outline", id: "search-box" %>
-    <input type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn">
+<div class="search-container">
+  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline row") do %>
+    <%= text_field_tag :keyword, nil, class: "form-control warning-outline col-xs-11 col-md-11 col-lg-11", id: "search-box" %>
+    <input name="city" type="hidden" value="">
+    <button type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
   <% end %>
 </div>
 
-<div class="row">
+<div class="row post-content">
   <div class="col-md-2"> 
     
     <ul class="category-list">
