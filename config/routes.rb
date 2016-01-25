@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       put :publish
       put :close
       put :reopen
-      post :request
+      post :request_post
     end
 
     collection do

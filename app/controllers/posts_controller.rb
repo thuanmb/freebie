@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    debugger
+    # debugger
     @posts = Post.published
 
     location_id = get_location_id
@@ -126,14 +126,14 @@ class PostsController < ApplicationController
     render :template => 'posts/index'
   end
 
-  # def request
-  #   # debugger
-  #   @post = Post.find(params[:id])
-  #   # subject = "#{request_params[:name]} - #{request_params[:email_or_phone]} at #{request_params[:address]} contacted for campaign #{@post.title}"
-  #   # conversation = current_user.send_message(@post.user, request_params[:message], subject).conversation
-  #   flash[:success] = "Message has been sent!"
-  #   redirect_to post_path(@post)
-  # end
+  def request_post
+    # debugger
+    @post = Post.find(params[:id])
+    subject = "#{request_params[:name]} - #{request_params[:email_or_phone]} at #{request_params[:address]} contacted for post #{@post.title}"
+    conversation = current_user.send_message(@post.user, request_params[:message], subject).conversation
+    flash[:success] = "Message has been sent!"
+    redirect_to post_path(@post)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -145,10 +145,10 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :description, :main_image, :location)
     end
-  
-    # def request_params
-    #   params.require(:request).permit(:email_or_phone, :message, :name, :address)
-    # end 
+
+    def request_params
+      params.require(:request).permit(:email_or_phone, :message, :name, :address)
+    end 
 
     def get_location_id
       # debugger
