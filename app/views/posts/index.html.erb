@@ -29,21 +29,21 @@
   </section>
   
   <!-- searching -->
-  <!-- <div class="row search-container">
+  <div class="row search-container">
       <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
         <%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
       </form>
       <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
-  </div> -->
+  </div>
 
 <!-- searching -->
-<div class="search-container">
+<!-- <div class="search-container">
   <%= form_tag('/posts/search', method: :get, class: "form-search form-inline row") do %>
     <%= text_field_tag :keyword, nil, class: "form-control warning-outline col-xs-11 col-md-11 col-lg-11", id: "search-box" %>
     <input name="city" type="hidden" value="">
     <button type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
   <% end %>
-</div>
+</div> -->
 
 <div class="row post-content">
   <div class="col-md-2"> 
