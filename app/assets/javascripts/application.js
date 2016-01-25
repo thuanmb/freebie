@@ -48,6 +48,10 @@ $(document).ready(function () {
         secondaryNav.toggleClass("is-visible");
     });
   }
-});
 
+  $( "#location_id" ).change(function () {
+    window.location.href = '/posts?city=' + $(this).val();
+  })
+
+});
 
