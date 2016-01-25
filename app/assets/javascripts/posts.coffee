@@ -46,13 +46,18 @@ $ ->
   $(".search-btn").click (e) ->
     $(".form-search").submit()
 
-  $(".location-alert").hide()
-  $(".location-select").hide()
+  reloadByCity = (city) ->
+    params = null
+    if location.search != ""
+      params = location.search + "&city=" + city
+    else
+      params = "?city=" + city
+    window.location.href = "/posts" + params
 
   $(".location-select .yes-btn").click (e) ->
     city = $(".location-select option:selected").text()
     localStorage.currentLocation = city
-    window.location.href = "/posts?city=" + city
+    reloadByCity city
 
   $(".location-select .no-btn").click (e) ->
     $(".location-select").fadeOut()
@@ -63,7 +68,7 @@ $ ->
         $(".location-alert .city").text city.longName
         $(".location-alert .yes-btn").click (e) ->
           localStorage.currentLocation = city.longName
-          window.location.href = "/posts?city=" + city.longName
+          reloadByCity city.longName
 
         $(".location-alert .no-btn").click (e) ->
           $(".location-alert").fadeOut(->
@@ -71,6 +76,10 @@ $ ->
           )
 
         $(".location-alert").fadeIn()
+      else
+        if location.search.indexOf("?") == -1
+          $(".location-loading").fadeIn()
+          reloadByCity city.longName
     ), (->
       $(".location-select").fadeIn()
     )

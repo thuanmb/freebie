@@ -3,7 +3,7 @@
   <p id="notice"><%= notice %></p>
 
   <!-- location selection -->
-  <section class="alert alert-success location-alert">
+  <section class="alert alert-success location-alert" style="display: none">
     <span>
       <span><%= t(".suggest_location_message_1") %></span>
       <span class="city label label-success"></span>
@@ -15,7 +15,7 @@
     </div>
   </section>
 
-  <section class="alert alert-success location-select">
+  <section class="alert alert-success location-select" style="display: none">
     <p><%= t(".location_selection_message") %></p>
     <%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
     <div class="btn-container">
@@ -24,23 +24,28 @@
     </div>
   </section>
 
+  <section class="alert alert-success location-loading" style="display: none">
+    <p><%= t(".location_loading_message") %></p>
+  </section>
+  
   <!-- searching -->
-  <!-- <div class="row search-container">
+  <div class="row search-container">
       <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
         <%= select_tag 'search', search_options, multiple: true, class: "search-input", :"data-placeholder" => t("search_placeholder")%>
       </form>
       <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
-  </div> -->
+  </div>
 
 <!-- searching -->
-<div class="row search-container">
-  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline col-xs-11 col-md-11 col-lg-11") do %>
-    <%= text_field_tag :keyword, nil, class: "form-control warning-outline", id: "search-box" %>
-    <input type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn">
+<!-- <div class="search-container">
+  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline row") do %>
+    <%= text_field_tag :keyword, nil, class: "form-control warning-outline col-xs-11 col-md-11 col-lg-11", id: "search-box" %>
+    <input name="city" type="hidden" value="">
+    <button type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
   <% end %>
-</div>
+</div> -->
 
-<div class="row">
+<div class="row post-content">
   <div class="col-md-2"> 
     
     <ul class="category-list">

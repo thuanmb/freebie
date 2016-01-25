@@ -2,6 +2,10 @@
   > .container {
     margin-top: 110px;
 
+    .post-content {
+      margin-top: 30px;
+    }
+
     .row {
 
       .col-md-4 {
@@ -25,7 +29,7 @@
     }
   }
 
-  .location-alert, .location-select {
+  .location-alert, .location-select, .location-loading {
     font-size: 16px;
     width: 100%;
 
