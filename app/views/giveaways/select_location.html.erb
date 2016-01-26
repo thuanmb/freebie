@@ -29,6 +29,7 @@
     var geoLocation = new GeoLocation(function (city) {
       set_current_location(city.longName);
     }, function () {
+      $('.current_location').hide();
       console.log("cannot get location");
     });
     geoLocation.getLocation();
