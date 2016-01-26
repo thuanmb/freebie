@@ -79,3 +79,7 @@ ul.pagination {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.top-pagination ~ .row {
+  padding-top: 40px;
+}
