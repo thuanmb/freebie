@@ -1,10 +1,17 @@
 $ ->
   searchInput = $(".search-input")
-  searchInput.chosen({include_group_label_in_selected: true})
+  searchInput.chosen(
+    include_group_label_in_selected: true,
+    no_results_text: window.noResultsText
+  )
 
   keyword = null
-  searchInput.on 'chosen:hiding_dropdown', (evt, params) ->
-    keyword = $(".search-field input").val()
+  noResults = true
+  $(".search-field input").keyup (e) ->
+    if e.keyCode == 13 && $(this).val() != ""
+      $(".form-search").submit()
+    else
+      keyword = $(this).val()
 
   $(".form-search").submit (e) ->
     getPathSignal = (url) ->
