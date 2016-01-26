@@ -89,3 +89,6 @@ vi:
         message: "Quyên góp những món đồ cũ hay không còn cần thiết của bạn cho các tổ chức từ thiện. Để mang đến nụ cười cho người nghèo và trẻ em Việt Nam."
         btn_action: "Quyên góp ngay"
 
+  will_paginate: 
+    previous_label: "trước"
+    next_label: "sau"

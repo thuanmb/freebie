@@ -1,6 +1,8 @@
 require 'textacular'
 
 class Post < ActiveRecord::Base.extend(Textacular)
+  self.per_page = 20
+
   belongs_to :user
   has_many :post_items
   validates :status, inclusion: { in: %w(drafted published closed) }
