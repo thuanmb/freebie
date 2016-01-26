@@ -27,14 +27,14 @@ class User < ActiveRecord::Base
 
   #Returning any kind of identification you want for the model
   def display_name
-    @name || @email
+    name || email
   end
 
   #Returning the email address of the model if an email should be sent for this object (Message or Notification).
   #If no mail has to be sent, return nil.
   def mailboxer_email(object)
-    shouldSendEmail = false   # I don't want to send email just yet
-    @email if shouldSendEmail
+    shouldSendEmail = true
+    email if shouldSendEmail
   end
 
 end

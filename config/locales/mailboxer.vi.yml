@@ -1,0 +1,7 @@
+vi:
+  mailboxer:
+     message_mailer:
+       subject_new: "Bạn có tin nhắn mới: %{subject}"
+       subject_reply: "Trả lời: %{subject}"
+     notification_mailer:
+       subject: "Tin nhắn từ Freebies: %{subject}"

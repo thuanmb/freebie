@@ -10,7 +10,7 @@
 
       <div class="card-block">
         <div class="messages">
-          <% @conversation.receipts_for(current_user).each do |receipt| %>
+          <% @conversation.receipts_for(current_user).reverse.each do |receipt| %>
             <div class="media">
               <% message = receipt.message %>
               <div class="media-left">

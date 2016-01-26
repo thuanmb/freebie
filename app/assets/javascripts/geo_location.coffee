@@ -6,9 +6,9 @@ class GeoLocation
   getLocation: () =>
     if navigator.geolocation
       navigator.geolocation.getCurrentPosition(@showPosition, @showError);
-  
+
   showPosition: (position) =>
-    $.getJSON "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true", (data) => 
+    $.getJSON "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true", (data) =>
       if @successCb
         @successCb @getCity data
 
@@ -22,7 +22,7 @@ class GeoLocation
         if component.types.length >= 2
           types = component.types
           if types.indexOf("administrative_area_level_1") > -1 && types.indexOf("political") > -1
-            result = 
+            result =
               longName: component.long_name
               shortName: component.short_name
 
@@ -38,6 +38,6 @@ class GeoLocation
 
     if @errorCb
       @errorCb error
-    
+
 
 window.GeoLocation = GeoLocation
