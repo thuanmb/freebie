@@ -17,10 +17,6 @@ class Post < ActiveRecord::Base.extend(Textacular)
   scope :by_location, ->( location_id )     { where( location: location_id) }
   scope :by_categories, ->( category_ids )  { joins(:category_link).where(category_links: {category_id: category_ids}) }
 
-  def main_image_url
-    self.image_url.present? ? self.image_url : self.main_image.url
-  end
-
   def published?
     self.status == 'published'
   end
