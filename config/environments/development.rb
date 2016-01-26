@@ -43,11 +43,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => ENV[MAILBOX_USERNAME],
-    :password => ENV[MAILBOX_PASSWORD],
-    :address => ENV[MAILBOX_ADDRESS],
-    :domain => ENV[MAILBOX_DOMAIN],
-    :port => ENV[MAILBOX_PORT],
+    :user_name => ENV['MAILBOX_USERNAME'],
+    :password => ENV['MAILBOX_PASSWORD'],
+    :address => ENV['MAILBOX_ADDRESS'],
+    :domain => ENV['MAILBOX_DOMAIN'],
+    :port => ENV['MAILBOX_PORT'],
     :authentication => :cram_md5
   }
 
