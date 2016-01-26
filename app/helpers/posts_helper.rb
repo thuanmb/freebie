@@ -11,6 +11,6 @@ module PostsHelper
   end 
 
   def current_location
-    session[:current_location]
+    session[:current_location] || current_user.try(:contact_city)
   end
 end
