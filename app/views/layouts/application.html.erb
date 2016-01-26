@@ -221,6 +221,7 @@
       if (typeof(Storage) !== "undefined" && location.pathname == "/") {
         $(window).bind('beforeunload', function(){
           localStorage.isVisitedFirstTimes = true;
+          localStorage.deniedToLoadCurrentLocation = false;
         });
 
         var onboardingView = $(".onboarding-container");

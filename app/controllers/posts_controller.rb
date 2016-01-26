@@ -9,8 +9,13 @@ class PostsController < ApplicationController
     @posts = Post.published
 
     location_id = get_location_id
-    if location_id
-      @posts = @posts.by_location(location_id)
+
+    if location_id != nil
+      session[:current_location] = location_id
+    end
+
+    if session[:current_location] != nil
+      @posts = @posts.by_location(session[:current_location])
     end
 
     @posts = @posts.paginate(:page => params[:page])

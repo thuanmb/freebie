@@ -60,9 +60,10 @@ $ ->
     reloadByCity city
 
   $(".location-select .no-btn").click (e) ->
+    localStorage.deniedToLoadCurrentLocation = true
     $(".location-select").fadeOut()
 
-  if location.pathname == "/posts" || location.pathname == "/select_location"
+  if (location.pathname == "/posts" || location.pathname == "/select_location") && (!localStorage.deniedToLoadCurrentLocation || localStorage.deniedToLoadCurrentLocation == "false")
     geoLocation = new GeoLocation ((city) ->
       if typeof(Storage) != "undefined" && city.longName != localStorage.currentLocation
         $(".location-alert .city").text city.longName
@@ -71,18 +72,14 @@ $ ->
           reloadByCity city.longName
 
         $(".location-alert .no-btn").click (e) ->
-          $(".location-alert").fadeOut(->
-            $(".location-select").fadeIn()
+          $(".location-alert").fadeOut(-> 
+            if (!localStorage.currentLocation)
+              $(".location-select").fadeIn()
           )
 
         $(".location-alert").fadeIn()
-      else
-        if location.search.indexOf("?") == -1
-          $(".location-loading").fadeIn()
-          reloadByCity city.longName
-    ), (->
+    ), (-> 
       $(".location-select").fadeIn()
     )
-
 
     geoLocation.getLocation()
