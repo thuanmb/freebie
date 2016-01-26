@@ -8,7 +8,7 @@ class GeoLocation
       navigator.geolocation.getCurrentPosition(@showPosition, @showError);
   
   showPosition: (position) =>
-    $.getJSON "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true", (data) => 
+    $.getJSON "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true", (data) => 
       if @successCb
         @successCb @getCity data
 
