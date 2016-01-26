@@ -132,5 +132,100 @@
       }
     }
   }
+}
 
+
+$detail_col_padding_top: 101px;
+.posts.show {
+  .detail-page {
+    .sharing {
+      padding-top: $detail_col_padding_top;
+      a {
+        display: block;
+
+        max-width: 50px;
+        max-height: 50px;
+        margin-bottom: 7px;
+
+        &.at-svc-ketnooi {
+          span {
+            padding-left: 10px;
+          }
+        }
+
+        span {
+          line-height: 50px !important;
+          height: 50px !important;
+          width: 50px !important;
+          padding-left: 5px;
+          padding-top: 6px;
+
+          .at-icon {
+            width: 40px !important;
+            height: 40px !important;
+          }
+        }
+      }
+    }
+
+    .post-content {
+      font-family: "Gotham SSm A";
+      color: #444;
+
+      h2, h6 {
+        text-align: center;
+        font-weight: normal;
+
+        margin-bottom: 10px;
+      }
+
+      h6 {
+        color: #818a91;
+        
+        i {
+          font-size: 7px;
+          position: relative;
+          top: -3px;
+
+          margin-left: 3px;
+          margin-right: 3px;
+        }
+      }
+
+      p {
+        padding: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .toolbar {
+    padding-top: $detail_col_padding_top;
+
+    ul {
+      &.more-info {
+        margin-bottom: 30px;
+
+        li {
+          text-align: center;
+
+          .published {
+            color: #5cb85c;
+          }
+
+          .closed {
+            color: #d9534f;
+          }
+
+          .drafted {
+            color: #818a91;
+          }
+        }  
+      }
+    }
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
 }
