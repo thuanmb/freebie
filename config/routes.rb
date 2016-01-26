@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   get 'welcome/index'
 
+<<<<<<< HEAD
   resources :posts do
     resources :post_items
     resources :requests
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
     end
   end
 
+=======
+  
+>>>>>>> ba9832310b01b72a47bf92f6186e0f1fc8aafff4
   mount RailsAdmin::Engine => '/secret', as: 'rails_admin'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -52,6 +56,14 @@ Rails.application.routes.draw do
       resources :donations
       #, only: [:edit, :update, :new, :create]
     end
+<<<<<<< HEAD
+=======
+  end
+  
+  resources :posts do
+    resources :post_items
+  end
+>>>>>>> ba9832310b01b72a47bf92f6186e0f1fc8aafff4
 
     resources :conversations do
       member do

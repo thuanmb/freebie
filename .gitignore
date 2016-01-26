@@ -13,7 +13,11 @@
 /tmp
 /config/database.yml
 run.sh
+<<<<<<< HEAD
 /public/system/posts/images/
 /public/system/posts/
 .idea
 .byebug_history
+=======
+/public/system/posts/main_images/
+>>>>>>> ba9832310b01b72a47bf92f6186e0f1fc8aafff4
