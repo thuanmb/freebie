@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'aws-sdk'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bootstrap-will_paginate'
 gem 'animate-rails'
