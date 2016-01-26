@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.published_posts
+    # debugger
+    @posts = Post.published
 
     location_id = get_location_id
 
@@ -16,6 +17,8 @@ class PostsController < ApplicationController
     if session[:current_location] != nil
       @posts = @posts.by_location(session[:current_location])
     end
+
+    @posts = @posts.paginate(:page => params[:page])
   end
 
   # GET /posts/1
@@ -52,7 +55,7 @@ class PostsController < ApplicationController
     #@post = Post.new(post_params)
 
     @post = current_user.posts.build(post_params)
-    @post.status = 'drafted'
+    @post.status = 'published'
     @post.set_category params[:post][:category]
 
     respond_to do |format|
@@ -112,21 +115,30 @@ class PostsController < ApplicationController
   def byLocation
     # TODO: get the posts by its location
     # location = params[:location] // for example: Hồ Chí Minh
-    render json: Post.published_posts
+    render json: Post.published
   end
 
   def search
     categories = params[:category].split(",") if params[:category].present?
     cities = params[:city].split(",") if params[:city].present?
     keyword = params[:keyword] if params[:keyword].present?
-  
+
     # debugger
     @posts = keyword.present? ? Post.by_keyword(keyword) : Post.published
     @posts = @posts.by_location(cities) if cities.present? && !cities.empty?
-    # TODO: filter post by categories
-    # @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
+    @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
+    @posts = @posts.paginate(:page => params[:page])
 
     render :template => 'posts/index'
+  end
+
+  def request_post
+    # debugger
+    @post = Post.find(params[:id])
+    subject = "#{request_params[:name]} - #{request_params[:email_or_phone]} at #{request_params[:address]} contacted for post #{@post.title}"
+    conversation = current_user.send_message(@post.user, request_params[:message], subject).conversation
+    flash[:success] = "Message has been sent!"
+    redirect_to post_path(@post)
   end
 
   private
@@ -140,13 +152,13 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :description, :main_image, :location)
     end
 
+    def request_params
+      params.require(:request).permit(:email_or_phone, :message, :name, :address)
+    end 
+
     def get_location_id
-      if params[:city] != nil
-        LOCATION_LIST.each do |location|
-          if location[:name].include?(params[:city])
-            return location[:id]
-          end
-        end
-      end
+      location_hash = LOCATION_LIST.find { |e| e[:name] == params[:city] || e[:id] == params[:city] }
+      session[:current_location] = location_hash[:id] if location_hash
+      session[:current_location]
     end
 end

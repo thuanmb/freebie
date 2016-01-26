@@ -9,4 +9,8 @@ module PostsHelper
   def post_status(post)
     "posts.status.#{post.status}"
   end 
+
+  def current_location
+    session[:current_location] || current_user.try(:contact_city)
+  end
 end

@@ -2,3 +2,10 @@ en:
   giveaway:
     tell_location: "Tell us your location"
     tell_location_description: "Your location will be used to filter posts and campaigns in your area. We will just ask this once and you can change this information later in user profile."
+    choose_location: "Choose a location"
+    save_location: "Save location"
+    detecting_location: Detecting current location...
+    detected_location: Detected location is
+    join_campaign: Have a look at these campaigns
+    join_campaign_description: Joining a campaign is a great way to bring your stuff to people in need in distance area.
+    join_campaign_alternative: Alternative you can post your stuff.

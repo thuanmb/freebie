@@ -30,7 +30,7 @@ vi:
       header: "Cho đồ cũ"
       title: "Tiêu đề, ví dụ áo thun bamboo cũ đã dùng 2 năm"
       description: "Mô tả về món đồ bạn đang muốn cho"
-      location: "Khu vực"
+      location: "Thành phố"
       category: "Phân loại"
       main_image: "Tải lên hình ảnh"
       submit_edit: "Cập nhật"
@@ -89,3 +89,6 @@ vi:
         message: "Quyên góp những món đồ cũ hay không còn cần thiết của bạn cho các tổ chức từ thiện. Để mang đến nụ cười cho người nghèo và trẻ em Việt Nam."
         btn_action: "Quyên góp ngay"
 
+  will_paginate: 
+    previous_label: "trước"
+    next_label: "sau"

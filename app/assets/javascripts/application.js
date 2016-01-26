@@ -18,7 +18,7 @@
 //= require chosen-jquery
 //
 //= require users
-//= require messages
+//= require welcome
 //= require geo_location
 //
 //= require_tree .
@@ -48,6 +48,10 @@ $(document).ready(function () {
         secondaryNav.toggleClass("is-visible");
     });
   }
-});
 
+  $( "#location_id" ).change(function () {
+    window.location.href = '/posts?city=' + $(this).val();
+  })
+
+});
 

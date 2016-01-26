@@ -1,6 +1,8 @@
 require 'textacular'
 
 class Post < ActiveRecord::Base.extend(Textacular)
+  self.per_page = 20
+
   belongs_to :user
   has_many :post_items
   validates :status, inclusion: { in: %w(drafted published closed) }
@@ -13,11 +15,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
   scope :published, ->()                    { where('status = ?', 'published') }
   scope :by_keyword, ->( keyword )          { basic_search(keyword) }
   scope :by_location, ->( location_id )     { where( location: location_id) }
-  scope :by_categories, ->( category_ids )  { where( category: category_ids) }
-
-  def self.published_posts
-    Post.where('status = ?', 'published')
-  end
+  scope :by_categories, ->( category_ids )  { joins(:category_link).where(category_links: {category_id: category_ids}) }
 
   def main_image_url
     self.image_url.present? ? self.image_url : self.main_image.url
@@ -51,10 +49,6 @@ class Post < ActiveRecord::Base.extend(Textacular)
 
   def Post.find_by_categories category_ids
     Post.joins(:category_link).where(category_links: {category_id: category_ids})
-  end
-
-  def self.by_location(location_id)
-  	self.where(location: location_id)
   end
   
 end

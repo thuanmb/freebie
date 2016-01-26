@@ -1,8 +1,8 @@
 @category_money = Category.create({
   name: 'money',
   fa_icon: 'fa-usd',
-  img_url: 'http://images.askmen.com/1080x540/2015/11/02-040952-lending_money_to_friends.jpg',
-  color: '#00679A'
+  img_url: 'https://i.ytimg.com/vi/bcWgk1XPTvY/maxresdefault.jpg',
+  color: '#b89155'
 })
 
 @category_people = Category.create({

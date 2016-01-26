@@ -23,7 +23,7 @@
       <button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>
     </div>
   </section>
-  
+
   <!-- searching -->
   <div class="row search-container">
       <form class="form-search form-inline col-xs-11 col-md-11 col-lg-11">
@@ -32,38 +32,42 @@
       <button class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
   </div>
 
-<!-- searching -->
-<!-- <div class="search-container">
-  <%= form_tag('/posts/search', method: :get, class: "form-search form-inline row") do %>
-    <%= text_field_tag :keyword, nil, class: "form-control warning-outline col-xs-11 col-md-11 col-lg-11", id: "search-box" %>
-    <input name="city" type="hidden" value="">
-    <button type="submit" class="btn btn-warning-outline col-xs-1 col-md-1 col-lg-1 search-btn"><%= fa_icon "search" %></button>
-  <% end %>
-</div> -->
-
 <div class="row post-content">
-  <div class="col-md-2"> 
-    
-    <ul class="category-list">
-    <%= form_tag('/posts', method: :get) do %>
-      <%= label_tag I18n.t('posts.form.location') %>
-      <%= select_tag :location_id, options_for_select(location_options) %>
+  <div class="col-md-2">
 
-      <hr/>
-      <%= label_tag I18n.t('posts.form.category') %>
-      <% Category.all.each do |c| %>
-        <li>
-          <%= check_box_tag c.display_name %>
-          <%= label_tag c.display_name %>
-        </li>
-      <% end %>
-    <% end %>
-    </ul>
+    <div>
+      <h6><%= I18n.t('posts.form.location') %></h6>
+      <%= select_tag :location_id, options_for_select(location_options, current_location), class: 'chosen-it' %>
+    </div>
+
+    <hr/>
+    <div>
+      <ul class="category-list" style="padding: 0">
+        <h6><%= I18n.t('posts.form.category') %></h6>
+
+        <% Category.all.each do |c| %>
+          <li>
+            <%= active_link_to search_posts_path({category: c.id, city: current_location}), active: /\/posts\/search\?.*category=#{c.id}/, class: 'btn btn-outline btn-sm btn-category' do %>
+              <i class="fa <%= c.fa_icon %>"></i>
+              <span class="text"><%= c.display_name %></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
   </div>
 
-  <div class="col-md-9"> 
+  <div class="col-md-9">
+    <div class="row">
+      <div class="digg_pagination">
+        <%= will_paginate @posts %>
+      </div>
+    </div>
+
+    <div class="row">
     <% @posts.each do |post| %>
+
       <div class="col-md-4">
         <div class="card">
           <%= link_to (image_tag post.main_image_url), post %>
@@ -72,9 +76,10 @@
             <p class="card-text"><%= truncate(post.description, length: 50) %></p>
             <span class="card-text"><i class="fa fa-map-marker"></i> <%= location_name(post.location) %></span>
             <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
-          </div> 
-        </div> 
-      </div> 
+          </div>
+        </div>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>
