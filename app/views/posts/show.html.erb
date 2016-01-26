@@ -16,7 +16,7 @@
         <%= fa_icon "circle" %>
         5 requests
       </h6>
-      <%= image_tag @post.main_image.url, class: "img-responsive", style: 'width: 100%' %>
+      <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
       <p class="extended-description">
         <%= @post.description %>
       </p>
@@ -35,7 +35,7 @@
               <%= fa_icon "check" %>
               <%= t("posts.status.published") %>
             <% elsif @post.closed %>
-              <%= fa_icon "times" %>
+              <%= fa_icon "minus-circle" %>
               <%= t("posts.status.closed") %>
             <% else %>
               <%= fa_icon "ban" %>
@@ -79,6 +79,11 @@
       </form>
 
     </div>
-
   </div>
 </div>
+
+<script type="text/javascript">
+  $(".post-image").error(function () {
+    $(this).hide();
+  });
+</script>
