@@ -39,6 +39,13 @@ vi:
     show:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
+      close: "Đóng"
+      claim_model_title: "Gửi yêu cầu"
+      claim_model_message: "Hãy cho chủ sở hữu biết lý do bạn muốn món đồ này"
+      send_message_model_title: "Gửi tin nhắn"
+      send_message_model_message: "Nội dung tin nhắn"
+      sendingMessage: "Đang gửi"
+      sentMessageSuccess: "Gửi thành công"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"

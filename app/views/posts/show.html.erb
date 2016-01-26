@@ -45,10 +45,10 @@
         </li>
       </ul>
 
-      <% if current_user == nil || @post.user.id != current_user.id %>
-        <button class="btn btn-primary btn-block"><%= t(".request_now") %></button>
-        <button class="btn btn-info btn-block"><%= t(".send_message") %></button>
-      <% elsif @post.user.id == current_user.id %>
+      <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".claim-model"><%= t(".request_now") %></button>
+      <button class="btn btn-info btn-block" data-toggle="modal" data-target=".send-message-model"><%= t(".send_message") %></button>
+
+      <% if current_user != nil && @post.user.id == current_user.id %>
         <ul class="list-group">
           <li class="list-group-item">Cras justo odio</li>
           <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -59,31 +59,102 @@
       <% end %>
     </div>
 
-    <div class="col-lg-3 col-lg-offset-0 col-md-6" style="display:none">
-      <%= form_tag(request_post_post_path(@post), method: 'post') %>
-        <fieldset class="form-group">
-          <input type="text" class="form-control" name="request[name]" placeholder="Tên của bạn">
-        </fieldset>
-        <fieldset class="form-group">
-          <input type="text" class="form-control" name="request[email_or_phone]" placeholder="Email / số điện thoại">
-        </fieldset>
-        <fieldset class="form-group">
-          <input type="text" class="form-control" name="request[address]" placeholder="Địa chỉ">
-        </fieldset>
-        <fieldset class="form-group">
-          <textarea class="form-control" name="request[message]" rows="3" placeholder="Nội dung nhắn"></textarea>
-        </fieldset>
-        <button type="submit" class="btn btn-lg btn-block btn-primary">
-          <%= t(".request_now") %>
-        </button>
-      </form>
-
+    <div class="modal fade claim-model">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title"><%= t(".claim_model_title") %></h4>
+          </div>
+          <div class="modal-body">
+            <%= form_tag(request_post_post_path(@post), method: 'post') %>
+              <% if user_signed_in? %>
+                <input type="hidden" name="request[sender_id]" value="<%= current_user.id %>">
+              <% end %>
+              <fieldset class="form-group">
+                <textarea class="form-control" name="request[message]" rows="3" placeholder="<%= t(".claim_model_message") %>"></textarea>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+            <button type="button" class="btn btn-primary send-btn"><%= t(".request_now") %></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="modal fade send-message-model">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title"><%= t(".send_message_model_title") %></h4>
+          </div>
+          <div class="modal-body">
+            <%= form_tag(send_message_post_path(@post), method: 'post', remote: true) %>
+            <% if user_signed_in? %>
+              <input type="hidden" name="request[sender_id]" value="<%= current_user.id %>">
+            <% end %>
+              <fieldset class="form-group">
+                <textarea class="form-control" name="request[message]" rows="3" placeholder="<%= t(".send_message_model_message") %>"></textarea>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
+            <button type="button" class="btn btn-primary send-btn">
+              <span><%= t(".send_message") %></span>
+              <%= fa_icon "spinner" %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
+<%= javascript_tag do %>
+  window.sendingMessageText = "<%= t(".sendingMessage") %>";
+  window.sentMessageSuccess = "<%= t(".sentMessageSuccess") %>";
+  window.sendMessageText = "<%= t(".send_message") %>";
+<% end %>
+
 <script type="text/javascript">
-  $(".post-image").error(function () {
-    $(this).hide();
+  $(document).ready(function () {
+    $(".post-image").error(function () {
+      $(this).hide();
+    });
+
+    var sendingMessage = false;
+    var sendMessageForm = $(".send-message-model form");
+    var sendMessageBtn = $(".send-message-model .send-btn");
+    var sendMessageBtnContent = sendMessageBtn.find("span");
+    sendMessageForm.bind('ajax:complete', function() {
+      sendMessageBtnContent.html(sentMessageSuccess);
+
+      setTimeout(function () {
+        sendMessageForm.find("textarea").val("");
+        $(".send-message-model .close").click();
+        sendMessageBtn.removeClass("loading");
+        sendMessageBtnContent.html(sendMessageText);
+        sendingMessage = false;
+      }, 1000);
+    });
+
+    sendMessageBtn.click(function () {
+      if (!sendingMessage) {
+        sendingMessage = true;
+        sendMessageBtnContent.html(sendingMessageText);
+        sendMessageBtn.addClass("loading");
+        sendMessageForm.submit();
+      }
+    });
   });
 </script>

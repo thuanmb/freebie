@@ -40,6 +40,13 @@ en:
     show:
       request_now: "Send request"
       send_message: "Send message"
+      close: "Close"
+      claim_model_title: "Claim form"
+      claim_model_message: "Let owner know why you need this things"
+      send_message_model_title: "Message form"
+      send_message_model_message: "Content of the message"
+      sendingMessage: "Sending"
+      sentMessageSuccess: "Sent successfully"
     status:
       published: 'Public'
       closed: 'Closed'

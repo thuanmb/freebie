@@ -141,6 +141,15 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def send_message
+    @post = Post.find(params[:id])
+    @sender = User.find(request_params[:sender_id])
+
+    subject = "#{@sender.name} - contacted for post #{@post.title}"
+    conversation = current_user.send_message(@post.user, request_params[:message], subject).conversation
+    render plain: "success"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -153,7 +162,7 @@ class PostsController < ApplicationController
     end
 
     def request_params
-      params.require(:request).permit(:email_or_phone, :message, :name, :address)
+      params.require(:request).permit(:message, :sender_id)
     end 
 
     def get_location_id

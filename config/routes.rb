@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       put :close
       put :reopen
       post :request_post
+      post :send_message
     end
 
     collection do
