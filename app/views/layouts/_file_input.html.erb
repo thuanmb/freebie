@@ -1,0 +1,14 @@
+<%= f.input :main_image, as: :file, label: render(partial: 'layouts/file_label', locals:{label: label}).html_safe, input_html: {class: 'hidden-xl-down file-input'}, label_html: {class: 'file-label'} %>
+<script>
+  $(function () {
+    $('.file-input').change( function (e) {
+      var fileName = '';
+      if( this.files && this.files.length > 1 )
+        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+      else
+        fileName = e.target.value.split( '\\' ).pop();
+      console.log(this.files.length);
+      $('.file-label .file-name').text(fileName);
+    });
+  });
+</script>
