@@ -367,11 +367,14 @@ body {
 }
 
 .alert {
-  position: relative;
-  top: 7px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
   border: none;
   text-align: center;
   width: 500px;
+  transform: translateX(-50%);
+  z-index: 100;
 
   i {
     font-size: 20px;

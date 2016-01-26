@@ -18,7 +18,7 @@
 //= require chosen-jquery
 //
 //= require users
-//= require messages
+//= require welcome
 //= require geo_location
 //
 //= require_tree .
