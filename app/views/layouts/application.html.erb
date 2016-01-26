@@ -273,6 +273,7 @@
 
 <%= javascript_tag do %>
   window.isENLocale = <%= I18n.locale == :en %>;
+  window.noResultsText = "<%= t("search_no_results_text") %>";
 <% end %>
 </body>
 </html>

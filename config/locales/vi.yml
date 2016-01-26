@@ -9,6 +9,7 @@ vi:
   search_location_group: "Tỉnh hoặc Thành phố"
   search_category_group: "Phân loại"
   search_for_whole_post: "Tìm đồ cũ"
+  search_no_results_text: "Không tìm thấy kết quả trùng khớp với"
   give_your_old_stuffs: "Cho đồ cũ"
   create_new_campaigns: "Quyên góp"
 

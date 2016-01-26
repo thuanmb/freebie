@@ -1,6 +1,9 @@
 $ ->
   searchInput = $(".search-input")
-  searchInput.chosen({include_group_label_in_selected: true})
+  searchInput.chosen(
+    include_group_label_in_selected: true,
+    no_results_text: window.noResultsText
+  )
 
   keyword = null
   noResults = true

@@ -10,6 +10,7 @@ en:
   search_location_group: "Province or City"
   search_category_group: "Categories"
   search_for_whole_post: "Search for old stuffs"
+  search_no_results_text: "No results match"
   give_your_old_stuffs: "Give your old stuffs"
   create_new_campaigns: "Donates"
 
