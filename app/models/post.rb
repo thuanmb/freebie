@@ -1,7 +1,7 @@
 require 'textacular'
 
 class Post < ActiveRecord::Base.extend(Textacular)
-  self.per_page = 20
+  self.per_page = 1
 
   belongs_to :user
   has_many :post_items
@@ -50,5 +50,5 @@ class Post < ActiveRecord::Base.extend(Textacular)
   def Post.find_by_categories category_ids
     Post.joins(:category_link).where(category_links: {category_id: category_ids})
   end
-  
+
 end
