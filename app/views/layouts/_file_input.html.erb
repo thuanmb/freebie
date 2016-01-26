@@ -1,4 +1,5 @@
 <%= f.input :main_image, as: :file, label: render(partial: 'layouts/file_label', locals:{label: label}).html_safe, input_html: {class: 'hidden-xl-down file-input'}, label_html: {class: 'file-label'} %>
+
 <script>
   $(function () {
     $('.file-input').change( function (e) {
