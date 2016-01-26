@@ -62,3 +62,24 @@
     padding-left: 5%;
   }
 }
+
+ul.pagination {
+  @extend .pagination-sm;
+
+  li {
+    @extend .page-item;
+
+    a {
+      @extend .page-link;
+    }
+  }
+}
+
+.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.top-pagination ~ .row {
+  padding-top: 40px;
+}
