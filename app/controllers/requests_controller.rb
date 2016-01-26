@@ -1,5 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :find_post
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /requests
   # GET /requests.json
@@ -14,7 +16,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/new
   def new
-    @request = Request.new
+    @request = @post.requests.build 
   end
 
   # GET /requests/1/edit
@@ -24,11 +26,13 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(request_params)
+    @request = @post.requests.build(request_params)
+    @request.user_id = current_user.id
+    
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to @post, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
         format.html { render :new }
@@ -70,5 +74,9 @@ class RequestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:content, :post_id, :user_id)
+    end
+
+    def find_post
+      @post = Post.find(params[:post_id])
     end
 end
