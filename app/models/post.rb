@@ -48,9 +48,5 @@ class Post < ActiveRecord::Base.extend(Textacular)
   def Post.find_by_categories category_ids
     Post.joins(:category_link).where(category_links: {category_id: category_ids})
   end
-
-  def self.by_location(location_id)
-  	self.where(location: location_id)
-  end
   
 end

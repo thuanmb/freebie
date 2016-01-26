@@ -9,9 +9,7 @@ class PostsController < ApplicationController
     @posts = Post.published
 
     location_id = get_location_id
-
-    if location_id != nil
-      session[:current_location] = location_id
+    if location_id
       @posts = @posts.by_location(location_id)
     end
   end
@@ -50,7 +48,7 @@ class PostsController < ApplicationController
     #@post = Post.new(post_params)
 
     @post = current_user.posts.build(post_params)
-    @post.status = 'drafted'
+    @post.status = 'published'
     @post.set_category params[:post][:category]
 
     respond_to do |format|
@@ -151,16 +149,8 @@ class PostsController < ApplicationController
     end 
 
     def get_location_id
-      # debugger
-      if params[:city] != nil
-        LOCATION_LIST.each do |location|
-          if location[:name].include?(params[:city])
-            return location[:id]
-          end
-        end
-        params[:city]
-      else 
-        ""
-      end
+      location_hash = LOCATION_LIST.find { |e| e[:name] == params[:city] || e[:id] == params[:city] }
+      session[:current_location] = location_hash[:id] if location_hash
+      session[:current_location]
     end
 end
