@@ -12,6 +12,8 @@ class PostsController < ApplicationController
     if location_id
       @posts = @posts.by_location(location_id)
     end
+
+    @posts = @posts.paginate(:page => params[:page])
   end
 
   # GET /posts/1
@@ -120,6 +122,7 @@ class PostsController < ApplicationController
     @posts = keyword.present? ? Post.by_keyword(keyword) : Post.published
     @posts = @posts.by_location(cities) if cities.present? && !cities.empty?
     @posts = @posts.by_categories(categories) if categories.present? && !categories.empty?
+    @posts = @posts.paginate(:page => params[:page])
 
     render :template => 'posts/index'
   end
