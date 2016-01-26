@@ -11,7 +11,10 @@ class PostsController < ApplicationController
 
     if location_id != nil
       session[:current_location] = location_id
-      @posts = @posts.by_location(location_id)
+    end
+
+    if session[:current_location] != nil
+      @posts = @posts.by_location(session[:current_location])
     end
   end
 
