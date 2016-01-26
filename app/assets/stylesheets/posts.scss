@@ -58,18 +58,22 @@
 
     #search_chosen {
       width: 100% !important;
+      background: none;
 
       .chosen-choices {
         width: 100%;
         border-radius: 4px;
 
         .search-choice {
-          background-color: #5bc0de;
-          color: #fff;
-          border: none;
+          background-color: rgba(240,173,78,0.15);
+          border: 1px solid $primary_color;
           padding: 7px 20px 7px 12px;
           background-image: none;
           box-shadow: none;
+
+          .group-name {
+            color: $primary_color;
+          }
 
           .search-choice-close {
             top: 8px;
