@@ -6,3 +6,6 @@ en:
     save_location: "Save location"
     detecting_location: Detecting current location...
     detected_location: Detected location is
+    join_campaign: Have a look at these campaigns
+    join_campaign_description: Joining a campaign is a great way to bring your stuff to people in need in distance area.
+    join_campaign_alternative: Alternative you can post your stuff.

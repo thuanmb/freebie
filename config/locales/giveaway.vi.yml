@@ -6,3 +6,7 @@ vi:
     save_location: "Lưu lại thành phố"
     detecting_location: Đang tìm kiếm thành phố hiện tại của bạn...
     detected_location: Thành phố hiện tại của bạn là
+    join_campaign: Tham gia hoạt động từ thiện
+    join_campaign_description: Mang món đồ cũ của bạn tới một hoạt động từ thiện là cách nhanh nhất để giúp đỡ những người nghèo ở vùng sâu vùng xa. Hãy dành chút thời gian xem qua những hoạt động từ thiện dưới đây. Có thể món đồ bạn sắp cho đi sẽ giúp ích được một phần nào đấy.
+    join_campaign_alternative: "Nếu bạn không tìm thấy một hoạt động từ thiện đang cần tới món đồ của bạn, bạn có thể tạo một bài đăng mới."
+    create_post: Tạo bài đăng mới
