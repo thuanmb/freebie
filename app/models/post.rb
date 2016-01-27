@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
   self.per_page = 20
 
   belongs_to :user
-  has_many :post_items
+  has_many :requests
   validates :status, inclusion: { in: %w(drafted published closed) }
   has_one :category_link, as: :item
   has_one :category, through: :category_link, source: :category

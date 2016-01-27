@@ -26,7 +26,7 @@
         <%= fa_icon "circle" %>
         by <%= @post.user.name %>
         <%= fa_icon "circle" %>
-        5 requests
+        <%= pluralize(@post.requests.count, "request") %>
       </h6>
       <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
       <div class="extended-description p-t-2">
@@ -62,11 +62,22 @@
 
       <% if current_user != nil && @post.user.id == current_user.id %>
         <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
+          <% @post.requests.each do |request| %>
+            <li class="list-group-item">
+              <div class="list-group-item-heading">
+                <%= request.user.email %>
+                <% if request.status %>
+                  <span> Da chap nhan </span>
+                  <button type="button" class="btn btn-sm btn-warning">Huy request</button>
+                <% else %>
+                  <button type="button" class="btn btn-sm btn-primary">Chap nhan</button>
+                <% end %>    
+                </div>
+              <p class="list-group-item-text">
+                <%= request.content %>
+              </p>
+          </li>
+          <% end %>
         </ul>
       <% end %>
     </div>
@@ -81,12 +92,12 @@
             <h4 class="modal-title"><%= t(".claim_model_title") %></h4>
           </div>
           <div class="modal-body">
-            <%= form_tag(send_message_post_path(@post), method: 'post', remote: true) %>
+            <%= form_tag([@post, @post.requests.build], remote: true) %>
               <% if user_signed_in? %>
                 <input type="hidden" name="request[sender_id]" value="<%= current_user.id %>">
               <% end %>
               <fieldset class="form-group">
-                <textarea class="form-control" name="request[message]" rows="3" placeholder="<%= t(".claim_model_message") %>"></textarea>
+                <textarea class="form-control" name="request[content]" rows="3" placeholder="<%= t(".claim_model_message") %>"></textarea>
               </fieldset>
             </form>
           </div>
