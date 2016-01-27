@@ -2,21 +2,20 @@
 <html>
 <head>
   <title>Freebie</title>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <% if content_for?(:meta_og) %>
       <%= yield :meta_og %>
   <% else %>
       <meta property="og:title" content="Freebie Community" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="http://freebie.vn" />
+      <meta property="og:url" content="<%= request.original_url %>" />
       <%= tag :meta, property: 'og:image', content: image_url('freebie.jpg') %>
   <% end %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
 </head>
 <body>
