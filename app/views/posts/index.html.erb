@@ -45,9 +45,16 @@
       <ul class="category-list" style="padding: 0">
         <h6><%= I18n.t('posts.form.category') %></h6>
 
+        <li>
+          <%= active_link_to search_posts_path({city: current_location}), active: /^((?!category).)*$/, class: 'btn btn-outline btn-sm btn-category' do %>
+            <i class="fa fa-globe"></i>
+            <span class="text"><%= t('category.all') %></span>
+          <% end %>
+        </li>
+
         <% Category.all.each do |c| %>
           <li>
-            <%= active_link_to search_posts_path({category: c.id, city: current_location}), active: /\/posts\/search\?.*category=#{c.id}/, class: 'btn btn-outline btn-sm btn-category' do %>
+            <%= active_link_to search_posts_path({category: c.id, city: current_location}), active: /category=[0-9,]*#{c.id}/, class: 'btn btn-outline btn-sm btn-category' do %>
               <i class="fa <%= c.fa_icon %>"></i>
               <span class="text"><%= c.display_name %></span>
             <% end %>
