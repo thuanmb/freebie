@@ -57,6 +57,7 @@ class PostsController < ApplicationController
 
     @post = current_user.posts.build(post_params)
     @post.status = 'published'
+    @post.expiring_date = Date.today + 14
     @post.set_category params[:post][:category]
 
     respond_to do |format|

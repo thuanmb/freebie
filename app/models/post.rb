@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
   has_attached_file :main_image, styles: {medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\Z/
 
-  scope :published, ->()                    { where('status = ?', 'published') }
+  scope :published, ->()                    { where('status = ? and (expiring_date is null or expiring_date >= ?)', 'published', Date.today) }
   scope :by_keyword, ->( keyword )          { basic_search(keyword) }
   scope :by_location, ->( location_id )     { where( location: location_id) }
   scope :by_categories, ->( category_ids )  { joins(:category_link).where(category_links: {category_id: category_ids}) }
@@ -28,6 +28,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
 
   def publish
     self.status = 'published' unless self.status == 'published'
+    self.expiring_date = Date.today + 14
   end
 
   def close
