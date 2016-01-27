@@ -1,3 +1,10 @@
+@category_toys = Category.create({
+  name: 'toys',
+  fa_icon: 'fa-reddit-alien',
+  img_url: 'http://i.huffpost.com/gen/872762/images/o-TOY-DONATION-facebook.jpg',
+  color: '#e6c325'
+});
+
 @category_clothes = Category.create({
   name: 'clothes',
   fa_icon: 'fa-shopping-bag',

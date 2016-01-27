@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.input :title, label: false, placeholder: t(".title") %>
     <%= f.input :description, label: false, as: :text, placeholder: t(".description"), :input_html => { :rows => 10 }  %>
+    <%= render partial: 'layouts/file_input', locals: {f: f, label: t('.main_image')} %>
     <%= f.input :location, label: t(".location"), collection: location_options, selected: @location, input_html: { class: 'chosen-it' }  %>
     <%= f.input :category, collection: @categories, label_method: :display_name, label: t(".category"), selected: params[:category] || @post.category.try(:id), include_blank: true, placeholder: t(".location"), input_html: { class: 'chosen-it'} %>
-    <%= render partial: 'layouts/file_input', locals: {f: f, label: t('.main_image')} %>
   </div>
 
   <div class="form-actions">
