@@ -280,12 +280,23 @@
 
 #footer {
   .copyright {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 5px 0;
     line-height: 30px;
-    text-align: center;
     color: #fff;
+    display: inline-block;
   }
+
+  .language-selection {
+    line-height: 40px;
+
+    a {
+      margin-right: 4px;
+      color: $primary_color;
+    }
+  }
+
+
   .social-icons {
     li {
       font-size: 1.5em;

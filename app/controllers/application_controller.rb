@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
   #   redirect_back_or root_path
   # end
 
+  before_action :set_locale
+ 
+  def set_locale
+    I18n.locale = params[:lang] || I18n.default_locale
+  end
+
   def redirect_back_or(path)
     redirect_to request.referer || path
   end
