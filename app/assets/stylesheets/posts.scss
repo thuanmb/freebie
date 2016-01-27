@@ -259,7 +259,10 @@ $detail_col_padding_top: 101px;
     .list-group {
       li {
         margin-bottom: 5px;
-        box-shadow: 1px 2px 1px rgba(0,0,0,0.5);
+        
+        &:hover {
+          box-shadow: 1px 2px 1px rgba(0,0,0,0.5);
+        }
 
         a {
           text-decoration: none;
