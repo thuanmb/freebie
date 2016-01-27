@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :find_post
 
   # GET /requests
   # GET /requests.json
@@ -14,7 +15,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/new
   def new
-    @request = Request.new
+    @request = @post.requests.build
   end
 
   # GET /requests/1/edit
@@ -24,16 +25,34 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(request_params)
+   # @request = Request.new(request_params)
+    @request = @post.requests.build(request_params)
+    @request.user_id = current_user.id
 
-    respond_to do |format|
-      if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render :show, status: :created, location: @request }
-      else
-        format.html { render :new }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-      end
+    if @request.save
+        render plain: @post.requests.count
+    else
+        render plain: @request.errors
+    end
+  end
+  
+  def accept
+    @request = Request.find(params[:request_id])
+    @request.status = true
+    if @request.save
+      render "request_list.js.erb"
+    else
+        render plain: @request.errors
+    end
+  end
+
+  def cancel
+    @request = Request.find(params[:request_id])
+    @request.status = false 
+    if @request.save
+      render "request_list.js.erb"
+    else
+        render plain: @request.errors
     end
   end
 
@@ -66,7 +85,11 @@ class RequestsController < ApplicationController
     def set_request
       @request = Request.find(params[:id])
     end
-
+    
+    def find_post
+      @post = Post.find(params[:post_id])
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:content, :post_id, :user_id)

@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :post_items
-    resources :requests
+    resources :requests do
+      collection do
+        patch :accept
+        patch :cancel
+    end
+    end
 
     member do
       put :publish
@@ -64,14 +69,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :requests do
-    collection do
-      put :accept
-      put :cancel
-    end
-  end
-
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

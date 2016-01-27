@@ -26,7 +26,7 @@
         <%= fa_icon "circle" %>
         by <%= @post.user.name %>
         <%= fa_icon "circle" %>
-        5 requests
+        <span class="request-count"><%= pluralize(@post.requests.count, "request") %></span>
       </h6>
       <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
       <div class="extended-description p-t-2">
@@ -59,6 +59,7 @@
 
       <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".claim-model"><%= t(".request_now") %></button>
       <button class="btn btn-info btn-block" data-toggle="modal" data-target=".send-message-model"><%= t(".send_message") %></button>
+
     </div>
 
     <div class="modal fade claim-model">
@@ -71,12 +72,12 @@
             <h4 class="modal-title"><%= t(".claim_model_title") %></h4>
           </div>
           <div class="modal-body">
-            <%= form_tag(send_message_post_path(@post), method: 'post', remote: true) %>
+            <%= form_tag([@post, @post.requests.build], remote: true) %>
               <% if user_signed_in? %>
                 <input type="hidden" name="request[sender_id]" value="<%= current_user.id %>">
               <% end %>
               <fieldset class="form-group">
-                <textarea class="form-control" name="request[message]" rows="3" placeholder="<%= t(".claim_model_message") %>"></textarea>
+                <textarea class="form-control" name="request[content]" rows="3" placeholder="<%= t(".claim_model_message") %>"></textarea>
               </fieldset>
             </form>
           </div>
@@ -122,11 +123,11 @@
       </div>
     </div>
 
-    <!--% if current_user != nil && @post.user.id == current_user.id %-->
+    <% if user_signed_in? && @post.user.id == current_user.id %>
       <section class="request-list jumbotron jumbotron-fluid col-md-8 col-md-offset-2">
-        <%= render "request_list" %>
+        <%= render "shared/request_list" %>
       </section>
-    <!--% end %-->
+    <% end %>
   </div>
 </div>
 
@@ -156,6 +157,7 @@
   window.sendingMessageText = "<%= t(".sendingMessage") %>";
   window.sentMessageSuccess = "<%= t(".sentMessageSuccess") %>";
   window.sendMessageText = "<%= t(".send_message") %>";
+  window.requestCount = <%= @post.requests.count %>;
 <% end %>
 
 <script type="text/javascript">
@@ -164,19 +166,23 @@
       $(this).hide();
     });
 
-    var registerFromEvent = function (modalSelector) {
+    var registerFromEvent = function (modalSelector, originalText, callback) {
       var sendingMessage = false;
       var messageForm = $(modalSelector + " form");
       var messageBtn = $(modalSelector + " .send-btn");
       var messageBtnContent = messageBtn.find("span");
-      messageForm.bind('ajax:complete', function() {
+      messageForm.bind('ajax:complete', function(e, status, message) {
+        if (callback) {
+          callback(status.responseText)
+        }
+
         messageBtnContent.html(sentMessageSuccess);
 
         setTimeout(function () {
           messageForm.find("textarea").val("");
           $(modalSelector + " .close").click();
           messageBtn.removeClass("loading");
-          messageBtnContent.html(sendMessageText);
+          messageBtnContent.html(originalText);
           sendingMessage = false;
         }, 1000);
       });
@@ -191,8 +197,16 @@
       });
     }
 
-    registerFromEvent(".send-message-model");
-    registerFromEvent(".claim-model");
+    registerFromEvent(".send-message-model", sendMessageText);
+    registerFromEvent(".claim-model", sendMessageText);
+
+    window.registerEventForRequestActionBtns = function () {
+      for (var i = 0; i < window.requestCount; i++) {
+        registerFromEvent(".request-content-" + i, "Somthing...");  
+      }
+    }
+
+    registerEventForRequestActionBtns();
 
     if (window.location.search.indexOf("new_post=true") >= 0) {
       $('#social-share').modal()
