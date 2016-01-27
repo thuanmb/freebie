@@ -8,7 +8,7 @@
             <img src="<%= avatar_url_for request.user, 30 %>">
             <div><%= request.user.name %></div>
           <% end %>
-          
+
           <% if request.status == nil || !request.status %>
             <%= form_for [@post, request], url: accept_post_requests_path(@post), html: {class: "form-inline", remote: true} do |f| %>
               <input type="hidden" name="request_id" value="<%= request.id %>">
@@ -33,6 +33,7 @@
             </span>
           <% end %>
           <p><%= request.content %></p>
+          <div class="request-date"><%= request.created_at.strftime("%b %d, %Y") %></div>
         </li>
       <% end %>
     <% end %>
