@@ -1,9 +1,9 @@
 <div class="container">
   <h3 class="display-3"><%= t(".request_list_title") %></h3>
   <ul class="list-group">
-    <% @post.requests.each do |request| %>
+    <% @post.requests.each_with_index do |request, index| %>
       <% if request.user != nil %>
-        <li class="list-group-item">
+        <li class="list-group-item request-content-<%= index %>">
           <%= link_to(user_path(request.user), class: "btn btn-link") do %>
             <img src="<%= avatar_url_for request.user, 30 %>">
             <div><%= request.user.name %></div>
@@ -12,13 +12,19 @@
           <% if request.status == nil || !request.status %>
             <%= form_for [@post, request], url: accept_post_requests_path(@post), html: {class: "form-inline", remote: true} do |f| %>
               <input type="hidden" name="request_id" value="<%= request.id %>">
-              <button type="submit" class="btn btn-success-outline"><%= t(".accept") %></button>
+              <button type="submit" class="btn btn-success-outline send-btn">
+                <span><%= t(".accept") %></span>
+                <%= fa_icon "spinner" %>
+              </button>
             <% end %>
           <% else%>
             <span class="pull-xs-right">
               <%= form_for request, url: cancel_post_requests_path(@post), html: {class: "form-inline", remote: true} do |f| %>
                 <input type="hidden" name="request_id" value="<%= request.id %>">
-                <button type="submit" class="btn btn-danger-outline"><%= t(".cancel") %></button>
+                <button type="submit" class="btn btn-danger-outline send-btn">
+                  <span><%= t(".cancel") %></span>
+                  <%= fa_icon "spinner" %>
+                </button>
               <% end %>
               <span class="accepted-status pull-xs-right">
                 <%= fa_icon "check" %>

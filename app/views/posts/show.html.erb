@@ -26,7 +26,7 @@
         <%= fa_icon "circle" %>
         by <%= @post.user.name %>
         <%= fa_icon "circle" %>
-        <%= pluralize(@post.requests.count, "request") %>
+        <span class="request-count"><%= pluralize(@post.requests.count, "request") %></span>
       </h6>
       <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
       <div class="extended-description p-t-2">
@@ -125,7 +125,7 @@
 
     <% if user_signed_in? && @post.user.id == current_user.id %>
       <section class="request-list jumbotron jumbotron-fluid col-md-8 col-md-offset-2">
-        <%= render "request_list" %>
+        <%= render "shared/request_list" %>
       </section>
     <% end %>
   </div>
@@ -135,6 +135,7 @@
   window.sendingMessageText = "<%= t(".sendingMessage") %>";
   window.sentMessageSuccess = "<%= t(".sentMessageSuccess") %>";
   window.sendMessageText = "<%= t(".send_message") %>";
+  window.requestCount = <%= @post.requests.count %>;
 <% end %>
 
 <script type="text/javascript">
@@ -143,19 +144,23 @@
       $(this).hide();
     });
 
-    var registerFromEvent = function (modalSelector) {
+    var registerFromEvent = function (modalSelector, originalText, callback) {
       var sendingMessage = false;
       var messageForm = $(modalSelector + " form");
       var messageBtn = $(modalSelector + " .send-btn");
       var messageBtnContent = messageBtn.find("span");
-      messageForm.bind('ajax:complete', function() {
+      messageForm.bind('ajax:complete', function(e, status, message) {
+        if (callback) {
+          callback(status.responseText)
+        }
+
         messageBtnContent.html(sentMessageSuccess);
 
         setTimeout(function () {
           messageForm.find("textarea").val("");
           $(modalSelector + " .close").click();
           messageBtn.removeClass("loading");
-          messageBtnContent.html(sendMessageText);
+          messageBtnContent.html(originalText);
           sendingMessage = false;
         }, 1000);
       });
@@ -170,7 +175,15 @@
       });
     }
 
-    registerFromEvent(".send-message-model");
-    registerFromEvent(".claim-model");
+    registerFromEvent(".send-message-model", sendMessageText);
+    registerFromEvent(".claim-model", sendMessageText);
+
+    window.registerEventForRequestActionBtns = function () {
+      for (var i = 0; i < window.requestCount; i++) {
+        registerFromEvent(".request-content-" + i, "Somthing...");  
+      }
+    }
+
+    registerEventForRequestActionBtns();
   });
 </script>

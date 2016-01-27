@@ -30,7 +30,7 @@ class RequestsController < ApplicationController
     @request.user_id = current_user.id
 
     if @request.save
-        render plain: "success"
+        render plain: @post.requests.count
     else
         render plain: @request.errors
     end
@@ -40,7 +40,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:request_id])
     @request.status = true
     if @request.save
-      render plain: "success"
+      render "request_list.js.erb"
     else
         render plain: @request.errors
     end
@@ -50,7 +50,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:request_id])
     @request.status = false 
     if @request.save
-      render plain: "success"
+      render "request_list.js.erb"
     else
         render plain: @request.errors
     end
