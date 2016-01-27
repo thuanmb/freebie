@@ -65,6 +65,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :requests do
+    collection do
+      put :accept
+      put :cancel
+    end
+  end
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

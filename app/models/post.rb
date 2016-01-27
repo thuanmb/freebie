@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
   validates :status, inclusion: { in: %w(drafted published closed) }
   has_one :category_link, as: :item
   has_one :category, through: :category_link, source: :category
+  has_many :requests
 
   has_attached_file :main_image, styles: {medium: "300x300>", thumb: "100x100>"}
   validates_attachment_content_type :main_image, content_type: /\Aimage\/.*\Z/
