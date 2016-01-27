@@ -30,7 +30,7 @@ Post.create({
 
 Post.create({
   user_id: @user.id,
-  category: @category_toys,
+  category: @category_books,
   status: 'published',
   title: 'Bộ truyện Pokemon special',
   description: 'Bạn nào muốn lấy 12 tập truyện Pokemon special thì liên hệ mình
@@ -43,3 +43,49 @@ Post.create({
   main_image_file_size: '122390',
   main_image_updated_at: '2016-01-27 10:22:43.256608'
 })
+
+Post.create({
+  user_id: @user.id,
+  category: @category_clothes,
+  status: 'published',
+  title: 'Đầm dạ hội ánh kim còn mới',
+  description: 'Mình có vài bộ đầm ánh kim chỉ mới mặc vài lần. Vì nhiều đồ quá nên phải cho đi bớt. Ai cần thì liên hệ nhá.',
+  location: 'location_1',
+  created_at: '2016-01-27 15:02:48.574623',
+  updated_at: '2016-01-27 15:02:48.574623',
+  main_image_file_name: 'dress.jpg',
+  main_image_content_type: 'image/jpeg',
+  main_image_file_size: '92111',
+  main_image_updated_at: '2016-01-27 15:02:48.373932'
+})
+
+Post.create({
+  user_id: @user.id,
+  category: @category_toys,
+  status: 'published',
+  title: 'Lâu đài xếp hình bằng gỗ cho bé',
+  description: 'Có nhiều đồ chơi bé ở nhà ko chơi nữa. Ai có nhu cầu xin cứ liên hệ.',
+  location: 'location_1',
+  created_at: '2016-01-27 16:01:17.319757',
+  updated_at: '2016-01-27 16:01:17.319757',
+  main_image_file_name: 'Wholesale-Children-toys-Forest-Castle-wooden-barrel-blocks-preschool-toys-educational-toys.jpg',
+  main_image_content_type: 'image/jpeg',
+  main_image_file_size: '22414',
+  main_image_updated_at: '2016-01-27 16:01:17.188277'
+})
+
+Post.create({
+  user_id: @user.id,
+  category: @category_electronics,
+  status: 'published',
+  title: 'Laptop cũ, vẫn xài được',
+  description: 'Mình có một cái laptop cũ vẫn còn xài tốt. Xin gửi tặng lại bạn nào có hoàn cảnh khó khăn.',
+  location: 'location_1',
+  created_at: '2016-01-27 16:55:23.410781',
+  updated_at: '2016-01-27 16:55:23.410781',
+  main_image_file_name: 'thick-notebook.jpg',
+  main_image_content_type: 'image/jpeg',
+  main_image_file_size: '96017',
+  main_image_updated_at: '2016-01-27 16:55:23.13993'
+})
+
