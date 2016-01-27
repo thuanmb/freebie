@@ -81,7 +81,7 @@
             <h4 class="modal-title"><%= t(".claim_model_title") %></h4>
           </div>
           <div class="modal-body">
-            <%= form_tag(request_post_post_path(@post), method: 'post') %>
+            <%= form_tag(send_message_post_path(@post), method: 'post', remote: true) %>
               <% if user_signed_in? %>
                 <input type="hidden" name="request[sender_id]" value="<%= current_user.id %>">
               <% end %>
@@ -92,7 +92,10 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(".close") %></button>
-            <button type="button" class="btn btn-primary send-btn"><%= t(".request_now") %></button>
+            <button type="button" class="btn btn-primary send-btn">
+              <span><%= t(".request_now") %></span>
+              <%= fa_icon "spinner" %>
+            </button>
           </div>
         </div>
       </div>
@@ -144,29 +147,34 @@
       $(this).hide();
     });
 
-    var sendingMessage = false;
-    var sendMessageForm = $(".send-message-model form");
-    var sendMessageBtn = $(".send-message-model .send-btn");
-    var sendMessageBtnContent = sendMessageBtn.find("span");
-    sendMessageForm.bind('ajax:complete', function() {
-      sendMessageBtnContent.html(sentMessageSuccess);
+    var registerFromEvent = function (modalSelector) {
+      var sendingMessage = false;
+      var messageForm = $(modalSelector + " form");
+      var messageBtn = $(modalSelector + " .send-btn");
+      var messageBtnContent = messageBtn.find("span");
+      messageForm.bind('ajax:complete', function() {
+        messageBtnContent.html(sentMessageSuccess);
 
-      setTimeout(function () {
-        sendMessageForm.find("textarea").val("");
-        $(".send-message-model .close").click();
-        sendMessageBtn.removeClass("loading");
-        sendMessageBtnContent.html(sendMessageText);
-        sendingMessage = false;
-      }, 1000);
-    });
+        setTimeout(function () {
+          messageForm.find("textarea").val("");
+          $(modalSelector + " .close").click();
+          messageBtn.removeClass("loading");
+          messageBtnContent.html(sendMessageText);
+          sendingMessage = false;
+        }, 1000);
+      });
 
-    sendMessageBtn.click(function () {
-      if (!sendingMessage) {
-        sendingMessage = true;
-        sendMessageBtnContent.html(sendingMessageText);
-        sendMessageBtn.addClass("loading");
-        sendMessageForm.submit();
-      }
-    });
+      messageBtn.click(function () {
+        if (!sendingMessage) {
+          sendingMessage = true;
+          messageBtnContent.html(sendingMessageText);
+          messageBtn.addClass("loading");
+          messageForm.submit();
+        }
+      });
+    }
+
+    registerFromEvent(".send-message-model");
+    registerFromEvent(".claim-model");
   });
 </script>
