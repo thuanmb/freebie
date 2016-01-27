@@ -7,6 +7,7 @@
     <%= render partial: 'layouts/file_input', locals: {f: f, label: t('.main_image')} %>
     <%= f.input :location, label: t(".location"), collection: location_options, selected: @location, input_html: { class: 'chosen-it' }  %>
     <%= f.input :category, collection: @categories, label_method: :display_name, label: t(".category"), selected: params[:category] || @post.category.try(:id), include_blank: true, placeholder: t(".location"), input_html: { class: 'chosen-it'} %>
+    <%= f.input :expiring_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year], html5: true, label: t(".expiring_date") %>
   </div>
 
   <div class="form-actions">

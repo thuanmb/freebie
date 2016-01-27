@@ -57,7 +57,7 @@ class PostsController < ApplicationController
 
     @post = current_user.posts.build(post_params)
     @post.status = 'published'
-    @post.expiring_date = Date.today + 14
+    @post.expiring_date = Date.today + 14 if @post.expiring_date.nil?
     @post.set_category params[:post][:category]
 
     respond_to do |format|
@@ -160,7 +160,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :main_image, :location)
+      params.require(:post).permit(:title, :description, :main_image, :location, :expiring_date)
     end
 
     def request_params

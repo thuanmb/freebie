@@ -42,6 +42,7 @@ vi:
       main_image: "Tải lên hình ảnh"
       submit_edit: "Cập nhật"
       submit_new: "Tạo"
+      expiring_date: "Ngày hết hạn"
     show:
       request_now: "Gửi yêu cầu"
       send_message: "Gửi tin nhắn"
@@ -57,6 +58,7 @@ vi:
       closed: "Đã đóng"
       drafted: "Lưu nháp"
     claim: "Yêu cầu"
+    expiring_label: "Ngày hết hạn"
     index:
       suggest_location_message_1: "Đã xác định vị trí của bạn là "
       suggest_location_message_2: ". Bạn có muốn tải lại trang với vị trí này?"
