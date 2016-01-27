@@ -130,6 +130,28 @@
   </div>
 </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="social-share" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel"><%= I18n.t('posts.social_share.title') %></h4>
+        </div>
+        <div class="modal-body">
+          <h6><%= I18n.t('posts.social_share.message') %></h6>
+
+          <div class="btn-group social-btn-group" role="group" aria-label="Basic example">
+            <button class="sharer button" data-sharer="facebook" data-url="<%= request.original_url %>">Share on Facebook</button>
+
+            <button class="sharer button" data-sharer="googleplus" data-url="<%= request.original_url %>">Share on Google+</button>
+
+            <button class="sharer button" data-sharer="linkedin" data-url="<%= request.original_url %>">Share on Linkedin</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <%= javascript_tag do %>
   window.sendingMessageText = "<%= t(".sendingMessage") %>";
   window.sentMessageSuccess = "<%= t(".sentMessageSuccess") %>";
@@ -171,5 +193,9 @@
 
     registerFromEvent(".send-message-model");
     registerFromEvent(".claim-model");
+
+    if (window.location.search.indexOf("new_post=true") >= 0) {
+      $('#social-share').modal()
+    }
   });
 </script>

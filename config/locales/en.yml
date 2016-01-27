@@ -66,6 +66,9 @@ en:
       yes_btn: "Yes"
       no_btn: "No. Thanks!"
     location: "Area"
+    social_share:
+      message: "Please share, your item will be found faster. And who know one of your friends might ask for it!"
+      title: "Share it"
 
   publish: "Publish"
   edit: "Edit"
