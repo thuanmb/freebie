@@ -6,6 +6,10 @@ module ApplicationHelper
       warning: "alert-warning",
       notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
   end
+  
+  def pretty_time(time) 
+    time.strftime "%b %d %Y"
+  end 
 
   def flash_messages(opts = {})
     flash.each do |msg_type, message|

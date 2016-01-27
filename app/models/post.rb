@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base.extend(Textacular)
 
   def publish
     self.status = 'published' unless self.status == 'published'
-    self.expiring_date = Date.today + 14
+    self.expiring_date = Date.today + 14 if self.expiring_date < Date.today
   end
 
   def close
