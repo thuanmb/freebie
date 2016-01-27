@@ -44,6 +44,15 @@ class RequestsController < ApplicationController
         render plain: @request.errors
     end
   end
+
+  def cancel
+    @request.status = false 
+    if @request.save
+      render plain: "success"
+    else
+        render plain: @request.errors
+    end
+  end
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update

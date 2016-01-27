@@ -1,5 +1,4 @@
 // Custom bootstrap variables must be set or import before bootstrap itself.
-@import "gotham_font";
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-fix";
@@ -18,6 +17,12 @@
 @import "categories";
 @import "giveaways";
 @import "footer";
+
+@font-face {
+  font-family: Gotham;
+  src: asset_url('assets/gotham_medium.ttf') format('truetype');
+  font-weight: normal;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -248,7 +253,7 @@ body {
     margin: auto;
     display: inline-block;
 
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.95);
 
     .fa-close {
       position: absolute;

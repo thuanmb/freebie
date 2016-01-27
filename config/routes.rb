@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_items
     resources :requests do
-      put :accept
-      put :cancel
+      collection do
+        put :accept
+        put :cancel
+    end
     end
 
     member do
