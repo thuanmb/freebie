@@ -15298,23 +15298,6 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* line 58, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/custom.scss */
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: normal;
-  color: #2c3e50;
-}
-
-/* line 65, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/custom.scss */
-.component {
-  margin-bottom: 80px;
-  background: #f9f9f9;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 1px 1px 30px #cecece;
-}
-
 @font-face {
   font-family: Gotham;
   src: url(/assets/gotham_medium.ttf) format("truetype");

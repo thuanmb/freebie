@@ -54,18 +54,3 @@ button:hover {
   transition: all .2s ease-in-out;
   transform: scale(1.1);
 }
-
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: normal;
-  color: #2c3e50;
-}
-
-.component {
-  margin-bottom: 80px;
-  background: #f9f9f9;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 1px 1px 30px #cecece;
-}
