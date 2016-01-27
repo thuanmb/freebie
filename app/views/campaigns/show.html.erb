@@ -8,19 +8,19 @@
     <% end %>
 <% end %>
 
-<div class="container-fluid no-pad events-detail">
+<div class="container-fluid events-detail p-b-3">
   <div class="row no-pad">
     <div class="col-md-12 event-content">
-      <div class="hero-img hidden-sm-down" style="background-image: url(<%= @campaign.image_url %>); background-size: cover;"> </div>
+      <div class="hero-img hidden-sm-down" style="background-image: url(<%= @campaign.image_url %>);"> </div>
       <div class="container">
-        <h1> <%= @campaign.title %> </h1> 
+        <h1> <%= @campaign.title %> </h1>
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="addthis_sharing_toolbox"></div>
-      
+
         <hr/>
         <div class="col-md-12">
-          <a href="#donations"><span><b><%= "#{@campaign.donations.count} đóng góp" %></b></span></a> | 
-          
+          <a href="#donations"><span><b><%= "#{@campaign.donations.count} đóng góp" %></b></span></a> |
+
           <% @campaign.campaign_items.each do |item| %>
             <a href="#money"><span><b><%= "#{item.collected_qty} #{item.label}" %></b></span></a> |
           <% end %>
@@ -31,18 +31,18 @@
           <div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5"></div></div>
 
         <div class="col-md-6">
-          <h3> <%= "Quyên góp sẽ kết thúc trong #{@campaign.remaining_days} ngày nữa" %> </h3> 
-          
+          <h3> <%= "Quyên góp sẽ kết thúc trong #{@campaign.remaining_days} ngày nữa" %> </h3>
+
           <% @campaign.campaign_items.each do |item| %>
-            <h4> 
-              <%= "#{item.progress}% của #{item.target_qty} #{item.label}" %> 
+            <h4>
+              <%= "#{item.progress}% của #{item.target_qty} #{item.label}" %>
               <progress class="progress progress-striped progress-success" value="<%= item.progress %>" max="100"></progress>
-              </h4> 
+              </h4>
           <% end %>
 
           <hr>
           <%= @markdown.render(@campaign.donation_instruction.present? ? @campaign.donation_instruction : 'Chúng tôi trân trọng mọi đóng góp. Hãy để lại tin nhắn, chúng tôi sẽ liên lạc trong vòng 24h để đón nhận đóng góp của bạn').html_safe %>
-  
+
           <%= form_tag('/campaigns/' + @campaign.id.to_s + '/ask_to_donate', method: 'post') %>
             <fieldset class="form-group">
               <input type="text" class="form-control" name="donation[name]" placeholder="Tên của bạn">
@@ -75,7 +75,7 @@
           </ul>
         </div>
 
-      </div>  
+      </div>
     </div>
   </div>
 </div>

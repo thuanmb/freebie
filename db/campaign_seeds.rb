@@ -4,8 +4,8 @@ campaign1 = Campaign.create({
   end_date: 5.days.from_now,
   status: 'Published',
   categories: [@category_money, @category_clothes, @category_people],
-  gmap_location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942346.616976209!2d104.749081!3d22.6895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cb929387547d35%3A0xdc43dc950ffc854!2zTMWpbmcgSOG7kywgWcOqbiBNaW5oLCBIw6AgR2lhbmcsIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1453543686933" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
-  image_url: 'http://songhuongthien.vn/uploads/song-huong-thien-7.jpg',
+  gmap_location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942346.616976209!2d104.749081!3d22.6895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cb929387547d35%3A0xdc43dc950ffc854!2zTMWpbmcgSOG7kywgWcOqbiBNaW5oLCBIw6AgR2lhbmcsIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1453543686933" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>',
+  image_url: 'http://www.mogo.vn/images/gioqua2.png',
   description: %q(Chương trình Trao tặng quà Tết của Nhóm Sống Hướng Thiện sẽ tổ chức 2 ngày 30, 31/1/2016 (tức 21, 22 tháng Chạp) tại Lũng Hồ, Yên Minh, Hà Giang.
 
 Trao quà cho 156 hộ nghèo ở 3 bản và 128 học sinh mầm non ở 3 điểm trường khó khăn nhất: Phìn Tỷ (75 hộ nghèo và 59 học sinh) Cáp 2 (39 hộ nghèo và 40 học sinh) Xu Chín (42 hộ nghèo và 29 học sinh).
@@ -30,7 +30,7 @@ campaign2 = Campaign.create({
   end_date: 10.days.from_now,
   status: 'Published',
   categories: [@category_books, @category_money],
-  image_url: 'http://www.tusachgiaitrigiaoduc.com/wp-content/uploads/2013/07/1044343_572230982841285_1524270752_n.jpg',
+  image_url: 'https://click.vcdn.vn/uploads/2015/08/30/IMG_0370.jpg',
   description: %q(Thư viện của “ Làng trẻ em Hữu Nghị” là nơi cung cấp kiến thức cũng như mang đến cho các em một thói quen ý nghĩa thông qua việc: Đọc sách.
 
 Hiểu được điều này và mong muốn mang cho các em nhiều niềm vui cũng như kiến thức, CLB Tình nguyện kêu gọi các bạn sinh viên trong và ngoài Khoa Luật – Đại học Quốc gia Hà Nội, các tổ chức, doanh nghiệp ủng hộ bằng cách quyên góp sách, truyện cho các em (lứa tuổi từ 5-18 tuổi): Truyện tranh, truyện cổ tích, truyền thuyết, sách tô màu, dạy vẽ, dạy làm hoa,…
@@ -45,7 +45,7 @@ campaign3 = Campaign.create({
   end_date: 14.days.from_now,
   status: 'Published',
   categories: [@category_clothes, @category_money],
-  image_url: 'https://scontent-hkg3-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10306260_247351658804062_1167187175941226746_n.jpg?oh=bd141750723955558e241820d0396f20&oe=5734BC25',
+  image_url: 'https://grist.files.wordpress.com/2015/10/donation-box.jpg?w=1200',
   description: %q(Nhóm quyên góp quần áo cũ Quê Hương phối hợp với Hội Chữ Thập Đỏ vận động quyên góp quần áo cũ cho người nghèo ở các tỉnh miền núi phía Bắc, các tỉnh miền Trung và miền Nam.
 
 Các vật phẩm cần được quyên góp gồm: - Quần, áo không bị rách, chắp vá, được giặt ủi sạch sẽ, gấp gọn gàng và đóng gói cẩn thận trong bao ni lông
@@ -54,10 +54,14 @@ Các vật phẩm cần được quyên góp gồm: - Quần, áo không bị r�
 
 
 campaign4 = Campaign.create({
-  title: 'Campaign 4',
+  title: 'Quyên góp tiền cho bệnh nhân ung thư',
   end_date: Date.today + 10,
   status: 'Published',
-  image_url: 'http://hieuvetraitim.org/data/image/nha%20tinh%20thuong/Lo-Van-Hac---kc.jpg',
-  description: %q(Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  categories: [@category_money],
+  image_url: 'http://nhp.org.vn/images/data/big/14_2010622155018_IMG_9786.JPG',
+  description: %q(
+Suốt buổi trò chuyện với chúng tôi, bà Phạm Thị Chín (47 tuổi, thôn An Hòa, xã Lộc An, huyện Bảo Lâm, tỉnh Lâm Đồng) không nhắc nhiều về căn bệnh ung thư vú đã di căn sang phổi, xương đang hành hạ mình mà cứ sụt sùi kể về tình thương, về sự hy sinh của người chị ruột - bà Phạm Thị Thỏa.
+
+Hiện tại, để có chi phí cho bà Chín tiếp tục hóa trị, mỗi tuần, bà Thỏa về quê một lần đi làm thuê kiếm tiền. Sau đó, bà xuống TP HCM vạ vật khắp hành lang Bệnh viện Ung bướu cùng em gái chiến đấu với bệnh tật. Với bà Thỏa, còn sống được ngày nào cùng nhau, bà chỉ muốn em gái vui vẻ, mãn nguyện.
   )
 })
