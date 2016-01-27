@@ -17,9 +17,9 @@
         5 requests
       </h6>
       <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
-      <p class="extended-description">
-        <%= @post.description %>
-      </p>
+      <div class="extended-description p-t-2">
+        <%= @markdown.render(@post.description).html_safe %>
+      </div>
     </div>
 
     <!-- tool bar -->

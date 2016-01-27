@@ -2,11 +2,11 @@
 
 <div class="row">
 <% @posts.each do |post| %>
- <div class="col-md-4"> 
+ <div class="col-md-4">
   <div class="card">
   <%= link_to (image_tag post.main_image.url), post %>
     <div class="card-block">
-      <h4 class="card-title"><%= link_to post.title, post_path(post) %> </h6></h4>
+      <h5 class="card-title"><%= link_to post.title, post_path(post) %> </h5>
       <p class="card-text"><%= truncate(post.description, length: 50) %></p>
 
       <span class="label label-pill <%= post_style_class(post) %> post-status"><%= I18n.t post_status(post) %></span>
@@ -19,8 +19,8 @@
       <%= active_link_to I18n.t(".close"), close_post_path(post), method: :put, class: 'card-link' %>
       <% end %>
     </div>
-  </div> 
-  </div> 
+  </div>
+  </div>
 <% end %>
 </div>
 </div>
