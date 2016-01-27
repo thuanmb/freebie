@@ -123,11 +123,11 @@
       </div>
     </div>
 
-    <!--% if current_user != nil && @post.user.id == current_user.id %-->
+    <% if user_signed_in? && @post.user.id == current_user.id %>
       <section class="request-list jumbotron jumbotron-fluid col-md-8 col-md-offset-2">
         <%= render "request_list" %>
       </section>
-    <!--% end %-->
+    <% end %>
   </div>
 </div>
 

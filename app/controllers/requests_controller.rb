@@ -37,6 +37,7 @@ class RequestsController < ApplicationController
   end
   
   def accept
+    @request = Request.find(params[:request_id])
     @request.status = true
     if @request.save
       render plain: "success"
@@ -46,6 +47,7 @@ class RequestsController < ApplicationController
   end
 
   def cancel
+    @request = Request.find(params[:request_id])
     @request.status = false 
     if @request.save
       render plain: "success"
@@ -53,6 +55,7 @@ class RequestsController < ApplicationController
         render plain: @request.errors
     end
   end
+
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update

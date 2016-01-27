@@ -2,29 +2,33 @@
   <h3 class="display-3"><%= t(".request_list_title") %></h3>
   <ul class="list-group">
     <% @post.requests.each do |request| %>
-      <li class="list-group-item">
-        <%= active_link_to(user_path(request.user), class: "btn btn-link") do %>
-          <img src="<%= avatar_url_for request.user, 30 %>">
-          <div><%= request.user.name %></div>
-        <% end %>
-        
-        <% if request.status %>
-          <%= form_for [@post,request], url: {action: "accept"}, html: {method: "put", class: "form-inline", remote: true} do |f| %>
-            <button type="submit" class="btn btn-success-outline"><%= t(".accept") %></button>
+      <% if request.user != nil %>
+        <li class="list-group-item">
+          <%= link_to(user_path(request.user), class: "btn btn-link") do %>
+            <img src="<%= avatar_url_for request.user, 30 %>">
+            <div><%= request.user.name %></div>
           <% end %>
-        <% else%>
-          <span class="pull-xs-right">
-            <%= form_for request, url: {action: "cancel"}, html: {method: "put", class: "form-inline", remote: true} do |f| %>
-              <button type="submit" class="btn btn-danger-outline"><%= t(".cancel") %></button>
+          
+          <% if request.status == nil || !request.status %>
+            <%= form_for [@post, request], url: accept_post_requests_path(@post), html: {class: "form-inline", remote: true} do |f| %>
+              <input type="hidden" name="request_id" value="<%= request.id %>">
+              <button type="submit" class="btn btn-success-outline"><%= t(".accept") %></button>
             <% end %>
-            <span class="accepted-status pull-xs-right">
-              <%= fa_icon "check" %>
-              <%= t(".accepted") %>
+          <% else%>
+            <span class="pull-xs-right">
+              <%= form_for request, url: cancel_post_requests_path(@post), html: {class: "form-inline", remote: true} do |f| %>
+                <input type="hidden" name="request_id" value="<%= request.id %>">
+                <button type="submit" class="btn btn-danger-outline"><%= t(".cancel") %></button>
+              <% end %>
+              <span class="accepted-status pull-xs-right">
+                <%= fa_icon "check" %>
+                <%= t(".accepted") %>
+              </span>
             </span>
-          </span>
-        <% end %>
-        <p><%= request.content %></p>
-      </li>
+          <% end %>
+          <p><%= request.content %></p>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>
