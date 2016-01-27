@@ -27,6 +27,13 @@ en:
   menu_item_new_posts: "Create new post"
   menu_item_my_posts: "My posts"
 
+  shared:
+    request_list:
+      request_list_title: "Requests"
+      accept: "Accept"
+      cancel: "Cancel Request"
+      accepted: "Accepted"
+
   posts:
     form:
       header: "Giveaway"
@@ -47,11 +54,6 @@ en:
       send_message_model_message: "Content of the message"
       sendingMessage: "Sending"
       sentMessageSuccess: "Sent successfully"
-    request_list:
-      request_list_title: "Requests"
-      accept: "Accept"
-      cancel: "Cancel Request"
-      accepted: "Accepted"
     status:
       published: 'Public'
       closed: 'Closed'
