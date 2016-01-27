@@ -65,6 +65,9 @@ vi:
       yes_btn: "Có"
       no_btn: "Không. Cảm ơn!"
     location: "Khu vực"
+    social_share:
+      message: "Hãy share bài đăng này, bạn sẽ có cơ hội cho đi nhanh hơn! Và biết đâu một người bạn của bạn đang cần món đồ này!"
+      title: "Share bài đăng này"
 
   publish: "Đăng"
   edit: "Sửa"
