@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :close, :reopen]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   # GET /posts
   # GET /posts.json
@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     if @post.user == current_user || @post.published?
+      @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
       render :show
     else
       render :post_not_found, status: 404
@@ -163,7 +164,7 @@ class PostsController < ApplicationController
 
     def request_params
       params.require(:request).permit(:message, :sender_id)
-    end 
+    end
 
     def get_location_id
       location_hash = LOCATION_LIST.find { |e| e[:name] == params[:city] || e[:id] == params[:city] }

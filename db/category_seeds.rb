@@ -1,16 +1,9 @@
-@category_money = Category.create({
-  name: 'money',
-  fa_icon: 'fa-usd',
-  img_url: 'https://i.ytimg.com/vi/bcWgk1XPTvY/maxresdefault.jpg',
-  color: '#b89155'
-})
-
-@category_people = Category.create({
-  name: 'people',
-  fa_icon: 'fa-user',
-  img_url: 'http://www.bstrust.org/images/blog%20photos/ML_South_Africa_1923.jpg',
-  color: '#b86b35'
-})
+@category_toys = Category.create({
+  name: 'toys',
+  fa_icon: 'fa-reddit-alien',
+  img_url: 'http://i.huffpost.com/gen/872762/images/o-TOY-DONATION-facebook.jpg',
+  color: '#e6c325'
+});
 
 @category_clothes = Category.create({
   name: 'clothes',
@@ -39,6 +32,20 @@
   img_url: 'http://www.uglydogbooks.com/wp-content/uploads/2014/04/books.jpg',
   color: '#9f652f'
 });
+
+@category_money = Category.create({
+  name: 'money',
+  fa_icon: 'fa-usd',
+  img_url: 'https://i.ytimg.com/vi/bcWgk1XPTvY/maxresdefault.jpg',
+  color: '#b89155'
+})
+
+@category_people = Category.create({
+  name: 'people',
+  fa_icon: 'fa-user',
+  img_url: 'http://www.bstrust.org/images/blog%20photos/ML_South_Africa_1923.jpg',
+  color: '#b86b35'
+})
 
 @category_other = Category.create({
   name: 'other',
