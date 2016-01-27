@@ -46,6 +46,11 @@ vi:
       send_message_model_message: "Nội dung tin nhắn"
       sendingMessage: "Đang gửi"
       sentMessageSuccess: "Gửi thành công"
+    request_list:  
+      request_list_title: "Danh Sách Yêu Cầu"
+      accept: "Đồng Ý"
+      cancel: "Huỷ Yêu Cầu"
+      accepted: "Đã chấp nhận"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"

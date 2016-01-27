@@ -47,6 +47,11 @@ en:
       send_message_model_message: "Content of the message"
       sendingMessage: "Sending"
       sentMessageSuccess: "Sent successfully"
+    request_list:
+      request_list_title: "Requests"
+      accept: "Accept"
+      cancel: "Cancel Request"
+      accepted: "Accepted"
     status:
       published: 'Public'
       closed: 'Closed'

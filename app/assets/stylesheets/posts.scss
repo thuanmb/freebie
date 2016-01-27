@@ -191,7 +191,7 @@ $detail_col_padding_top: 101px;
     }
 
     .post-content {
-      font-family: "Gotham SSm A";
+      font-family: Gotham;
       color: #444;
 
       h2, h6 {
@@ -248,5 +248,56 @@ $detail_col_padding_top: 101px;
 
   .btn {
     margin-bottom: 10px;
+  }
+
+  .request-list {
+    font-family: Gotham;
+    margin-top: 30px;
+
+    h3 {
+      font-size: 3.5em;
+    }
+
+    .list-group {
+      li {
+        margin-bottom: 5px;
+        box-shadow: 1px 2px 1px rgba(0,0,0,0.5);
+
+        a {
+          text-decoration: none;
+          font-size: 13px;
+
+          img {
+            width: 50px;
+            height: auto;
+            border-radius: 50px;
+            border: 1px solid #0275d8;
+            padding: 5px;
+          }
+
+          div {
+            margin-top: 5px;
+          }
+        }
+
+        form {
+          display: inline-block;
+          float: right;
+        }
+
+        p {
+          font-size: 16px;
+          padding-left: 16px;
+          border-top: 1px solid #818a91;
+          padding-top: 7px;
+        }
+
+        .accepted-status {
+          color: #5cb85c;
+          line-height: 40px;
+          margin-right: 12px;
+        }
+      }
+    }
   }
 }
