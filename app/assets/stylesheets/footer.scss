@@ -351,8 +351,12 @@
   -ms-transform: translateY(150%);
   transform: translateY(150%);
 
-  &:hover .fa {
-    color: $primary_color;
+  &:hover {
+    background-color: $primary_color;
+
+    .fa {
+      color: #fff;
+    }
   }
 
   &.slideIn {

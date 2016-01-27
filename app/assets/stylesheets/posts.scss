@@ -156,7 +156,7 @@ $detail_col_padding_top: 101px;
     @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
     @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
   }
-  
+
   .detail-page {
     .sharing {
       padding-top: $detail_col_padding_top;
@@ -259,7 +259,7 @@ $detail_col_padding_top: 101px;
     .list-group {
       li {
         margin-bottom: 5px;
-        
+
         &:hover {
           box-shadow: 1px 2px 1px rgba(0,0,0,0.5);
         }
