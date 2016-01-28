@@ -54,6 +54,11 @@ vi:
       sendingMessage: "Đang gửi"
       sentMessageSuccess: "Gửi thành công"
       show_request_list: "Danh Sách Yêu Cầu"
+      by: "đăng bởi %{name}"
+      request: 
+        zero: "chưa có yêu cầu"
+        one: "%{count} yêu cầu"
+        other: "%{count} yêu cầu"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"
@@ -112,3 +117,7 @@ vi:
   will_paginate: 
     previous_label: "trước"
     next_label: "sau"
+
+  time:
+    formats:
+      default: "%d / %m / %Y"

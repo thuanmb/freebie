@@ -22,11 +22,11 @@
     <div class="post-content col-md-8 col-lg-8">
       <h2><%= @post.title %></h2>
       <h6 class="text-uppercase">
-        <%= @post.created_at.strftime("%b %d, %Y") %>
+        <%= I18n.l @post.created_at %>
         <%= fa_icon "circle" %>
-        by <%= @post.user.name %>
+        <%= t("posts.show.by", name: @post.user.name) %>
         <%= fa_icon "circle" %>
-        <span class="request-count"><%= pluralize(@post.requests.count, "request") %></span>
+        <span class="request-count"><%= t("posts.show.request", count: @post.requests.count) %></span>
       </h6>
       <%= image_tag @post.main_image.url, class: "img-responsive post-image", style: 'width: 100%' %>
       <div class="extended-description p-t-2">

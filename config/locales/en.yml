@@ -56,6 +56,11 @@ en:
       sendingMessage: "Sending"
       sentMessageSuccess: "Sent successfully"
       show_request_list: "Request List"
+      by: "by "
+      request: 
+        zero: "no requests"
+        one: "%{count} request"
+        other: "%{count} requests"
     status:
       published: 'Public'
       closed: 'Closed'
