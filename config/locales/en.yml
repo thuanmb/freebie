@@ -33,6 +33,11 @@ en:
       accept: "Accept"
       cancel: "Cancel Request"
       accepted: "Accepted"
+      waiting: "Waiting for approval"
+
+  email:
+    request_subject: '%{user_name} requested for "%{post_name}"'
+    message_subject: '%{user_name} messaged form "%{post_name}"'
 
   posts:
     form:
@@ -59,7 +64,7 @@ en:
       close_post: "Close Post"
       publish_post: "Publish Post"
       by: "by "
-      request: 
+      request:
         zero: "no requests"
         one: "%{count} request"
         other: "%{count} requests"

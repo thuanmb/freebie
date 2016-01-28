@@ -5,3 +5,6 @@ vi:
   new_conversation: "Gửi tin nhắn mới"
   reply: "Trả lời"
   empty_trash: "Dọn rác"
+
+  conversation:
+    says_at: "trả lời vào lúc %{time} trước"

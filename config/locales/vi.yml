@@ -27,11 +27,17 @@ vi:
   menu_item_my_posts: "Bài đăng của tôi"
 
   shared:
-    request_list:  
+    request_list:
       request_list_title: "Danh Sách Yêu Cầu"
-      accept: "Đồng Ý"
-      cancel: "Huỷ Yêu Cầu"
+      accept: "Đồng ý"
+      cancel: "Huỷ yêu cầu"
       accepted: "Đã chấp nhận"
+      waiting: "Đang chờ trả lời"
+
+  email:
+    request_subject: '%{user_name} xin món đồ trong "%{post_name}"'
+    message_subject: '%{user_name} gửi tin nhắn từ "%{post_name}"'
+
   posts:
     form:
       header: "Cho đồ cũ"
@@ -57,7 +63,7 @@ vi:
       close_post: "Đóng Bài Đăng"
       publish_post: "Công Khai Bài Đăng"
       by: "đăng bởi %{name}"
-      request: 
+      request:
         zero: "chưa có yêu cầu"
         one: "%{count} yêu cầu"
         other: "%{count} yêu cầu"
@@ -118,7 +124,7 @@ vi:
   giveaway:
     location:
       message: "Đã lưu địa điểm của bạn"
-  will_paginate: 
+  will_paginate:
     previous_label: "trước"
     next_label: "sau"
 

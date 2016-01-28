@@ -29,7 +29,7 @@ class RequestsController < ApplicationController
    # @request = Request.new(request_params)
     @request = @post.requests.build(request_params)
     @request.user_id = current_user.id
-    subject = "#{current_user.display_name} requested for #{@post.title}"
+    subject = I18n.t("email.request_subject", {user_name: current_user.display_name, post_name: @post.title})
     @request.mailboxer_conversation_id = current_user.send_message(@post.user, request_params[:content], subject).conversation.id
 
     if @request.save
