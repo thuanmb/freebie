@@ -62,6 +62,11 @@
 
       <% if user_signed_in? && @post.user.id == current_user.id %>
         <button class="btn btn-success btn-block request-list-btn" onclick="scrollToRequestList()"><%= t(".show_request_list") %></button>
+        <% if @post.published? %>
+          <%= active_link_to I18n.t("posts.show.close_post"), close_post_path(@post), method: :put, class: 'btn btn-danger btn-block' %>
+        <% elsif !@post.closed %>
+          <%= active_link_to I18n.t("posts.show.publish_post"), publish_post_path(@post), method: :put, class: 'btn btn-danger btn-block' %>
+      <% end %>
       <% end %>
     </div>
 
@@ -207,7 +212,7 @@
 
     window.registerEventForRequestActionBtns = function () {
       for (var i = 0; i < window.requestCount; i++) {
-        registerFromEvent(".request-content-" + i, "Somthing...");
+        registerFromEvent(".request-content-" + i, sentMessageSuccess);
       }
     }
 

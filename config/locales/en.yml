@@ -56,6 +56,8 @@ en:
       sendingMessage: "Sending"
       sentMessageSuccess: "Sent successfully"
       show_request_list: "Request List"
+      close_post: "Close Post"
+      publish_post: "Publish Post"
     status:
       published: 'Public'
       closed: 'Closed'

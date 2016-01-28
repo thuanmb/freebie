@@ -54,6 +54,8 @@ vi:
       sendingMessage: "Đang gửi"
       sentMessageSuccess: "Gửi thành công"
       show_request_list: "Danh Sách Yêu Cầu"
+      close_post: "Đóng Bài Đăng"
+      publish_post: "Công Khai Bài Đăng"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"
