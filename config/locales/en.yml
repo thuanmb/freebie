@@ -58,6 +58,11 @@ en:
       show_request_list: "Request List"
       close_post: "Close Post"
       publish_post: "Publish Post"
+      by: "by "
+      request: 
+        zero: "no requests"
+        one: "%{count} request"
+        other: "%{count} requests"
     status:
       published: 'Public'
       closed: 'Closed'
@@ -94,6 +99,10 @@ en:
       title: "Latest Posts"
     third_column:
       title: "Nearby Posts"
+
+  giveaway:
+    location:
+      message: "Your location was successfully updated."
 
   welcome:
     index:

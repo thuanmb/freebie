@@ -56,6 +56,11 @@ vi:
       show_request_list: "Danh Sách Yêu Cầu"
       close_post: "Đóng Bài Đăng"
       publish_post: "Công Khai Bài Đăng"
+      by: "đăng bởi %{name}"
+      request: 
+        zero: "chưa có yêu cầu"
+        one: "%{count} yêu cầu"
+        other: "%{count} yêu cầu"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"
@@ -110,7 +115,13 @@ vi:
         title: "Quyên góp"
         message: "Quyên góp những món đồ cũ hay không còn cần thiết của bạn cho các tổ chức từ thiện. Để mang đến nụ cười cho người nghèo và trẻ em Việt Nam."
         btn_action: "Quyên góp ngay"
-
+  giveaway:
+    location:
+      message: "Đã lưu địa điểm của bạn"
   will_paginate: 
     previous_label: "trước"
     next_label: "sau"
+
+  time:
+    formats:
+      default: "%d / %m / %Y"

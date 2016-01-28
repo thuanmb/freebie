@@ -26,7 +26,7 @@ class GiveawaysController < ApplicationController
       @user.errors.add(:contact_city, I18n.t('errors.messages.blank'))
       render :select_location
     elsif  @user.update(user_params)
-      redirect_to :select_category_giveaways, notice: 'User location was successfully updated.'
+      redirect_to :select_category_giveaways, notice: t('giveaway.location.message')
     else
       redirect_to :edit_location_giveaways
     end

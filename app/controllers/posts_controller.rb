@@ -7,17 +7,7 @@ class PostsController < ApplicationController
   def index
     # debugger
     @posts = Post.published
-
-    location_id = get_location_id
-
-    if location_id != nil
-      session[:current_location] = location_id
-    end
-
-    if session[:current_location] != nil
-      @posts = @posts.by_location(session[:current_location])
-    end
-
+    @posts = @posts.by_location(session[:current_location]) if get_location_id.present?
     @posts = @posts.paginate(:page => params[:page])
   end
 
@@ -35,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = current_user.posts.build
+    @post.expiring_date = Date.today + 14
     @categories = Category.all
     @location = current_user.contact_city
   end
@@ -45,7 +36,6 @@ class PostsController < ApplicationController
     @location = current_user.contact_city
   end
 
-  # GET /posts/1/edit
   def my
     @posts = Post.where(user: current_user).order(created_at: :desc)
   end
@@ -53,8 +43,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    #@post = Post.new(post_params)
-
     @post = current_user.posts.build(post_params)
     @post.status = 'published'
     @post.expiring_date = Date.today + 14 if @post.expiring_date.nil?
