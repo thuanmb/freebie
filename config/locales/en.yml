@@ -54,6 +54,7 @@ en:
       send_message_model_message: "Content of the message"
       sendingMessage: "Sending"
       sentMessageSuccess: "Sent successfully"
+      show_request_list: "Request List"
     status:
       published: 'Public'
       closed: 'Closed'

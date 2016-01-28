@@ -52,6 +52,7 @@ vi:
       send_message_model_message: "Nội dung tin nhắn"
       sendingMessage: "Đang gửi"
       sentMessageSuccess: "Gửi thành công"
+      show_request_list: "Danh Sách Yêu Cầu"
     status:
       published: "Đang đăng"
       closed: "Đã đóng"
