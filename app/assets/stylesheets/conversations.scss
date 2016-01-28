@@ -1,16 +1,26 @@
-.messages {
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 1em;
-  margin-top: 1em;
+.conversations {
+  .messages {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  .unread {
+    border-left: 4px solid #0275d8 !important;
+  }
+
+  .conversation-side-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .accepted-status {
+    color: #5cb85c;
+    line-height: 40px;
+    margin-right: 12px;
+  }
 }
 
-.unread {
-  border-left: 4px solid #0275d8 !important;
-}
 
-.conversation-side-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-}

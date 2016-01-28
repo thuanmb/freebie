@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127151027) do
+ActiveRecord::Schema.define(version: 20160127200252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -158,11 +158,13 @@ ActiveRecord::Schema.define(version: 20160127151027) do
     t.text     "content"
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.boolean  "status"
+    t.integer  "mailboxer_conversation_id"
   end
 
+  add_index "requests", ["mailboxer_conversation_id"], name: "index_requests_on_mailboxer_conversation_id", using: :btree
   add_index "requests", ["post_id"], name: "index_requests_on_post_id", using: :btree
   add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree
 
@@ -203,6 +205,7 @@ ActiveRecord::Schema.define(version: 20160127151027) do
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "posts", "category_links"
+  add_foreign_key "requests", "mailboxer_conversations"
   add_foreign_key "requests", "posts"
   add_foreign_key "requests", "users"
 end

@@ -29,6 +29,8 @@ class RequestsController < ApplicationController
    # @request = Request.new(request_params)
     @request = @post.requests.build(request_params)
     @request.user_id = current_user.id
+    subject = "#{current_user.display_name} requested for #{@post.title}"
+    @request.mailboxer_conversation_id = current_user.send_message(@post.user, request_params[:content], subject).conversation.id
 
     if @request.save
         render plain: @post.requests.count
@@ -36,12 +38,14 @@ class RequestsController < ApplicationController
         render plain: @request.errors
     end
   end
-  
+
   def accept
     @request = Request.find(params[:request_id])
     @request.status = true
     if @request.save
-      render "request_list.js.erb"
+      respond_to do |format|
+        format.js { render "request_list.js.erb" }
+      end
     else
         render plain: @request.errors
     end
@@ -49,9 +53,11 @@ class RequestsController < ApplicationController
 
   def cancel
     @request = Request.find(params[:request_id])
-    @request.status = false 
+    @request.status = false
     if @request.save
-      render "request_list.js.erb"
+      respond_to do |format|
+        format.js { render "request_list.js.erb" }
+      end
     else
         render plain: @request.errors
     end
@@ -86,11 +92,11 @@ class RequestsController < ApplicationController
     def set_request
       @request = Request.find(params[:id])
     end
-    
+
     def find_post
       @post = Post.find(params[:post_id])
     end
-    
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:content, :post_id, :user_id)

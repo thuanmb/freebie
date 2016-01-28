@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       collection do
         patch :accept
         patch :cancel
-    end
+      end
     end
 
     member do

@@ -1,2 +1,12 @@
-$(".request-list").html("<%= escape_javascript render(:partial => 'shared/request_list', :object => @messages) %>");
-registerEventForRequestActionBtns();
+$requestList = $(".request-list")
+if ($requestList.length > 0) {
+  $requestList.html("<%= escape_javascript render(:partial => 'shared/request_list', :object => @messages) %>");
+  registerEventForRequestActionBtns();
+}
+
+$requestAccept = $(".request-action-accept")
+$requestCancel = $(".request-action-cancel")
+if ($requestAccept.length > 0 && $requestCancel.length > 0) {
+  $requestAccept.toggle(300);
+  $requestCancel.toggle(300);
+}
