@@ -60,6 +60,9 @@
       <button class="js-required-login btn btn-primary btn-block" data-toggle="modal" data-target-x=".claim-model"><%= t(".request_now") %></button>
       <button class="js-required-login btn btn-info btn-block" data-toggle="modal" data-target-x=".send-message-model"><%= t(".send_message") %></button>
 
+      <% if user_signed_in? && @post.user.id == current_user.id %>
+        <button class="btn btn-success btn-block request-list-btn" onclick="scrollToRequestList()"><%= t(".show_request_list") %></button>
+      <% end %>
     </div>
 
     <div class="modal fade claim-model">
@@ -124,7 +127,7 @@
     </div>
 
     <% if user_signed_in? && @post.user.id == current_user.id %>
-      <section class="request-list jumbotron jumbotron-fluid col-md-8 col-md-offset-2">
+      <section id="request-list" class="request-list jumbotron jumbotron-fluid col-md-8 col-md-offset-2">
         <%= render "shared/request_list" %>
       </section>
     <% end %>
@@ -158,6 +161,7 @@
   window.sentMessageSuccess = "<%= t(".sentMessageSuccess") %>";
   window.sendMessageText = "<%= t(".send_message") %>";
   window.requestCount = <%= @post.requests.count %>;
+  window.shouldShowRequestList = <%= user_signed_in? && @post.user.id == current_user.id %>;
   window.signed_in = <%= user_signed_in? %>;
 <% end %>
 
@@ -212,6 +216,21 @@
     if (window.location.search.indexOf("new_post=true") >= 0) {
       $('#social-share').modal()
     }
+
+
+    var showRequestList = function () {
+      $('body, html').animate({
+          scrollTop: $("#request-list").offset().top - 77
+      }, 1000);
+    }
+
+    if (shouldShowRequestList) {
+      setTimeout(showRequestList, 1000);
+    }
+
+    window.scrollToRequestList = function () {
+      showRequestList();
+    };
 
     $(".js-required-login").click(function (event) {
       event.preventDefault();

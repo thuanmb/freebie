@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20160127200252) do
     t.integer  "user_id"
     t.string   "status"
     t.integer  "category_link_id"
+    t.datetime "expiring_date"
   end
 
   add_index "posts", ["category_link_id"], name: "index_posts_on_category_link_id", using: :btree
