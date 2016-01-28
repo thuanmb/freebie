@@ -1,6 +1,6 @@
 <div class="container post-container">
   <!-- location selection -->
-  <section class="alert alert-success location-alert" style="display: none">
+  <section class="alert alert-info location-alert" style="display: none">
     <span>
       <span><%= t(".suggest_location_message_1") %></span>
       <span class="city label label-success"></span>
@@ -8,16 +8,16 @@
     </span>
     <div class="btn-container">
       <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
-      <button class="btn btn-info yes-btn"><%= t(".yes_btn") %></button>
+      <button class="btn btn-success yes-btn"><%= t(".yes_btn") %></button>
     </div>
   </section>
 
-  <section class="alert alert-success location-select" style="display: none">
+  <section class="alert alert-info location-select" style="display: none">
     <p><%= t(".location_selection_message") %></p>
     <%= select "location", "location", LOCATION_LIST.each.map {|location| I18n.locale == :vi ? [location[:displayName], location[:id]] : [location[:displayNameEN], location[:id]]} %>
     <div class="btn-container">
       <button class="btn btn-danger no-btn"><%= t(".no_btn") %></button>
-      <button class="btn btn-info yes-btn"><%= t(".reload_page_btn") %></button>
+      <button class="btn btn-success yes-btn"><%= t(".reload_page_btn") %></button>
     </div>
   </section>
 
@@ -65,10 +65,9 @@
   <div class="col-md-10">
     <%= will_paginate @posts, class: 'top-pagination pull-right' %>
 
-    <div class="row">
+    <div class="posts">
     <% @posts.each do |post| %>
 
-      <div class="col-md-4">
         <div class="card">
           <%= link_to (image_tag post.main_image.url), post %>
           <div class="card-block">
@@ -78,8 +77,17 @@
             <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
           </div>
         </div>
-      </div>
+      
     <% end %>
     </div>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $('.posts').masonry({
+      itemSelector: '.card',
+      columnWidth: 290,
+      gutter: 10
+    });
+</script>
+

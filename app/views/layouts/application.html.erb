@@ -13,12 +13,21 @@
   <% end %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
   <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.1.1/js/tether.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
 </head>
-<body data-no-turbolink='true'>
+
+<% if (controller.controller_name == 'campaigns' and action_name == 'show') || (controller.controller_name == 'posts' and action_name == 'show')%>
+  <body data-no-turbolink="true">
+<% else %>
+  <body >
+<% end %>
+
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569662315d82736c" async="async"></script>
 <div id="fb-root"></div>

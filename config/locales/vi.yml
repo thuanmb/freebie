@@ -39,6 +39,8 @@ vi:
     message_subject: '%{user_name} gửi tin nhắn từ "%{post_name}"'
 
   posts:
+    create:
+      success: "Đăng bài thành công!"
     form:
       header: "Cho đồ cũ"
       title: "Tiêu đề, ví dụ áo thun bamboo cũ đã dùng 2 năm"
@@ -80,7 +82,7 @@ vi:
       location_loading_message: "Đang tải bài đăng ở khu vực của bạn..."
       reload_page_btn: "Tải lại trang với vị trí này"
       yes_btn: "Có"
-      no_btn: "Không. Cảm ơn!"
+      no_btn: "Không, Cảm ơn!"
     location: "Khu vực"
     social_share:
       message: "Hãy share bài đăng này, bạn sẽ có cơ hội cho đi nhanh hơn! Và biết đâu một người bạn của bạn đang cần món đồ này!"
