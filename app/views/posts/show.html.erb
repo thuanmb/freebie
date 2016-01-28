@@ -10,7 +10,7 @@
 <% end %>
 
 
-<div class="container detail-page p-b-3">
+<div class="container post-container detail-page p-b-3">
   <div class="row">
 
     <!-- sharing -->
@@ -57,8 +57,8 @@
         </li>
       </ul>
 
-      <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".claim-model"><%= t(".request_now") %></button>
-      <button class="btn btn-info btn-block" data-toggle="modal" data-target=".send-message-model"><%= t(".send_message") %></button>
+      <button class="js-required-login btn btn-primary btn-block" data-toggle="modal" data-target-x=".claim-model"><%= t(".request_now") %></button>
+      <button class="js-required-login btn btn-info btn-block" data-toggle="modal" data-target-x=".send-message-model"><%= t(".send_message") %></button>
 
       <% if user_signed_in? && @post.user.id == current_user.id %>
         <button class="btn btn-success btn-block request-list-btn" onclick="scrollToRequestList()"><%= t(".show_request_list") %></button>
@@ -162,6 +162,7 @@
   window.sendMessageText = "<%= t(".send_message") %>";
   window.requestCount = <%= @post.requests.count %>;
   window.shouldShowRequestList = <%= user_signed_in? && @post.user.id == current_user.id %>;
+  window.signed_in = <%= user_signed_in? %>;
 <% end %>
 
 <script type="text/javascript">
@@ -206,7 +207,7 @@
 
     window.registerEventForRequestActionBtns = function () {
       for (var i = 0; i < window.requestCount; i++) {
-        registerFromEvent(".request-content-" + i, "Somthing...");  
+        registerFromEvent(".request-content-" + i, "Somthing...");
       }
     }
 
@@ -215,6 +216,7 @@
     if (window.location.search.indexOf("new_post=true") >= 0) {
       $('#social-share').modal()
     }
+
 
     var showRequestList = function () {
       $('body, html').animate({
@@ -229,5 +231,17 @@
     window.scrollToRequestList = function () {
       showRequestList();
     };
+
+    $(".js-required-login").click(function (event) {
+      event.preventDefault();
+
+      if (!window.signed_in) {
+        window.location.href = '/users/sign_in?return_url=' + window.location.href;
+      }
+      else {
+        model = $(event.target).attr('data-target-x');
+        $(model).modal()
+      }
+    });
   });
 </script>

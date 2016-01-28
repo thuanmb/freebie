@@ -1,23 +1,32 @@
-<div class="container">
+<div class="container post-container">
 
 <div class="row">
 <% @posts.each do |post| %>
  <div class="col-md-4">
   <div class="card">
-  <%= link_to (image_tag post.main_image.url), post %>
+  <%= link_to (image_tag post.main_image.url), post, style: 'width: 100%;' %>
     <div class="card-block">
       <h5 class="card-title"><%= link_to post.title, post_path(post) %> </h5>
       <p class="card-text"><%= truncate(post.description, length: 50) %></p>
 
-      <span class="label label-pill <%= post_style_class(post) %> post-status"><%= I18n.t post_status(post) %></span>
-      <%= active_link_to I18n.t(".edit"), edit_post_path(post), class: 'card-link' %>
+      <div>
+        <span class="label label-pill <%= post_style_class(post) %> post-status"><%= I18n.t post_status(post) %></span>
 
-      <% unless post.published? %>
-      <%= active_link_to I18n.t(".publish"), publish_post_path(post), method: :put, class: 'card-link' %>
-      <% end %>
-      <% unless post.closed? %>
-      <%= active_link_to I18n.t(".close"), close_post_path(post), method: :put, class: 'card-link' %>
-      <% end %>
+        <span style="float: right">
+          <%= I18n.t('posts.expiring_label') %>:
+          <%= post.expiring_date.nil? ? 'NA' : pretty_time(post.expiring_date) %></span>
+      </div>
+      
+      <div style="margin-top: 10px">
+        <%= active_link_to I18n.t(".edit"), edit_post_path(post), class: 'card-link' %>
+
+        <% unless post.published? %>
+        <%= active_link_to I18n.t(".publish"), publish_post_path(post), method: :put, class: 'card-link' %>
+        <% end %>
+        <% unless post.closed? %>
+        <%= active_link_to I18n.t(".close"), close_post_path(post), method: :put, class: 'card-link' %>
+        <% end %>
+      </div>
     </div>
   </div>
   </div>

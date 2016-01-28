@@ -44,6 +44,7 @@ en:
       main_image: "Upload photos"
       submit_edit: "Update"
       submit_new: "Create"
+      expiring_date: "Expiring date"
     show:
       request_now: "Send request"
       send_message: "Send message"
@@ -60,6 +61,7 @@ en:
       closed: 'Closed'
       drafted: 'Draft'
     claim: "Claim"
+    expiring_label: "Expiring date"
     index:
       suggest_location_message_1: "Detect your current location at "
       suggest_location_message_2: ". Do you want to reload the page with this location?"

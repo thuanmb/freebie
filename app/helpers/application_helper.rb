@@ -6,10 +6,14 @@ module ApplicationHelper
       warning: "alert-warning",
       notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
   end
+  
+  def pretty_time(time) 
+    time.strftime "%b %d %Y"
+  end 
 
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in container") do
+      concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in") do
               concat content_tag(:i, '', class: "fa fa-times close", data: { dismiss: 'alert' })
               concat message
             end)
@@ -47,13 +51,13 @@ module ApplicationHelper
       location_arr << [ name, location[:id] ]
     end
     location_arr
-  end 
+  end
 
   def location_name(location_id)
-    location = LOCATION_LIST.find { |e| e[:id] == location_id } 
+    location = LOCATION_LIST.find { |e| e[:id] == location_id }
 
     return '' if location.nil?
     I18n.locale == :en ? location[:displayNameEN] : location[:displayName]
-  end 
+  end
 
 end
