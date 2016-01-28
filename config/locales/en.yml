@@ -76,7 +76,7 @@ en:
       location_loading_message: "Loading posts at your current location..."
       reload_page_btn: "Reload page with this location"
       yes_btn: "Yes"
-      no_btn: "No. Thanks!"
+      no_btn: "No, Thanks!"
     location: "Area"
     social_share:
       message: "Please share, your item will be found faster. And who know one of your friends might ask for it!"
