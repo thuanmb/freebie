@@ -14319,20 +14319,24 @@ div.chosen-container-multi .result-selected img {
 .posts .container.post-container .row .col-md-4 .card .post-status {
   margin-right: 15px;
 }
-/* line 27, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 26, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+.posts .card {
+  width: 280px;
+}
+/* line 31, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts form h1 {
   text-align: center;
 }
-/* line 32, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 36, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .location-alert, .posts .location-select {
   font-size: 16px;
   width: 100%;
 }
-/* line 36, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 40, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .location-alert .btn-container, .posts .location-select .btn-container {
   margin-top: 14px;
 }
-/* line 42, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 46, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .location-select select {
   height: 40px;
   width: 35%;
@@ -14341,25 +14345,25 @@ div.chosen-container-multi .result-selected img {
   color: #262b30;
   background-color: #f4f4f4;
 }
-/* line 52, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 56, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container {
   padding-right: 15px;
 }
-/* line 55, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 59, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container .btn {
   height: 53px;
 }
-/* line 59, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 63, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen {
   width: 100% !important;
 }
-/* line 62, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 66, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices {
   width: 100%;
   border-radius: 4px;
   background: none;
 }
-/* line 67, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 71, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices .search-choice {
   background-color: rgba(240, 173, 78, 0.15);
   border: 1px solid #FE9322;
@@ -14367,31 +14371,31 @@ div.chosen-container-multi .result-selected img {
   background-image: none;
   box-shadow: none;
 }
-/* line 74, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 78, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices .search-choice .group-name {
   color: #FE9322;
   opacity: 0.8;
 }
-/* line 79, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 83, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices .search-choice .search-choice-close {
   top: 8px;
   right: 4px;
 }
-/* line 85, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 89, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices .search-field {
   width: 100%;
   padding: 12px 24px;
 }
-/* line 89, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 93, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .search-container #search_chosen .chosen-choices .search-field input {
   width: 100%;
   font-size: 20px;
 }
-/* line 99, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 103, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .category-list li {
   list-style: none;
 }
-/* line 104, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 108, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts #search-box {
   width: 100%;
   height: 53px;
@@ -14399,34 +14403,34 @@ div.chosen-container-multi .result-selected img {
   background-color: transparent;
   border-color: #f0ad4e;
 }
-/* line 112, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 116, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .btn-category {
   position: relative;
   width: 100px;
   text-align: left;
   padding-left: 0px;
 }
-/* line 118, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 122, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .btn-category i.fa {
   text-align: center;
   width: 20px;
   margin-right: 2px;
 }
-/* line 125, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 129, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .btn-category:hover, .posts .btn-category.active {
   border-left: solid 3px #FE9322;
   color: #FE9322;
 }
-/* line 130, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 134, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .btn-category:hover i.fa, .posts .btn-category.active i.fa {
   padding-left: 5px;
 }
 
-/* line 142, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 146, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .send-btn i {
   display: none;
 }
-/* line 147, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 151, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .send-btn.loading i {
   display: inline-block;
   -webkit-animation: spin 1s linear infinite;
@@ -14449,22 +14453,22 @@ div.chosen-container-multi .result-selected img {
     transform: rotate(360deg);
   }
 }
-/* line 161, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 165, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .sharing {
   padding-top: 101px;
 }
-/* line 163, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 167, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .sharing a {
   display: block;
   max-width: 50px;
   max-height: 50px;
   margin-bottom: 7px;
 }
-/* line 171, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 175, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .sharing a.at-svc-ketnooi span {
   padding-left: 10px;
 }
-/* line 176, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 180, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .sharing a span {
   line-height: 50px !important;
   height: 50px !important;
@@ -14472,27 +14476,27 @@ div.chosen-container-multi .result-selected img {
   padding-left: 5px;
   padding-top: 6px;
 }
-/* line 183, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 187, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .sharing a span .at-icon {
   width: 40px !important;
   height: 40px !important;
 }
-/* line 191, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 195, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .post-content {
   font-family: Gotham;
   color: #444;
 }
-/* line 195, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 199, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .post-content h2, .posts.show .detail-page .post-content h6 {
   text-align: center;
   font-weight: normal;
   margin-bottom: 10px;
 }
-/* line 202, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 206, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .post-content h6 {
   color: #818a91;
 }
-/* line 205, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 209, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .post-content h6 i {
   font-size: 7px;
   position: relative;
@@ -14500,69 +14504,69 @@ div.chosen-container-multi .result-selected img {
   margin-left: 3px;
   margin-right: 3px;
 }
-/* line 215, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 219, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .detail-page .post-content p {
   font-size: 16px;
 }
-/* line 221, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 225, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar {
   padding-top: 101px;
 }
-/* line 225, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 229, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar ul.more-info {
   margin-bottom: 30px;
 }
-/* line 228, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 232, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar ul.more-info li {
   text-align: center;
 }
-/* line 231, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 235, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar ul.more-info li .published {
   color: #5cb85c;
 }
-/* line 235, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 239, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar ul.more-info li .closed {
   color: #d9534f;
 }
-/* line 239, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 243, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .toolbar ul.more-info li .drafted {
   color: #818a91;
 }
-/* line 247, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 251, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .btn {
   margin-bottom: 10px;
 }
-/* line 250, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 254, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .btn.request-list-btn {
   margin-top: 50px;
 }
-/* line 255, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 259, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show a.btn {
   display: inline-block;
 }
-/* line 259, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 263, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list {
   font-family: Gotham;
   margin-top: 30px;
 }
-/* line 263, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 267, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list h3 {
   font-size: 3.5em;
 }
-/* line 268, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 272, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li {
   margin-bottom: 5px;
 }
-/* line 271, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 275, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li:hover {
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 275, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 279, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li a {
   text-decoration: none;
   font-size: 13px;
 }
-/* line 279, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 283, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li a img {
   width: 50px;
   height: auto;
@@ -14570,28 +14574,28 @@ div.chosen-container-multi .result-selected img {
   border: 1px solid #0275d8;
   padding: 5px;
 }
-/* line 287, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 291, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li a div {
   margin-top: 5px;
 }
-/* line 292, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 296, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li .request-date {
   float: right;
   margin-top: -15px;
 }
-/* line 297, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 301, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li form {
   display: inline-block;
   float: right;
 }
-/* line 302, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 306, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li p {
   font-size: 16px;
   padding-left: 16px;
   border-top: 1px solid #818a91;
   padding-top: 7px;
 }
-/* line 309, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
+/* line 313, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts.show .request-list .list-group li .accepted-status {
   color: #5cb85c;
   line-height: 40px;
