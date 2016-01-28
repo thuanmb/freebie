@@ -33,6 +33,8 @@ vi:
       cancel: "Huỷ Yêu Cầu"
       accepted: "Đã chấp nhận"
   posts:
+    create:
+      success: "Đăng bài thành công!"
     form:
       header: "Cho đồ cũ"
       title: "Tiêu đề, ví dụ áo thun bamboo cũ đã dùng 2 năm"

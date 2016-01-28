@@ -35,6 +35,8 @@ en:
       accepted: "Accepted"
 
   posts:
+    create:
+      success: "Create post successfully!"
     form:
       header: "Giveaway"
       title: "Title"
