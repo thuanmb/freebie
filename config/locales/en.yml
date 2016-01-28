@@ -98,6 +98,10 @@ en:
     third_column:
       title: "Nearby Posts"
 
+  giveaway:
+    location:
+      message: "Your location was successfully updated."
+
   welcome:
     index:
       title_1: "Things are not necessarily for you,"
