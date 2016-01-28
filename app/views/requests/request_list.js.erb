@@ -4,8 +4,8 @@ if ($requestList.length > 0) {
   registerEventForRequestActionBtns();
 }
 
-$requestAccept = $(".request-action-accept")
-$requestCancel = $(".request-action-cancel")
+$requestAccept = $(".<%= dom_id @request %> .request-action-accept")
+$requestCancel = $(".<%= dom_id @request %> .request-action-cancel")
 if ($requestAccept.length > 0 && $requestCancel.length > 0) {
   $requestAccept.toggle(300);
   $requestCancel.toggle(300);

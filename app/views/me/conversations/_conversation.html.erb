@@ -9,13 +9,15 @@
         </small>
       </p>
       <% request = conversation.request %>
-      <% if request.present? %>
-        <div class="request-action-cancel" <%= 'style="display: none;"'.html_safe unless request.status %> >
-          <span class="accepted-status"> <i class="fa fa-check"></i> <%= t 'shared.request_list.accepted' %></span>
-          <%= link_to t('shared.request_list.cancel'), cancel_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-danger-outline', method: :patch, remote: true %>
-        </div>
-        <div class="request-action-accept" <%= 'style="display: none;"'.html_safe if request.status %> >
-          <%= link_to t('shared.request_list.accept'), accept_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-success', method: :patch, remote: true %>
+      <% if request.present? && request.user != current_user %>
+        <div class="<%= dom_id request %>">
+          <div class="request-action-cancel" <%= 'style="display: none;"'.html_safe unless request.status %> >
+            <span class="accepted-status"> <i class="fa fa-check"></i> <%= t 'shared.request_list.accepted' %></span>
+            <%= link_to t('shared.request_list.cancel'), cancel_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-danger-outline', method: :patch, remote: true %>
+          </div>
+          <div class="request-action-accept" <%= 'style="display: none;"'.html_safe if request.status %> >
+            <%= link_to t('shared.request_list.accept'), accept_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-success', method: :patch, remote: true %>
+          </div>
         </div>
       <% end %>
     </div>
