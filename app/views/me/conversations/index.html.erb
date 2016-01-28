@@ -18,10 +18,11 @@
               </div>
 
               <div class="media-body">
-                <h6 class="media-heading">
-                  <%= message.sender.name %> says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
-                </h6>
-                <%= message.body %>
+                <div class="media-heading">
+                  <%= message.sender.name %>
+                  <small class="pull-right"><%= time_ago_in_words message.created_at %></small>
+                </div>
+                <div class="media-content"> <%= message.body %> </div>
               </div>
             </div>
           <% end %>

@@ -2,23 +2,33 @@
   <div class="media">
     <div class="media-body">
       <%= link_to conversation.subject, me_conversations_path({box: params[:box], conversation: conversation}) %>
-      <p>
-        <%= conversation.last_message.body %>
+      <div class="last-message-content">
+        <% last_message = conversation.last_message %>
+        <span><%= last_message.body %></span>
         <small>
-          <span class="text-muted"> — <%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>
+          <span class="text-muted"> — <%= last_message.sender.name %> <%= t "conversation.says_at", {time: time_ago_in_words(last_message.created_at)} %></span>
         </small>
-      </p>
+      </div>
       <% request = conversation.request %>
-      <% if request.present? && request.user != current_user %>
-        <div class="<%= dom_id request %>">
-          <div class="request-action-cancel" <%= 'style="display: none;"'.html_safe unless request.status %> >
+      <% if request.present? %>
+        <% if request.user != current_user %>
+          <div class="<%= dom_id request %>">
+            <div class="request-action-cancel" <%= 'style="display: none;"'.html_safe unless request.status %> >
+              <span class="accepted-status"> <i class="fa fa-check"></i> <%= t 'shared.request_list.accepted' %></span>
+              <%= link_to t('shared.request_list.cancel'), cancel_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-danger-outline', method: :patch, remote: true %>
+            </div>
+            <div class="request-action-accept" <%= 'style="display: none;"'.html_safe if request.status %> >
+              <%= link_to t('shared.request_list.accept'), accept_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-success', method: :patch, remote: true %>
+            </div>
+          </div>
+        <% else %>
+          <% if request.status %>
             <span class="accepted-status"> <i class="fa fa-check"></i> <%= t 'shared.request_list.accepted' %></span>
-            <%= link_to t('shared.request_list.cancel'), cancel_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-danger-outline', method: :patch, remote: true %>
-          </div>
-          <div class="request-action-accept" <%= 'style="display: none;"'.html_safe if request.status %> >
-            <%= link_to t('shared.request_list.accept'), accept_post_requests_path(request.post, params: {request_id: request.id}), class: 'btn btn-sm btn-success', method: :patch, remote: true %>
-          </div>
-        </div>
+          <% else %>
+            <span class="waiting-status"> <i class="fa fa-clock-o"></i> <%= t 'shared.request_list.waiting' %></span>
+          <% end %>
+        <% end %>
+
       <% end %>
     </div>
     <div class="media-right">

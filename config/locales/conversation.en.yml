@@ -5,3 +5,6 @@ en:
   new_conversation: "New message"
   reply: "Reply"
   empty_trash: "Empty trash"
+
+  conversation:
+    says_at: "says at %{time} ago"

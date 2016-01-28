@@ -50,7 +50,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to post_path(@post, new_post: true) } 
+        format.html { redirect_to post_path(@post, new_post: true) }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -135,7 +135,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @sender = User.find(request_params[:sender_id])
 
-    subject = "#{@sender.name} - contacted for post #{@post.title}"
+    subject = I18n.t('email.message_subject', {user_name: @sender.name, post_name: @post.title})
     conversation = current_user.send_message(@post.user, request_params[:message], subject).conversation
     render plain: "success"
   end
