@@ -65,10 +65,9 @@
   <div class="col-md-10">
     <%= will_paginate @posts, class: 'top-pagination pull-right' %>
 
-    <div class="row">
+    <div class="posts">
     <% @posts.each do |post| %>
 
-      <div class="col-md-4">
         <div class="card">
           <%= link_to (image_tag post.main_image.url), post %>
           <div class="card-block">
@@ -78,8 +77,17 @@
             <%= active_link_to I18n.t('posts.claim'), post_path(post), class: 'btn btn-primary pull-right' %>
           </div>
         </div>
-      </div>
+      
     <% end %>
     </div>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  $('.posts').masonry({
+      itemSelector: '.card',
+      columnWidth: 290,
+      gutter: 10
+    });
+</script>
+
