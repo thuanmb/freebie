@@ -14,22 +14,6 @@
   }
 
   .header .navbar-header {
-    // &.is-fixed {
-    //   position: fixed;
-    //   left: 0;
-    //   top: 0;
-    //   height: 70px;
-    //   width: 100%;
-    // }
-
-    // &.animate-children {
-    //   .nav-item {
-    //     .nav-link {
-    //       padding: 10px 30px !important;
-    //     }
-    //   }
-    // }
-
     .navbar-container {
       .navbar {
         .nav {
@@ -60,6 +44,8 @@
 
 @media only screen and (max-width: 768px) {
   .header .navbar-header {
+    padding-bottom: 16px;
+
     &.is-visible {
       .navbar {
         padding-bottom: 30px;
@@ -68,12 +54,7 @@
 
     .navbar-container {
       .navbar {
-        form {
-          display: flex;
-          float: left !important;
-        }
-
-        .nav {
+        .nav:not(.second-nav) {
           transition: display 0.5s;
           display: none;
 
@@ -82,6 +63,11 @@
             width: 100%;
             border-bottom: 1px dashed #999;
             padding-left: 20px;
+
+            &:first-child {
+              border-top: 1px dashed #999;
+              margin-top: 24px;
+            }
 
             a {
               border-top: none !important;
@@ -107,21 +93,97 @@
           float: right;
         }
       }
+
+      .second-nav {
+        position: absolute;
+        right: 55px;
+
+        li {
+          position: relative;
+
+          &.edit-profile {
+            top: -3px;
+          }
+
+          &.message {
+            top: 13px;
+            margin-right: 20px;
+          }
+
+          &.login {
+            margin-top: 16px;
+            margin-right: 5px;
+
+            a {
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-content.welcome {
+    .introduction {
+      .ads {
+        img {
+          width: auto;
+          height: 100%;
+          left: -200px;
+          top: 0;
+        }
+
+        .info {
+          h3 {
+            padding: 0 1em;
+          }
+
+          p {
+            padding: 0 4em;
+          }
+        }
+      }
+
+      .description {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    }
+
+    .overview img, .campaign img {
+      display: none;
+    }
+  }
+
+  #main-footer {
+    padding-top: 10px;
+
+    .row > div {
+      
     }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .onboarding-container {
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 105%;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: auto;
 
     .content {
       width: 100%;
       padding-top: 0;
 
       overflow-y: scroll;
+
+      .welcome-message {
+        h1, p {
+          display: none;
+        }
+      }
 
       .fa-close {
         top: 10px;

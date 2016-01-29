@@ -65,7 +65,9 @@
               <%= I18n.t('menu_item_find_posts') %>
             <% end %>
           </li>
+        </ul>
 
+        <ul class="nav navbar-nav second-nav">
           <% unless user_signed_in? %>
             <li class="nav-item login pull-xs-right">
               <%= active_link_to new_user_session_path, class: 'nav-link' do %>

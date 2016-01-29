@@ -44,8 +44,9 @@ $(document).ready(function () {
         }
     });
 
-    $(".cd-secondary-nav-trigger").click(function () {
-        secondaryNav.toggleClass("is-visible");
+    $(".cd-secondary-nav-trigger").click(function (e) {
+      e.preventDefault();
+      secondaryNav.toggleClass("is-visible");
     });
   }
 
