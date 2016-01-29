@@ -172,8 +172,9 @@ html, body {
 
     .post-content {
       margin-left: 40px;
-      
+
       .filter-toggle {
+        display: inline-block;
         position: absolute;
         right: 11px;
         top: -20px;
