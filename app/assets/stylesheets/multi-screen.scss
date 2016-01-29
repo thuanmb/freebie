@@ -155,6 +155,52 @@ html, body {
 
     }
   }
+
+  .main-content.posts {
+    .search-container {
+      form {
+        width: 90%;
+      }
+
+      .btn {
+        border: none;
+        padding: 0;
+        font-size: 30px;
+        background: transparent;
+      }
+    }
+
+    .post-content {
+      margin-left: 40px;
+      
+      .filter-toggle {
+        position: absolute;
+        right: 11px;
+        top: -20px;
+        border: none;
+        background: transparent;
+        color: $primary_color !important;
+        font-size: 26px;
+      }
+      
+      .filter-container {
+        position: absolute;
+        left: -85%;  
+        width: 100%;
+        z-index: 1;
+        background-color: #fff;
+        transition: left 1s;
+
+        &.open {
+          left: 0;
+
+          .filter-toggle {
+              color: #5bc0de !important;
+            }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {

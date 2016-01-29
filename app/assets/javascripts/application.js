@@ -24,6 +24,10 @@
 //= require_tree .
 //= require_tree ../../../vendor/assets/javascripts/.
 
+AbstractChosen.browser_is_supported = function () {
+  return true;
+};
+
 $(document).ready(function () {
   var secondaryNav = $('.navbar-header');
   if (secondaryNav.length > 0) {

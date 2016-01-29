@@ -4,6 +4,14 @@
 
     .post-content {
       margin-top: 30px;
+      
+      .posts-container {
+        overflow-y: hidden;
+
+        .posts {
+          overflow: scroll;
+        }
+      }
     }
 
     .row {
