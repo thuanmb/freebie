@@ -14,12 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    if @post.user == current_user || @post.published?
-      @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-      render :show
-    else
-      render :post_not_found, status: 404
-    end
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    render :show
   end
 
   # GET /posts/new

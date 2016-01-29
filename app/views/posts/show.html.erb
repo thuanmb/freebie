@@ -46,7 +46,7 @@
             <% if @post.published? %>
               <%= fa_icon "check" %>
               <%= t("posts.status.published") %>
-            <% elsif @post.closed %>
+            <% elsif @post.closed? %>
               <%= fa_icon "minus-circle" %>
               <%= t("posts.status.closed") %>
             <% else %>
@@ -64,7 +64,7 @@
         <button class="btn btn-success btn-block request-list-btn" onclick="scrollToRequestList()"><%= t(".show_request_list") %></button>
         <% if @post.published? %>
           <%= active_link_to I18n.t("posts.show.close_post"), close_post_path(@post), method: :put, class: 'btn btn-danger btn-block' %>
-        <% elsif !@post.closed %>
+        <% elsif !@post.closed? %>
           <%= active_link_to I18n.t("posts.show.publish_post"), publish_post_path(@post), method: :put, class: 'btn btn-danger btn-block' %>
       <% end %>
       <% end %>
