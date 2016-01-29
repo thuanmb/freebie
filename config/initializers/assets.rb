@@ -12,5 +12,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( admin.css )
 
 Rails.application.config.assets.precompile += %w( home_bg.jpg )
-Rails.application.config.assets.precompile += %w( old_stuffs.jpg )
+Rails.application.config.assets.precompile += %w( finding_stuffs.jpg )
 Rails.application.config.assets.precompile += %w( campaign.jpg )

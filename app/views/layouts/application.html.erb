@@ -222,39 +222,39 @@
   </div>
 </footer>
 
-<% if current_page?(root_path) %>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      // onboarding
-      if (typeof(Storage) !== "undefined" && location.pathname == "/") {
-        $(window).bind('beforeunload', function(){
-          localStorage.isVisitedFirstTimes = true;
-          localStorage.deniedToLoadCurrentLocation = false;
-        });
+<script type="text/javascript">
+  $(document).ready(function () {
+    // onboarding
+    if (typeof(Storage) !== "undefined" && location.pathname == "/") {
+      $(window).bind('beforeunload', function(){
+        localStorage.isVisitedFirstTimes = true;
+        localStorage.deniedToLoadCurrentLocation = false;
+      });
 
-        var onboardingView = $(".onboarding-container");
-        if (!localStorage.shouldNotShowOnboarding) {
-          localStorage.shouldNotShowOnboarding = 0;
-        }
+      var onboardingView = $(".onboarding-container");
+      if (!localStorage.shouldNotShowOnboarding) {
+        localStorage.shouldNotShowOnboarding = 0;
+      }
 
-        var count = parseInt(localStorage.shouldNotShowOnboarding, 10);
-        count++;
-        localStorage.shouldNotShowOnboarding = count;
+      var count = parseInt(localStorage.shouldNotShowOnboarding, 10);
+      count++;
+      localStorage.shouldNotShowOnboarding = count;
 
-        if ((!localStorage.isVisitedFirstTimes || localStorage.isVisitedFirstTimes === "true") && count >= 2) {
+      if ((!localStorage.isVisitedFirstTimes || localStorage.isVisitedFirstTimes === "true") && count >= 2) {
+        if (location.pathname == "/") {
           onboardingView.show();
           onboardingView.find(".fa-close").click(function () {
             onboardingView.fadeOut();
           });
-
-          localStorage.isVisitedFirstTimes = false;
-        } else {
-          onboardingView.hide();
         }
+
+        localStorage.isVisitedFirstTimes = false;
+      } else {
+        onboardingView.hide();
       }
-    });
-  </script>
-<% end %>
+    }
+  });
+</script>
 
 <!-- Get near by posts -->
 <script type="text/javascript">
