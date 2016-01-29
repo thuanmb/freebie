@@ -1,18 +1,10 @@
 @import 'variables';
 
-@media only screen and (min-width: 769px) {
-  body {
-    &.is-fixed {
-      .header .navbar-header {
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 70px;
-        width: 100%;
-      }
-    }
-  }
+html, body {
+  box-sizing: border-box !important;
+}
 
+@media only screen and (min-width: 769px) {
   .header .navbar-header {
     .navbar-container {
       .navbar {
@@ -53,6 +45,7 @@
     }
 
     .navbar-container {
+      padding: 0 !important;
       .navbar {
         .nav:not(.second-nav) {
           transition: display 0.5s;
@@ -159,7 +152,7 @@
     padding-top: 10px;
 
     .row > div {
-      
+
     }
   }
 }
