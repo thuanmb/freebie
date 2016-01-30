@@ -83,6 +83,7 @@ vi:
       reload_page_btn: "Tải lại trang với vị trí này"
       yes_btn: "Có"
       no_btn: "Không, Cảm ơn!"
+      empty_message: "Không có bài đăng nào."
     location: "Khu vực"
     social_share:
       message: "Hãy share bài đăng này, bạn sẽ có cơ hội cho đi nhanh hơn! Và biết đâu một người bạn của bạn đang cần món đồ này!"

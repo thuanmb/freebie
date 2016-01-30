@@ -4,7 +4,7 @@ campaign1 = Campaign.create({
   end_date: 5.days.from_now,
   status: 'Published',
   categories: [@category_money, @category_clothes, @category_people],
-  gmap_location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942346.616976209!2d104.749081!3d22.6895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cb929387547d35%3A0xdc43dc950ffc854!2zTMWpbmcgSOG7kywgWcOqbiBNaW5oLCBIw6AgR2lhbmcsIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1453543686933" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>',
+  gmap_location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d942346.616976209!2d104.749081!3d22.6895!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cb929387547d35%3A0xdc43dc950ffc854!2zTMWpbmcgSOG7kywgWcOqbiBNaW5oLCBIw6AgR2lhbmcsIFZpZXRuYW0!5e0!3m2!1sen!2sus!4v1453543686933" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>',
   image_url: 'http://www.mogo.vn/images/gioqua2.png',
   description: %q(Chương trình Trao tặng quà Tết của Nhóm Sống Hướng Thiện sẽ tổ chức 2 ngày 30, 31/1/2016 (tức 21, 22 tháng Chạp) tại Lũng Hồ, Yên Minh, Hà Giang.
 

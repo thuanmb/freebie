@@ -202,6 +202,29 @@ html, body {
       }
     }
   }
+
+  .main-content.giveaways {
+    .container.p-b-3 {
+      text-align: center;
+
+      a {
+        margin: auto;
+        display: inline-block;
+      }
+    }
+
+    .row.split-layout {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .main-content.campaigns.show {
+    .campaign-location {
+      margin-top: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {

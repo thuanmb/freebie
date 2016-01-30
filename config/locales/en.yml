@@ -84,6 +84,7 @@ en:
       reload_page_btn: "Reload page with this location"
       yes_btn: "Yes"
       no_btn: "No, Thanks!"
+      empty_message: "No posts to be shown."
     location: "Area"
     social_share:
       message: "Please share, your item will be found faster. And who know one of your friends might ask for it!"
