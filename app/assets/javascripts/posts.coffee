@@ -79,14 +79,29 @@ $ ->
           reloadByCity city.longName
 
         $(".location-alert .no-btn").click (e) ->
-          $(".location-alert").fadeOut(-> 
+          $(".location-alert").fadeOut(->
             if (!localStorage.currentLocation)
               $(".location-select").fadeIn()
           )
 
         $(".location-alert").fadeIn()
-    ), (-> 
+    ), (->
       $(".location-select").fadeIn()
     )
 
     geoLocation.getLocation()
+
+
+
+window.PhotoJS =
+  setupMasonry: ->
+    window.$grid = $('.post-items').masonry
+      itemSelector: '.card'
+      columnWidth: 290
+      gutter: 10
+
+$(document).on "page:change", ->
+  window.PhotoJS.setupMasonry()
+
+  $grid.imagesLoaded().progress ->
+    $grid.masonry('layout')
