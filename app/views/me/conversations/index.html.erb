@@ -19,7 +19,7 @@
 
               <div class="media-body">
                 <div class="media-heading">
-                  <%= message.sender.name %>
+                  <%= message.sender.name %> <%= t "conversation.says_at", {time: time_ago_in_words(message.created_at)} %>
                   <small class="pull-right"><%= time_ago_in_words message.created_at %></small>
                 </div>
                 <div class="media-content"> <%= message.body %> </div>
