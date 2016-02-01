@@ -25,6 +25,13 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: GothamBold;
+  src: asset_url('assets/gotham_bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #888;
