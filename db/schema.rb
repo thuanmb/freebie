@@ -50,9 +50,8 @@ ActiveRecord::Schema.define(version: 20160127200252) do
     t.string   "fa_icon"
     t.string   "color"
     t.string   "img_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "order_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "category_links", force: :cascade do |t|
