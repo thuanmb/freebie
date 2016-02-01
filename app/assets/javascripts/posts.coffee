@@ -79,13 +79,13 @@ $ ->
           reloadByCity city.longName
 
         $(".location-alert .no-btn").click (e) ->
-          $(".location-alert").fadeOut(-> 
+          $(".location-alert").fadeOut(->
             if (!localStorage.currentLocation)
               $(".location-select").fadeIn()
           )
 
         $(".location-alert").fadeIn()
-    ), (-> 
+    ), (->
       $(".location-select").fadeIn()
     )
 
@@ -95,7 +95,7 @@ $ ->
 
 window.PhotoJS =
   setupMasonry: ->
-    window.$grid = $('.posts').masonry
+    window.$grid = $('.post-items').masonry
       itemSelector: '.card'
       columnWidth: 290
       gutter: 10
