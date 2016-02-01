@@ -90,3 +90,18 @@ $ ->
     )
 
     geoLocation.getLocation()
+
+
+
+window.PhotoJS =
+  setupMasonry: ->
+    window.$grid = $('.posts').masonry
+      itemSelector: '.card'
+      columnWidth: 290
+      gutter: 10
+
+$(document).on "page:change", ->
+  window.PhotoJS.setupMasonry()
+
+  $grid.imagesLoaded().progress ->
+    $grid.masonry('layout')
