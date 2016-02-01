@@ -8,7 +8,7 @@
 @category_clothes = Category.create({
   name: 'clothes',
   fa_icon: 'fa-shopping-bag',
-  img_url: 'http://192.163.240.212/~careerk8/wp-content/uploads/2014/01/donation.jpg',
+  img_url: 'https://s3-ap-southeast-1.amazonaws.com/freebievn/clothes.jpg',
   color: '#ea462c'
 });
 
@@ -29,7 +29,7 @@
 @category_books = Category.create({
   name: 'books',
   fa_icon: 'fa-book',
-  img_url: 'http://www.uglydogbooks.com/wp-content/uploads/2014/04/books.jpg',
+  img_url: 'https://s3-ap-southeast-1.amazonaws.com/freebievn/book.jpg',
   color: '#9f652f'
 });
 
