@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  default_scope { order('order_number ASC') }
+  default_scope { order('id ASC') }
 
   has_many :category_links
   has_many :campaigns, through: :category_links, source: :item, source_type: 'Campaign'

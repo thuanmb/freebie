@@ -25,6 +25,13 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: GothamBold;
+  src: asset_url('assets/gotham_bold.ttf') format('truetype');
+  font-weight: normal;
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #888;
@@ -254,7 +261,7 @@ body {
     margin: auto;
     display: inline-block;
 
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.9);
 
     .fa-close {
       position: absolute;
