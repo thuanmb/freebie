@@ -130,3 +130,6 @@ en:
         message: "Donates your old or unnecessary things to charitable organizations. To bring smile to the poor and children in Vietnam."
         btn_action: "Contribute now"
 
+  campaign:
+    message:
+      success: "Message has been sent, we will contact you soon!"

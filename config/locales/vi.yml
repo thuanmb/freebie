@@ -134,3 +134,6 @@ vi:
   time:
     formats:
       default: "%d / %m / %Y"
+  campaign:
+    message:
+      success: "Đã gửi thông tin quyên góp, chúng tôi sẽ liên lạc bạn trong thời gian sớm nhất!"
