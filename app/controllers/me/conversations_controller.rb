@@ -16,14 +16,14 @@ class Me::ConversationsController < AdminController
   def create
     recipients = User.where(id: params['recipients'])
     conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
-    flash[:success] = "Message has been sent!"
+    flash[:success] = I18n.t('message.sent.success')
     redirect_to me_conversations_path({conversation: conversation.id})
   end
 
   def reply
     get_conversation
     current_user.reply_to_conversation(@conversation, params[:body])
-    flash[:success] = 'Reply sent'
+    flash[:success] = I18n.t('message.reply.success')
     redirect_to me_conversations_path({box: params[:box], conversation: params[:id]})
   end
 

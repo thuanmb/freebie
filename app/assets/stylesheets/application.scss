@@ -21,13 +21,13 @@
 
 @font-face {
   font-family: Gotham;
-  src: asset_url('assets/gotham_medium.ttf') format('truetype');
+  src: font-url( asset-path("gotham_medium.ttf") ) format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: GothamBold;
-  src: asset_url('assets/gotham_bold.ttf') format('truetype');
+  src: asset-url('gotham_bold.ttf') format('truetype');
   font-weight: normal;
 }
 

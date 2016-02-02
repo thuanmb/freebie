@@ -17602,6 +17602,23 @@ License:  MIT
     }
   });
 
+  window.PhotoJS = {
+    setupMasonry: function() {
+      return window.$grid = $('.post-items').masonry({
+        itemSelector: '.card',
+        columnWidth: 290,
+        gutter: 10
+      });
+    }
+  };
+
+  $(document).on("page:change", function() {
+    window.PhotoJS.setupMasonry();
+    return $grid.imagesLoaded().progress(function() {
+      return $grid.masonry('layout');
+    });
+  });
+
 }).call(this);
 (function() {
 

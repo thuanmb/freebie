@@ -127,6 +127,9 @@ vi:
   giveaway:
     location:
       message: "Đã lưu địa điểm của bạn"
+  giveaways:
+    select_campaign:
+      join_action: "Xem các hoạt động từ thiện"
   will_paginate:
     previous_label: "trước"
     next_label: "sau"
@@ -134,3 +137,11 @@ vi:
   time:
     formats:
       default: "%d / %m / %Y"
+  campaign:
+    message:
+      success: "Đã gửi thông tin quyên góp, chúng tôi sẽ liên lạc bạn trong thời gian sớm nhất!"
+  message:
+    sent:
+      success: "Đã gửi tin nhắn"
+    reply: 
+      success: "Đã gửi phản hồi"

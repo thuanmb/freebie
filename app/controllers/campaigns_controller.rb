@@ -12,7 +12,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     subject = "#{donation_params[:name]} - #{donation_params[:email_or_phone]} at #{donation_params[:address]} contacted for campaign #{@campaign.title}"
     conversation = current_user.send_message(@campaign.user, donation_params[:message], subject).conversation
-    flash[:success] = "Message has been sent!"
+    flash[:success] = I18n.t('campaign.message.success')
     redirect_to campaign_path(@campaign)
   end 
 

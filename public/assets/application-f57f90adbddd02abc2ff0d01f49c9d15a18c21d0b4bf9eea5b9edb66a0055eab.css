@@ -14347,7 +14347,7 @@ div.chosen-container-multi .result-selected img {
 }
 /* line 38, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts .card {
-  width: 280px;
+  width: 290px;
 }
 /* line 43, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/posts.scss */
 .posts form h1 {
@@ -14679,6 +14679,15 @@ div.chosen-container-multi .result-selected img {
 .main-content.giveaways.select_campaign .split-layout {
   height: 380px;
   overflow-y: hidden;
+}
+/* line 16, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/giveaways.scss */
+.main-content.giveaways.select_campaign .create-post-btn {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 20, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/giveaways.scss */
+.main-content.giveaways.select_campaign .create-post-btn:hover {
+  color: #FE9322;
 }
 
 /* line 1, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/footer.scss */
@@ -15363,12 +15372,12 @@ div.chosen-container-multi .result-selected img {
 
 @font-face {
   font-family: Gotham;
-  src: url(/assets/gotham_medium.ttf) format("truetype");
+  src: url(/assets/gotham_medium-eca5bb46ee668a9dc56daa0ff6be68ea429fa2a9963036d20667adfdebe12899.ttf) format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: GothamBold;
-  src: url(/assets/gotham_bold.ttf) format("truetype");
+  src: url(/assets/gotham_bold-1ba5deee5ba7db155c23554705e9b9c812389d03060531e310e9b70bc4be800b.ttf) format("truetype");
   font-weight: normal;
 }
 /* line 35, /Users/atran/workspace/rails-tutorial/freebie/app/assets/stylesheets/application.scss */
