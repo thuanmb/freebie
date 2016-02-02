@@ -133,3 +133,8 @@ en:
   campaign:
     message:
       success: "Message has been sent, we will contact you soon!"
+  message:
+    sent:
+      success: "Your message has been sent successfully."
+    reply: 
+      success: "Your reply has been sent successfully."

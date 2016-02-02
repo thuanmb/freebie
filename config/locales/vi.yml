@@ -137,3 +137,8 @@ vi:
   campaign:
     message:
       success: "Đã gửi thông tin quyên góp, chúng tôi sẽ liên lạc bạn trong thời gian sớm nhất!"
+  message:
+    sent:
+      success: "Đã gửi tin nhắn"
+    reply: 
+      success: "Đã gửi phản hồi"
