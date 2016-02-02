@@ -111,6 +111,9 @@ en:
   giveaway:
     location:
       message: "Your location was successfully updated."
+  giveaways:
+    select_campaign:
+      join_action: "Show campaign list"
 
   welcome:
     index:

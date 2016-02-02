@@ -127,6 +127,9 @@ vi:
   giveaway:
     location:
       message: "Đã lưu địa điểm của bạn"
+  giveaways:
+    select_campaign:
+      join_action: "Xem các hoạt động từ thiện"
   will_paginate:
     previous_label: "trước"
     next_label: "sau"

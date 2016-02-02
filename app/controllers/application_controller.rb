@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
  
   def set_locale
-    I18n.locale = params[:lang] || I18n.default_locale
+    if params[:lang]
+      session[:locale] = params[:lang]
+    end
+
+    I18n.locale = session[:locale] || I18n.default_locale
   end
 
   def redirect_back_or(path)

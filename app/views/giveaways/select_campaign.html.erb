@@ -3,10 +3,11 @@
     <h2 class="m-b-1"><%= t 'giveaway.join_campaign' %></h2>
     <p><%= t 'giveaway.join_campaign_description' %></p>
     <p><%= t 'giveaway.join_campaign_alternative' %></p>
-    <%= link_to t('giveaway.create_post'), new_post_path({category: params[:category]}), class: 'btn btn-inverse btn-sm' %>
+    <a href="#campaign-list" class="btn btn-inverse btn-sm"><%= t(".join_action") %></a>
+    <%= link_to t('giveaway.create_post'), new_post_path({category: params[:category]}), class: 'btn btn-link create-post-btn' %>
   </div>
   <%= image_tag @category.img_url, class: "col-lg-6 img-responsive", onerror: "this.src='#{image_path('home_bg.jpg')}'" %>
 </div>
-<div class="container m-t-2 p-b-3">
+<div id="campaign-list" class="container m-t-3 p-b-3">
   <%= render 'campaigns/campaigns' %>
 </div>
